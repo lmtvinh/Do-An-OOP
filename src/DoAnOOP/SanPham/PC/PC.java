@@ -11,10 +11,10 @@ public class PC extends SanPham {
     public static int id = 0;
     private String maPC;
     private String mainboard, casePC, SSD, HHD, cooling, VGA;
+    private LoaiPC loaiPC;
 
     public PC() {
-        maPC = Maker. + id;
-        id++;
+        loaiPC = new LoaiPC();
     }
 
     public PC(String tenSanPham, String CPU, String ramCapacity, Maker thongTinNXS, Provider thongTinNCC, float price, int thoiGianBaoHanh, String maPC, String mainboard, String casePC, String SSD, String HHD, String cooling, String VGA) {
@@ -84,7 +84,36 @@ public class PC extends SanPham {
         this.VGA = VGA;
     }
 
-    public void input() {
-
+    public LoaiPC getLoaiPC() {
+        return loaiPC;
     }
+
+    public void setLoaiPC(LoaiPC loaiPC) {
+        this.loaiPC = loaiPC;
+    }
+
+    @Override
+    public void input() {
+        super.input();
+        System.out.print("Nhap Thong tin ve Mainboard: ");
+        mainboard = scanner.nextLine();
+        System.out.print("Nhap Thong tin ve CPU: ");
+        CPU = scanner.nextLine();
+        System.out.print("Nhap Thong tin ve Case PC: ");
+        casePC = scanner.nextLine();
+        System.out.print("Nhap Thong tin ve SSD: ");
+        SSD = scanner.nextLine();
+        System.out.print("Nhap Thong tin ve HHD: ");
+        HHD = scanner.nextLine();
+        System.out.print("Nhap Thong tin ve Tan nhiet: ");
+        cooling = scanner.nextLine();
+        System.out.print("Nhap Thong tin ve VGA: ");
+        VGA = scanner.nextLine();
+        System.out.print("Nhap Thong tin ve Loai PC.");
+        loaiPC.input();
+    }
+
+//    public void output() {
+//
+//    }
 }
