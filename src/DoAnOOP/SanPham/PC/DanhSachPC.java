@@ -185,4 +185,148 @@ public class DanhSachPC {
 //            temp[i].output();
         }
     }
+
+    public void findByCPU(String nameCPU) {
+        int count = 0, flag = 0;
+        for (int i = 0; i < length; i++) {
+            if (Objects.equals(arrPC[i].getCPU(), nameCPU)) {
+                count++;
+            }
+        }
+        if (count != 0) {
+            PC[] b = new PC[count];
+            for (int i = 0; i < count; i++) {
+                if (arrPC[i].getCPU().contains(nameCPU)) {
+                    b[flag] = arrPC[i];
+                    flag++;
+                }
+            }
+            System.out.println("\n\tTHONG TIN SAN PHAM CO CPU LOAI " + nameCPU + "LA.");
+            for (int i = 0; i < count; i++) {
+                // b[i].output();
+            }
+        } else {
+            System.out.println("\n\tKHONG CO SAN PHAM NAO CO HANG SAN XUAT LA " + nameCPU);
+        }
+    }
+
+    public void findByRamCapacity(String ramCapacity) {
+        int count = 0, flag = 0;
+        for (int i = 0; i < length; i++) {
+            if (Objects.equals(arrPC[i].getRamCapacity(), ramCapacity)) {
+                count++;
+            }
+        }
+        if (count != 0) {
+            PC[] b = new PC[count];
+            for (int i = 0; i < count; i++) {
+                if (arrPC[i].getRamCapacity().contains(ramCapacity)) {
+                    b[flag] = arrPC[i];
+                    flag++;
+                }
+            }
+            System.out.println("\n\tTHONG TIN SAN PHAM CO DUNG LUONG RAM " + ramCapacity + "LA.");
+            for (int i = 0; i < count; i++) {
+                // b[i].output();
+            }
+        } else {
+            System.out.println("\n\tKHONG CO SAN PHAM NAO CO HANG SAN XUAT LA " + ramCapacity);
+        }
+    }
+
+    public void findBySSD(String checkSSD) {
+        int count = 0, flag = 0;
+        for (int i = 0; i < length; i++) {
+            if (Objects.equals(arrPC[i].getSSD(), checkSSD)) {
+                count++;
+            }
+        }
+        if (count != 0) {
+            PC[] b = new PC[count];
+            for (int i = 0; i < count; i++) {
+                if (arrPC[i].getSSD().contains(checkSSD)) {
+                    b[flag] = arrPC[i];
+                    flag++;
+                }
+            }
+            System.out.println("\n\tTHONG TIN SAN PHAM CO LOAI " + checkSSD + "LA.");
+            for (int i = 0; i < count; i++) {
+                // b[i].output();
+            }
+        } else {
+            System.out.println("\n\tKHONG CO SAN PHAM NAO CO LOAI LA " + checkSSD);
+        }
+    }
+
+    public void findByHHD(String checkHHD) {
+        int count = 0, flag = 0;
+        for (int i = 0; i < length; i++) {
+            if (Objects.equals(arrPC[i].getHHD(), checkHHD)) {
+                count++;
+            }
+        }
+        if (count != 0) {
+            PC[] b = new PC[count];
+            for (int i = 0; i < count; i++) {
+                if (arrPC[i].getHHD().contains(checkHHD)) {
+                    b[flag] = arrPC[i];
+                    flag++;
+                }
+            }
+            System.out.println("\n\tTHONG TIN SAN PHAM CO LOAI HHD " + checkHHD + "LA.");
+            for (int i = 0; i < count; i++) {
+                // b[i].output();
+            }
+        } else {
+            System.out.println("\n\tKHONG CO SAN PHAM NAO CO LOAI HHD " + checkHHD);
+        }
+    }
+
+    public void findByCooling(String checkCooling) {
+        int count = 0, flag = 0;
+        for (int i = 0; i < length; i++) {
+            if (Objects.equals(arrPC[i].getCooling(), checkCooling)) {
+                count++;
+            }
+        }
+        if (count != 0) {
+            PC[] b = new PC[count];
+            for (int i = 0; i < count; i++) {
+                if (arrPC[i].getCooling().contains(checkCooling)) {
+                    b[flag] = arrPC[i];
+                    flag++;
+                }
+            }
+            System.out.println("\n\tTHONG TIN SAN PHAM CO LOAI TAN NHIET " + checkCooling + "LA.");
+            for (int i = 0; i < count; i++) {
+                // b[i].output();
+            }
+        } else {
+            System.out.println("\n\tKHONG CO SAN PHAM NAO CO LOAI TAN NHIET " + checkCooling);
+        }
+    }
+
+    public void findByVGA(String checkVGA) {
+        int count = 0, flag = 0;
+        for (int i = 0; i < length; i++) {
+            if (Objects.equals(arrPC[i].getVGA(), checkVGA)) {
+                count++;
+            }
+        }
+        if (count != 0) {
+            PC[] b = new PC[count];
+            for (int i = 0; i < count; i++) {
+                if (arrPC[i].getVGA().contains(checkVGA)) {
+                    b[flag] = arrPC[i];
+                    flag++;
+                }
+            }
+            System.out.println("\n\tTHONG TIN SAN PHAM CO CARD DO HOA " + checkVGA + "LA.");
+            for (int i = 0; i < count; i++) {
+                // b[i].output();
+            }
+        } else {
+            System.out.println("\n\tKHONG CO SAN PHAM NAO CO CARD DO HOA " + checkVGA);
+        }
+    }
 }
