@@ -9,6 +9,7 @@ public class DanhSachKhachHang {
     static final Scanner scanner = new Scanner(System.in);
     private Customer[] customers;
     private int length;
+
     public DanhSachKhachHang() {
         customers = null;
         length = 0;
@@ -33,7 +34,7 @@ public class DanhSachKhachHang {
             customers[0] = a;
             length++;
         } else {
-            Customer[] temp = new Customer[length+1];
+            Customer[] temp = new Customer[length + 1];
             for (int i = 0; i < length; i++) {
                 temp[i] = customers[i];
             }
@@ -44,9 +45,10 @@ public class DanhSachKhachHang {
     }
 
     public void remove(int index, Customer a) {
-        if (index < 0 || index > length) return;
+        if (index < 0 || index > length)
+            return;
         for (int i = index; i < length; i++) {
-            set(a,index,customers);
+            set(a, index, customers);
         }
     }
 
@@ -55,8 +57,8 @@ public class DanhSachKhachHang {
         String check = scanner.nextLine();
         for (int i = 0; i < length; i++) {
             boolean result = get(i).getMaKhachHang().equalsIgnoreCase(check);
-            if(result) {
-                remove(i,get(i));
+            if (result) {
+                remove(i, get(i));
             }
         }
     }
@@ -74,12 +76,13 @@ public class DanhSachKhachHang {
             newCustomer = null;
             newCustomer.input();
             set(newCustomer, temp, customers);
+        } else {
+            System.out.println("Khong co ID trong danh sach.");
         }
-        System.out.println("Khong co ID trong danh sach.");
     }
 
     public void output() {
-        System.out.printf("%-8s%-25s%-15s%-12s\n","Ma Khach Hang","Ten Khach Hang","Nhom Khach Hang");
+        System.out.printf("%-8s%-25s%-15s%-12s\n", "Ma Khach Hang", "Ten Khach Hang", "Nhom Khach Hang");
         for (int i = 0; i < length; i++) {
             customers[i].output();
         }
@@ -105,25 +108,29 @@ public class DanhSachKhachHang {
                         System.out.println("Nhap thong tin cua Khach Hang.");
                         a.input();
                         addCustomer(a);
-                    } case "2" -> {
+                    }
+                    case "2" -> {
                         System.out.println("Danh sach Khach Hang.");
                         output();
                         System.out.print("Nhap Ma Khach Hang muon sua: ");
                         String index = scanner.nextLine();
                         updateCustomer(index);
-                    } case "3" -> {
+                    }
+                    case "3" -> {
                         removeCustomer();
-                    } case "4" -> {
+                    }
+                    case "4" -> {
                         output();
-                    } case "0" -> {
+                    }
+                    case "0" -> {
                         System.out.println("Thoat");
-                    }default -> {
+                    }
+                    default -> {
                         System.out.println("Lua chon cua ban khong phu hop");
                     }
                 }
             } while (luachon != "0");
-        }
-        else {
+        } else {
             String luachon;
             do {
                 HoTro.clearConsole();
@@ -149,7 +156,7 @@ public class DanhSachKhachHang {
 
     public static void main(String[] args) {
         DanhSachKhachHang danhSachKhachHang = new DanhSachKhachHang();
-        danhSachKhachHang.menu("admin","admin");
+        danhSachKhachHang.menu("admin", "admin");
     }
 
 }
