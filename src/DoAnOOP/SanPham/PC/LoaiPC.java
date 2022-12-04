@@ -14,7 +14,6 @@ public class LoaiPC {
     }
 
     public LoaiPC(String tenLoai, String ghiChu) {
-        maLoai = maLoai;
         this.tenLoai = tenLoai;
         this.ghiChu = ghiChu;
     }

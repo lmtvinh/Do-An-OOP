@@ -73,9 +73,9 @@ public class DanhSachKhachHang {
             }
         }
         if (temp != -1 && newCustomer != null) {
-            newCustomer = null;
-            newCustomer.input();
-            set(newCustomer, temp, customers);
+            Customer newCustomer1 = null;
+            newCustomer1.input();
+            set(newCustomer1, temp, customers);
         } else {
             System.out.println("Khong co ID trong danh sach.");
         }

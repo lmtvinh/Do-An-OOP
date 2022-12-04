@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class DanhSachLoaiPC {
     static final Scanner scanner = new Scanner(System.in);
     private int length = LoaiPC.id;
-    private LoaiPC[] arr = new LoaiPC[length];
+    private LoaiPC[] arrLPC = new LoaiPC[length];
 
     public void addLoaiPC(LoaiPC newLPC) {
-        arr[length] = newLPC;
+        arrLPC[length] = newLPC;
         length++;
         LoaiPC.id++;
     }
@@ -19,8 +19,8 @@ public class DanhSachLoaiPC {
     }
 
     public boolean check(String maLoaiPC) {
-        for (int i = 0; i < arr.length; i++) {
-            if (Objects.equals(maLoaiPC, arr[i].getMaLoai())) {
+        for (int i = 0; i < arrLPC.length; i++) {
+            if (Objects.equals(maLoaiPC, arrLPC[i].getMaLoai())) {
                 return true;
             }
         }
@@ -31,33 +31,34 @@ public class DanhSachLoaiPC {
         int temp=-1;
         LoaiPC newLPC = null;
         for (int i = 0;i<length;i++) {
-            if(Objects.equals(arr[i].getMaLoai(), index)) {
+            if(Objects.equals(arrLPC[i].getMaLoai(), index)) {
                 temp = i;
-                newLPC = arr[i];
+                newLPC = arrLPC[i];
             }
         }
         if (temp!=-1 && newLPC != null) {
             LoaiPC newLoaiPC = null;
             for (int i = temp;i<length;i++) {
-                set(newLoaiPC,i,arr);
+                set(newLoaiPC,i,arrLPC);
             }
+        } else {
+            System.out.println("Khong co Id trong danh sach");
         }
-        System.out.println("Khong co Id trong danh sach");
     }
 
     public void updateLoaiPC(String index) {
         int temp = -1;
         LoaiPC newLPC = null;
         for (int i = 0;i<length;i++) {
-            if (Objects.equals(arr[i].getMaLoai(), index)) {
+            if (Objects.equals(arrLPC[i].getMaLoai(), index)) {
                 temp = i;
-                newLPC = arr[i];
+                newLPC = arrLPC[i];
             }
         }
         if (temp != -1 && newLPC != null) {
             LoaiPC newLoaiPC = null;
             newLoaiPC.input();
-            set(newLoaiPC,temp,arr);
+            set(newLoaiPC,temp,arrLPC);
         }
         System.out.println("Khong co Id trong danh sach");
     }
@@ -65,15 +66,15 @@ public class DanhSachLoaiPC {
     public void output() {
         System.out.println("Danh Sach Ma Loai PC.");
         for (int i = 0;i<length;i++) {
-            arr[i].output();
+            arrLPC[i].output();
         }
     }
 
     public LoaiPC getById(String id) {
         LoaiPC loaiPC = null;
         for (int i = 0;i<length;i++) {
-            if (Objects.equals(arr[i].getMaLoai(), id)) {
-                loaiPC = arr[i];
+            if (Objects.equals(arrLPC[i].getMaLoai(), id)) {
+                loaiPC = arrLPC[i];
             }
         }
         return loaiPC;

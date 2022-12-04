@@ -4,13 +4,16 @@ import java.util.Scanner;
 
 public class LoaiLaptop {
     static final Scanner scanner = new Scanner(System.in);
-    private String maLoai, tenLoai, ghiChu;
+    private String tenLoai, ghiChu;
+    private static String maLoai;
+    public static String idMaLoai = maLoai;
+    public static int id = 0;
 
     public LoaiLaptop() {
+        id++;
     }
 
-    public LoaiLaptop(String maLoai, String tenLoai, String ghiChu) {
-        this.maLoai = maLoai;
+    public LoaiLaptop(String tenLoai, String ghiChu) {
         this.tenLoai = tenLoai;
         this.ghiChu = ghiChu;
     }
