@@ -1,10 +1,12 @@
 package DoAnOOP.People;
 
 import DoAnOOP.Help.Check;
+import DoAnOOP.ThongTin.Address;
+import DoAnOOP.ThongTin.Date;
 
 import java.util.Scanner;
 
-public class Customer {
+public class Customer extends Person  {
     static final Scanner scanner = new Scanner(System.in);
     private String maKhachHang;
     static private int phanLoaiKhachHang;
@@ -14,6 +16,11 @@ public class Customer {
     public Customer(String maKhachHang, int phanLoaiKhachHang) {
         this.maKhachHang = maKhachHang;
         this.phanLoaiKhachHang = phanLoaiKhachHang;
+    }
+
+    public Customer(String fullname, String email, Address address, Date dateOfBirth, String maKhachHang) {
+        super(fullname, email, address, dateOfBirth);
+        this.maKhachHang = maKhachHang;
     }
 
     public String getMaKhachHang() {
@@ -32,7 +39,9 @@ public class Customer {
         this.phanLoaiKhachHang = phanLoaiKhachHang;
     }
 
+    @Override
     public void input() {
+        super.input();
         String luachon;
         System.out.print("Nhap ma khach hang: ");
         maKhachHang = Check.checkMKH();
@@ -48,9 +57,9 @@ public class Customer {
         System.out.printf("%-8s%-25s%-15s%-12s\n",getMaKhachHang(),null,getPhanLoaiKhachHang());
     }
 
-    public static void main(String[] args) {
-        Customer e = new Customer();
-        e.input();
-        e.output();
-    }
+//    public static void main(String[] args) {
+//        Customer e = new Customer();
+//        e.input();
+//        e.output();
+//    }
 }
