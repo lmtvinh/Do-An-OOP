@@ -174,7 +174,12 @@ public class Main {
         // PC6
         PC pc6 = new PC("GVN Homework Athlon", "Athlon 3000G / 5MB / 3.5GHz / 2 nhân 4 luồng / AM4", "RAM Corsair Vengeance LPX 8GB bus 3200", null, null, 5000000, 36, "GE006", "RAM Corsair Vengeance LPX 8GB bus 3200", "Jetek EM4", "	Jetek EM4", "Tùy chọn nâng cấp", "JONSBO CR-1000 PLUS", "Khong co", "VP");
         // PC7
-
-
+        PC pc7 = new PC("GVN VIPER i3050 WHITE", "Intel Core i5 12400F", "PNY XLR8 Silver 1x8GB 3600 RGB x 2", null, null, 21490000, 60, "GE007", "MSI MAG B660M MORTAR DDR4", "1st Player XF White (4 fan RGB)", "SSD Kingston NV2 250GB M.2 PCIe NVMe Gen4", "Tùy chọn nâng cấp", "ID COOLING SE-214-XT ARGB WHITE", "GIGABYTE GeForce RTX 3050 EAGLE OC 8G", "GA");
+        // PC8
+        PC pc8 = new PC("GVN TITAN Plus i3080Ti", "Intel Core i9 12900K", "Kingston Fury Beast RGB 32GB (2x16GB) bus 5600 DDR5 (KF556C40BBAK2-32)", null, null, 89000000, 60, "GE008", "ASUS ROG MAXIMUS Z690 HERO DDR5", "ASUS ROG Strix Helios GX601", "SamSung 980 PRO 500GB M.2 PCIe gen 4 NVMe", "Tùy chọn nâng cấp", "ASUS ROG RYUJIN II 360", "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G", "GA");
+        // PC9
+        PC pc9 = new PC("GVN PHANTOM Plus i4080", "Intel Core i7 13700K", "Intel Core i7 13700K", null, null, 90000000, 60, "GE008", "GIGABYTE Z690 AERO D DDR5", "Corsair 5000D AIRFLOW Tempered Glass White", "Corsair 5000D AIRFLOW Tempered Glass White", "Tùy chọn nâng cấp", "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO", "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO", "GA");
+        // PC10
+        PC pc10 = new PC("Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO", "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO", "PNY XLR8 Silver 1x8GB 3600 RGB x 2", null, null, 23000000, 60, "GE010", "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)", "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)", "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)", "Tùy chọn nâng cấp", "DEEPCOOL AG400 ARGB", "DEEPCOOL AG400 ARGB", "GA");
     }
 }
