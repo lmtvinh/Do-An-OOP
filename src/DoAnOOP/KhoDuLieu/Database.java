@@ -80,6 +80,8 @@ public class Database {
     public static DanhSachHoaDonBan getDanhSachHoaDonBan() {
         if (danhSachHoaDonBan == null) {
             danhSachHoaDonBan = new DanhSachHoaDonBan();
+//            danhSachHoaDonBan.docFile();
         }
+        return danhSachHoaDonBan;
     }
 }
