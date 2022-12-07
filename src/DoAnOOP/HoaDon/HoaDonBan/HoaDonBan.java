@@ -1,6 +1,8 @@
 package DoAnOOP.HoaDon.HoaDonBan;
 
 import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.People.Customer;
+import DoAnOOP.People.Employee;
 import DoAnOOP.ThongTin.Address;
 
 import java.time.LocalDateTime;
@@ -65,6 +67,13 @@ public class HoaDonBan {
         this.ngayBan = ngayBan;
     }
 
+    public Employee getEmployee() {
+        return Database.getDanhSachNhanVien().getByIdEmployee(getMaNhanVien());
+    }
+
+    public Customer getCustomer() {
+        return Database.getDanhSachKhachHang().getByIdCustomer(getMaKhachHang());
+    }
     // public ChiTietHoaDonBan[] getChiTietHoaDon() {
     //     for (int i = 0; i < Database.getDanhSachChiTietHoaDonBan().lengthDanhSachChiTietHoaDonBan(); i++) {
             
