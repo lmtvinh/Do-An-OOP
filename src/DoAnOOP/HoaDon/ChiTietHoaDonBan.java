@@ -39,6 +39,8 @@ public class ChiTietHoaDonBan {
         this.soLuong = soLuong;
     }
 
+
+
     public void input() {
         System.out.print("Nhap ma Hoa Don: ");
         maHD = scanner.nextLine();

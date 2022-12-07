@@ -70,7 +70,7 @@ public class DanhSachLoaiPC {
         }
     }
 
-    public LoaiPC getById(String id) {
+    public LoaiPC getByIdLoaiPC(String id) {
         LoaiPC loaiPC = null;
         for (int i = 0;i<length;i++) {
             if (Objects.equals(arrLPC[i].getMaLoai(), id)) {

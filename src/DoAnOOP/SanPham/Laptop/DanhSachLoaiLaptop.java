@@ -73,7 +73,7 @@ public class DanhSachLoaiLaptop {
 //        }
 //    }
 
-    public LoaiLaptop getById(String id) {
+    public LoaiLaptop getByIdLoaiLaptop(String id) {
         LoaiLaptop loaiLaptop = null;
         for (int i = 0; i < length; i++) {
             if (Objects.equals(arrLoaiLaptop[i].getMaLoai(), id)) {

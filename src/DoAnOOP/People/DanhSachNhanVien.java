@@ -2,6 +2,7 @@ package DoAnOOP.People;
 
 import DoAnOOP.Help.HoTro;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class DanhSachNhanVien {
@@ -157,8 +158,12 @@ public class DanhSachNhanVien {
         System.out.println("End");
     }
 
-    public static void main(String[] args) {
-        DanhSachNhanVien danhSachNhanVien = new DanhSachNhanVien();
-        danhSachNhanVien.menu("admin","admin");
+    public Employee getByIdEmployee(String idCanCheck) {
+        for (int i = 0; i < length; i++) {
+            if (Objects.equals(employees[i].getMaNV(), idCanCheck)) {
+                return employees[i];
+            }
+        }
+        return null;
     }
 }

@@ -2,6 +2,7 @@ package DoAnOOP.People;
 
 import DoAnOOP.Help.HoTro;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class DanhSachKhachHang {
@@ -154,9 +155,18 @@ public class DanhSachKhachHang {
         }
     }
 
-    public static void main(String[] args) {
-        DanhSachKhachHang danhSachKhachHang = new DanhSachKhachHang();
-        danhSachKhachHang.menu("admin", "admin");
+//    public static void main(String[] args) {
+//        DanhSachKhachHang danhSachKhachHang = new DanhSachKhachHang();
+//        danhSachKhachHang.menu("admin", "admin");
+//    }
+
+    public Customer getByIdCustomer(String idCanCheck) {
+        for (int i = 0; i < length; i++) {
+            if (Objects.equals(customers[i].getMaKhachHang(), idCanCheck)) {
+                return customers[i];
+            }
+        }
+        return null;
     }
 
 }

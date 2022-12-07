@@ -274,5 +274,13 @@ public class DanhSachLaptop {
             System.out.println("\n\tKHONG CO SAN PHAM NAO CO DO PHAN GIAI LA " + checkResolution);
         }
     }
-    
+
+    public Laptop getByIdLaptop(String idCanCheck) {
+        for (int i = 0; i < length; i++) {
+            if (Objects.equals(arrLaptop[i].getMaLaptop(), idCanCheck)) {
+                return arrLaptop[i];
+            }
+        }
+        return null;
+    }
 }

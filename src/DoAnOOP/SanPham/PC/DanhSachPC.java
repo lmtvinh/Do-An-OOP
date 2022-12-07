@@ -328,4 +328,13 @@ public class DanhSachPC {
             System.out.println("\n\tKHONG CO SAN PHAM NAO CO CARD DO HOA " + checkVGA);
         }
     }
+
+    public PC getByIdPC(String idCanCheck) {
+        for (int i = 0; i < length; i++) {
+            if (Objects.equals(arrPC[i].getMaPC(), idCanCheck)) {
+                return arrPC[i];
+            }
+        }
+        return null;
+    }
 }
