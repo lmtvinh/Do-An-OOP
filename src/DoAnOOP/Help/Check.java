@@ -75,17 +75,30 @@ public class Check {
         }
     }
 
-    public static int checkPLKH() {
+//    public static int checkPLKH() {
+//        String n;
+//        while (true) {
+//            n = scanner.nextLine();
+//            if(n.matches("[1-3]{1}")) {
+//                return Integer.parseInt(n);
+//            } else {
+//                System.err.println("Chi co 3 Nhom Khach Hang: ");
+//                System.out.println("1.Nhom I(Giam gia 25%): ");
+//                System.out.println("2.Nhom II(Giam gia 15%): ");
+//                System.out.println("3.Nhom IV(Giam gia 10%): ");
+//            }
+//            System.out.print("Moi nhap lai: ");
+//        }
+//    }
+
+    public static int checkInputInteger() {
         String n;
         while (true) {
             n = scanner.nextLine();
-            if(n.matches("[1-3]{1}")) {
+            if (n.matches("^\\-?\\d+$")) {
                 return Integer.parseInt(n);
             } else {
-                System.err.println("Chi co 3 Nhom Khach Hang: ");
-                System.out.println("1.Nhom I(Giam gia 25%): ");
-                System.out.println("2.Nhom II(Giam gia 15%): ");
-                System.out.println("3.Nhom IV(Giam gia 10%): ");
+                System.out.println(n + " khong phai so tu nhien.");
             }
             System.out.print("Moi nhap lai: ");
         }
