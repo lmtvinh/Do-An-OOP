@@ -5,6 +5,8 @@ import DoAnOOP.KhoDuLieu.Database;
 
 import java.util.Scanner;
 
+import javax.xml.crypto.Data;
+
 public class ChiTietHoaDonBan {
     final static Scanner scanner = new Scanner(System.in);
     private String maHD, maSP;
@@ -52,9 +54,9 @@ public class ChiTietHoaDonBan {
         return tien;
     }
 
-    // public HoaDonBan getHoaDonBan() {
-        
-    // }
+    public HoaDonBan getHoaDonBan() {
+        return Database.getDanh   
+    }
 
     public void input() {
         System.out.print("Nhap ma Hoa Don: ");
