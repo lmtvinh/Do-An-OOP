@@ -53,7 +53,7 @@ public class ChiTietHoaDonBan {
     }
 
     public HoaDonBan getHoaDonBan() {
-        return Database.getDanhSachHoaDonBan().
+        return Database.getDanhSachHoaDonBan().getByIdHoaDonBan(getMaHD());
     }
 
     public void input() {

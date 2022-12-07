@@ -1,5 +1,6 @@
 package DoAnOOP.HoaDon.HoaDonBan;
 
+import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.ThongTin.Address;
 
 import java.time.LocalDateTime;
@@ -63,6 +64,12 @@ public class HoaDonBan {
     public void setNgayBan(LocalDateTime ngayBan) {
         this.ngayBan = ngayBan;
     }
+
+    // public ChiTietHoaDonBan[] getChiTietHoaDon() {
+    //     for (int i = 0; i < Database.getDanhSachChiTietHoaDonBan().lengthDanhSachChiTietHoaDonBan(); i++) {
+            
+    //     }
+    // }
 
     public void input() {
         System.out.print("Nhap ma nhan vien: ");
