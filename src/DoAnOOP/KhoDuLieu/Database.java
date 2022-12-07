@@ -8,7 +8,7 @@ import DoAnOOP.SanPham.PC.DanhSachLoaiPC;
 import DoAnOOP.SanPham.PC.DanhSachPC;
 import DoAnOOP.ThongTin.DanhSachNSX;
 
-public class TongHopDuLieu {
+public class Database {
     private static DanhSachNSX danhSachNSX = null;
     private static DanhSachLaptop danhSachLaptop = null;
     private static DanhSachLoaiLaptop danhSachLoaiLaptop = null;

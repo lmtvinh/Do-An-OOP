@@ -1,6 +1,7 @@
 package DoAnOOP.HoaDon;
 
 import DoAnOOP.Help.Check;
+import DoAnOOP.KhoDuLieu.Database;
 
 import java.util.Scanner;
 
@@ -39,7 +40,21 @@ public class ChiTietHoaDonBan {
         this.soLuong = soLuong;
     }
 
+    public float getThanhTienLaptop() {
+        float tien;
+        tien = Database.getDanhSachLaptop().getByIdLaptop(getMaSP()).getPrice()*soLuong;
+        return tien;
+    }
 
+    public float getThanhTienPC() {
+        float tien;
+        tien = Database.getDanhSachPC().getByIdPC(getMaSP()).getPrice()*soLuong;
+        return tien;
+    }
+
+    // public HoaDonBan getHoaDonBan() {
+        
+    // }
 
     public void input() {
         System.out.print("Nhap ma Hoa Don: ");

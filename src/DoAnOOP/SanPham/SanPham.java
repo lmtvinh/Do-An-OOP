@@ -1,6 +1,7 @@
 package DoAnOOP.SanPham;
 
-import DoAnOOP.KhoDuLieu.TongHopDuLieu;
+import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.ThongTin.Maker;
 
 import java.util.Scanner;
@@ -89,7 +90,7 @@ public class SanPham {
     }
 
     public Maker getThongTinNXS(String idCanCheck) {
-        return TongHopDuLieu.getDanhSachNSX().findById(idCanCheck);
+        return Database.getDanhSachNSX().findById(idCanCheck);
     }
 
     public void input() {

@@ -45,12 +45,12 @@ public class Customer extends Person  {
         String luachon;
         System.out.print("Nhap ma khach hang: ");
         maKhachHang = Check.checkMKH();
-        System.out.println("Khach hang thuoc nhom nao?");
-        System.out.println("1.Nhom I(Giam gia 25%): ");
-        System.out.println("2.Nhom II(Giam gia 15%): ");
-        System.out.println("3.Nhom IV(Giam gia 10%): ");
-        System.out.print("Nhap: ");
-        phanLoaiKhachHang = Check.checkPLKH();
+        // System.out.println("Khach hang thuoc nhom nao?");
+        // System.out.println("1.Nhom I(Giam gia 25%): ");
+        // System.out.println("2.Nhom II(Giam gia 15%): ");
+        // System.out.println("3.Nhom IV(Giam gia 10%): ");
+        // System.out.print("Nhap: ");
+        // phanLoaiKhachHang = Check.checkPLKH();
     }
 
     public void output() {
