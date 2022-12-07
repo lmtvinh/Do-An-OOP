@@ -1,5 +1,6 @@
 package DoAnOOP.KhoDuLieu;
 
+import DoAnOOP.HoaDon.HoaDonBan.DanhSachHoaDonBan;
 import DoAnOOP.People.DanhSachKhachHang;
 import DoAnOOP.People.DanhSachNhanVien;
 import DoAnOOP.SanPham.Laptop.DanhSachLaptop;
@@ -17,6 +18,8 @@ public class Database {
 
     private static DanhSachKhachHang danhSachKhachHang = null;
     private static DanhSachNhanVien danhSachNhanVien = null;
+
+    private static DanhSachHoaDonBan danhSachHoaDonBan = null;
 
     public static  DanhSachNSX getDanhSachNSX() {
         if (danhSachNSX == null) {
@@ -72,5 +75,11 @@ public class Database {
 //            danhSachNhanVien.docFile();
         }
         return danhSachNhanVien;
+    }
+
+    public static DanhSachHoaDonBan getDanhSachHoaDonBan() {
+        if (danhSachHoaDonBan == null) {
+            danhSachHoaDonBan = new DanhSachHoaDonBan();
+        }
     }
 }

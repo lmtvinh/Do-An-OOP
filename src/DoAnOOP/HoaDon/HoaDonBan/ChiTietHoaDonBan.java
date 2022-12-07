@@ -1,11 +1,9 @@
-package DoAnOOP.HoaDon;
+package DoAnOOP.HoaDon.HoaDonBan;
 
 import DoAnOOP.Help.Check;
 import DoAnOOP.KhoDuLieu.Database;
 
 import java.util.Scanner;
-
-import javax.xml.crypto.Data;
 
 public class ChiTietHoaDonBan {
     final static Scanner scanner = new Scanner(System.in);

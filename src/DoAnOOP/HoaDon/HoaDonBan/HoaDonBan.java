@@ -1,4 +1,4 @@
-package DoAnOOP.HoaDon;
+package DoAnOOP.HoaDon.HoaDonBan;
 
 import DoAnOOP.ThongTin.Address;
 
