@@ -2,6 +2,8 @@ package DoAnOOP.Data;
 
 import DoAnOOP.People.Customer;
 import DoAnOOP.People.Employee;
+import DoAnOOP.SanPham.Laptop.Laptop;
+import DoAnOOP.SanPham.Laptop.LoaiLaptop;
 import DoAnOOP.ThongTin.Address;
 import DoAnOOP.ThongTin.Date;
 import DoAnOOP.ThongTin.Provider;
@@ -116,5 +118,38 @@ public class Main {
         QuocGia quocGia5 = new QuocGia("+1","Hoa Ky");
         Address a5 = new Address("336","Wall St","Palo Alto","San Francisco","California");
         Provider p5 = new Provider("HP","HP Inc.",quocGia5,a5,"866-625-0242866-625-0242");
+    }
+
+    public static void initLoaiLaptop() {
+        LoaiLaptop loaiLaptop1 = new LoaiLaptop("Gaming","Danh cho nguoi dung co nhu cau choi game va lam do hoa.");
+        LoaiLaptop loaiLaptop2 = new LoaiLaptop("Van phong","Danh cho nguoi dung co nhu cau su dung cac tac vu co ban.");
+    }
+
+    public static void initLaptop() {
+//        ASUS
+//        Laptop1
+        Laptop laptop1 = new Laptop("ASUS ProArt Studiobook Pro 16 OLED W7600Z3A L2048W","Intel Core i9-12900H 2.5GHz up to 5.0GHz 24MB","32GB (16x2) DDR5 4800MHz (2x SO-DIMM socket, up to 64GB SDRAM)",null,null,79990000f,48,"AS001","16 inch","4K (3840 x 2400) OLED 16:10","VP");
+//        Laptop2
+        Laptop laptop2 = new Laptop("ASUS ROG Strix SCAR 15 G533ZW LN134W","Intel Core i9-12900H 3.8GHz up to 5.0GHz 24MB","32GB (16GBx2) DDR5 4800MHz (2x SO-DIMM socket, up to 64GB SDRAM)",null,null,71990000f,48,"AS002","15.6 inch","WQHD (2560 x 1440) 16:9","GM");
+//        ACER
+//        Laptop3
+        Laptop laptop3 = new Laptop("Acer Swift Edge SFA16 41 R9WB","AMD Ryzen™ 7 PRO 6850U (2.7 GHz upto 4.70 GHz)","32GB LPDDR5 6400MHz (Onboard)",null,null,45990000f,48,"AC001","16 inch","WQUXGA (3840x2400) OLED 16:10","VP");
+//        Laptop4
+        Laptop laptop4 = new Laptop("Acer Predator Triton 500 SE PT516 52S 91XH","Intel® Core™ i9-12900H 3.80 GHz up to 5.00 GHz","32GB DDR5 4800MHz Onboard",null,null,105990000f,48,"AC002","16 inch","WQXGA (2560 x 1600) SlimBezel 240Hz","GA");
+//        Lenovo
+//        Laptop5
+        Laptop laptop5 = new Laptop("Lenovo IdeaPad 5 Pro 16ARH7 82SN003LVN","AMD Ryzen 5 6600HS Creator Edition (6C / 12T, 3.3 / 4.5GHz, 3MB L2 / 16MB L3)","16GB LPDDR5 6400MHz dual-channel onboard",null,null,26490000f,48,"LE001","16 inch", "2.5K WQXGA (2560x1600) IPS","VP");
+//        Laptop6
+        Laptop laptop6 = new Laptop("Lenovo Legion 7 16IAX7 82TD008FVN","Intel Core i7-12700H","32GB (2x16GB) DDR5 4800MHz (2x SO-DIMM socket, up to 32GB SDRAM)",null,null,76990000f,48,"LE002","16 inch", "WQXGA (2560x1600) IPS 500nits Anti-glare","GA");
+//        Dell
+//        Laptop7
+        Laptop laptop7 = new Laptop("Dell XPS 15 9520 70295790","Intel Core i9-12900HK 3.8GHz up to 5.0GHz 18MB","16GB (2 x 8GB) DDR5 4800MHz",null,null,75990000f,48,"DE001","15.6 inch", "3.5K QHD+ (3456 x 2160)","VP");
+//        Laptop8
+        Laptop laptop8 = new Laptop("Dell Alienware M15 R6 70272633","Intel Core i7-11800H 2.3GHz up to 4.6GHz 24MB","32GB (16x2) DDR4 3200MHz (2x SO-DIMM socket, up to 64GB SDRAM)",null,null,54990000f,48,"DE002","15.6 inch", "QHD (2560 x 1440) 240Hz","GA");
+//        HP
+//        Laptop9
+        Laptop laptop9 = new Laptop("HP Spectre x360 14 ef0030TU 6K773PA","Intel Core i7-1255U 1.7GHz up to 4.7GHz 12MB","16GB LPDDR4x 4266MHz (Onboard)",null,null,51990000f,48,"HP001","13.5 inch", "3K2K (3000 x 2000)","VP");
+//        Laptop10
+        Laptop laptop10 = new Laptop("HP Omen 16 b0127TX 4Y0W7PA","HP Omen 16 b0127TX 4Y0W7PA","16GB (2x8GB) DDR4 3200Mhz (2 khe, max 64GB RAM)",null,null,45990000f,48,"HP002","16.1 inch", "QHD (2560 x 1440)","GA");
     }
 }

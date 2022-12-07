@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class LoaiLaptop {
     static final Scanner scanner = new Scanner(System.in);
     private String tenLoai, ghiChu;
-    private static String maLoai;
-    public static String idMaLoai = maLoai;
+    private static String maLoaiLaptop;
+    public static String idMaLoai = maLoaiLaptop;
     public static int id = 0;
 
     public LoaiLaptop() {
@@ -19,11 +19,11 @@ public class LoaiLaptop {
     }
 
     public String getMaLoai() {
-        return maLoai;
+        return maLoaiLaptop;
     }
 
-    public void setMaLoai(String maLoai) {
-        this.maLoai = maLoai;
+    public void setMaLoai(String maLoaiLaptop) {
+        this.maLoaiLaptop = maLoaiLaptop;
     }
 
     public String getTenLoai() {
@@ -44,7 +44,7 @@ public class LoaiLaptop {
 
     public void input() {
         System.out.print("Nhap Ma loai Laptop: ");
-        maLoai = scanner.nextLine();
+        maLoaiLaptop = scanner.nextLine();
         System.out.print("Nhap Ten loai Laptop: ");
         tenLoai = scanner.nextLine();
         System.out.print("Nhap Ghi chu(neu co): ");

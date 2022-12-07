@@ -10,23 +10,23 @@ public class Laptop extends SanPham {
     static final Scanner scanner = new Scanner(System.in);
     private String maLaptop;
     private String screensize, resolution;
-    private LoaiLaptop loaiLaptop;
+    private String maLoaiLaptop;
     public Laptop() {
     }
 
-    public Laptop(String maLaptop, String screensize, String resolution, LoaiLaptop loaiLaptop) {
+    public Laptop(String maLaptop, String screensize, String resolution, String maLoaiLaptop) {
         this.maLaptop = maLaptop;
         this.screensize = screensize;
         this.resolution = resolution;
-        this.loaiLaptop = loaiLaptop;
+        this.maLoaiLaptop = maLoaiLaptop;
     }
 
-    public Laptop(String tenSanPham, String CPU, String ramCapacity, Maker thongTinNXS, Provider thongTinNCC, float price, int thoiGianBaoHanh, String maLaptop, String screensize, String resolution, LoaiLaptop loaiLaptop) {
+    public Laptop(String tenSanPham, String CPU, String ramCapacity, Maker thongTinNXS, Provider thongTinNCC, float price, int thoiGianBaoHanh, String maLaptop, String screensize, String resolution, String maLoaiLaptop) {
         super(tenSanPham, CPU, ramCapacity, thongTinNXS, thongTinNCC, price, thoiGianBaoHanh);
         this.maLaptop = maLaptop;
         this.screensize = screensize;
         this.resolution = resolution;
-        this.loaiLaptop = loaiLaptop;
+        this.maLoaiLaptop = maLoaiLaptop;
     }
 
     public String getMaLaptop() {
@@ -53,12 +53,12 @@ public class Laptop extends SanPham {
         this.resolution = resolution;
     }
 
-    public LoaiLaptop getLoaiLaptop() {
-        return loaiLaptop;
+    public String getMaLoaiLaptop() {
+        return maLoaiLaptop;
     }
 
-    public void setLoaiLaptop(LoaiLaptop loaiLaptop) {
-        this.loaiLaptop = loaiLaptop;
+    public void setMaLoaiLaptop(String maLoaiLaptop) {
+        this.maLoaiLaptop = maLoaiLaptop;
     }
 
     @Override
@@ -68,7 +68,7 @@ public class Laptop extends SanPham {
         screensize = scanner.nextLine();
         System.out.print("Nhap Do phan giai Man hinh Laptop: ");
         resolution = scanner.nextLine();
-        System.out.print("Nhap Thong tin ve Loai Laptop.");
-        loaiLaptop.input();
+        System.out.print("Nhap Ma Loai Laptop.");
+        maLoaiLaptop = scanner.nextLine();
     }
 }
