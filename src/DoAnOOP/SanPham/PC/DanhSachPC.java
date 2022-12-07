@@ -98,7 +98,6 @@ public class DanhSachPC {
             System.out.println("\n\tKHONG TIM THAY THONG TIN CUA SAN PHAM.");
         }
     }
-
     public void findByPrice(float min, float max) {
         int count = 0, flag = 0;
         for (int i = 0; i < length; i++) {

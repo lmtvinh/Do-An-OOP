@@ -120,7 +120,7 @@ public class DanhSachLaptop {
     public void findHangSanXuat(String nameMaker) {
         int count = 0, flag = 0;
         for (int i = 0; i < length; i++) {
-            if (Objects.equals(arrLaptop[i].getThongTinNXS().getTenNSX(), nameMaker)) {
+            if (Objects.equals(arrLaptop[i].getThongTinNXS(nameMaker))) {
                 count++;
             }
         }

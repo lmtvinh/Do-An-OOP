@@ -1,8 +1,6 @@
 package DoAnOOP.SanPham.Laptop;
 
 import DoAnOOP.SanPham.SanPham;
-import DoAnOOP.ThongTin.Maker;
-import DoAnOOP.ThongTin.Provider;
 
 import java.util.Scanner;
 
@@ -21,8 +19,8 @@ public class Laptop extends SanPham {
         this.maLoaiLaptop = maLoaiLaptop;
     }
 
-    public Laptop(String tenSanPham, String CPU, String ramCapacity, Maker thongTinNXS, Provider thongTinNCC, float price, int thoiGianBaoHanh, String maLaptop, String screensize, String resolution, String maLoaiLaptop) {
-        super(tenSanPham, CPU, ramCapacity, thongTinNXS, thongTinNCC, price, thoiGianBaoHanh);
+    public Laptop(String tenSanPham, String CPU, String ramCapacity, String maNXS, String maNCC, float price, int thoiGianBaoHanh, String maLaptop, String screensize, String resolution, String maLoaiLaptop) {
+        super(tenSanPham, CPU, ramCapacity, maNXS, maNCC, price, thoiGianBaoHanh);
         this.maLaptop = maLaptop;
         this.screensize = screensize;
         this.resolution = resolution;
