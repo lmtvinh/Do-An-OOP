@@ -53,7 +53,7 @@ public class ChiTietHoaDonBan {
     }
 
     public HoaDonBan getHoaDonBan() {
-        return Database.getDanh   
+        return Database.getDanhSachHoaDonBan().
     }
 
     public void input() {

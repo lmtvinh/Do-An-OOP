@@ -1,6 +1,7 @@
 package DoAnOOP.HoaDon.HoaDonBan;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class DanhSachHoaDonBan {
@@ -33,9 +34,20 @@ public class DanhSachHoaDonBan {
 
     public void findByMaHoaDonBan(String maHoaDonBanCanTim) {
         for (int i = 0; i < hoaDonBans.size(); i++) {
-            if (hoaDonBans.get(i).getMaHoaDon() == maHoaDonBanCanTim) {
+            if (Objects.equals(hoaDonBans.get(i).getMaHoaDon(), maHoaDonBanCanTim)) {
                 // hoaDonBans.get(i).output();
+                return;
             }
         }
+        System.err.println("ID KHONG CO TRONG DANH SACH.");
+    }
+
+    public HoaDonBan getByIdHoaDonBan(String maHoaDonBanCanTim) {
+        for (int i = 0; i < hoaDonBans.size(); i++) {
+            if (Objects.equals(hoaDonBans.get(i).getMaHoaDon(), maHoaDonBanCanTim)) {
+                return hoaDonBans.get(i);
+            }
+        }
+        return null;
     }
 }
