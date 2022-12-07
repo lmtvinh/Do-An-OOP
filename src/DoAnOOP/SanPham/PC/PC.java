@@ -11,13 +11,12 @@ public class PC extends SanPham {
     public static int id = 0;
     private String maPC;
     private String mainboard, casePC, SSD, HHD, cooling, VGA;
-    private LoaiPC loaiPC;
+    private String maLoaiPC;
 
     public PC() {
-        loaiPC = new LoaiPC();
     }
 
-    public PC(String tenSanPham, String CPU, String ramCapacity, Maker thongTinNXS, Provider thongTinNCC, float price, int thoiGianBaoHanh, String maPC, String mainboard, String casePC, String SSD, String HHD, String cooling, String VGA) {
+    public PC(String tenSanPham, String CPU, String ramCapacity, Maker thongTinNXS, Provider thongTinNCC, float price, int thoiGianBaoHanh, String maPC, String mainboard, String casePC, String SSD, String HHD, String cooling, String VGA,String maLoaiPC) {
         super(tenSanPham, CPU, ramCapacity, thongTinNXS, thongTinNCC, price, thoiGianBaoHanh);
         this.maPC = maPC;
         this.mainboard = mainboard;
@@ -26,6 +25,7 @@ public class PC extends SanPham {
         this.HHD = HHD;
         this.cooling = cooling;
         this.VGA = VGA;
+        this.maLoaiPC = maLoaiPC;
     }
 
     public String getMaPC() {
@@ -84,12 +84,12 @@ public class PC extends SanPham {
         this.VGA = VGA;
     }
 
-    public LoaiPC getLoaiPC() {
-        return loaiPC;
+    public String getMaLoaiPC() {
+        return maLoaiPC;
     }
 
-    public void setLoaiPC(LoaiPC loaiPC) {
-        this.loaiPC = loaiPC;
+    public void setMaLoaiPC(String maLoaiPC) {
+        this.maLoaiPC = maLoaiPC;
     }
 
     @Override
@@ -109,8 +109,8 @@ public class PC extends SanPham {
         cooling = scanner.nextLine();
         System.out.print("Nhap Thong tin ve VGA: ");
         VGA = scanner.nextLine();
-        System.out.print("Nhap Thong tin ve Loai PC.");
-        loaiPC.input();
+        System.out.print("Nhap Ma Loai PC.");
+        maLoaiPC = scanner.nextLine();
     }
 
 //    public void output() {

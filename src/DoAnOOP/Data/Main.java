@@ -4,6 +4,8 @@ import DoAnOOP.People.Customer;
 import DoAnOOP.People.Employee;
 import DoAnOOP.SanPham.Laptop.Laptop;
 import DoAnOOP.SanPham.Laptop.LoaiLaptop;
+import DoAnOOP.SanPham.PC.LoaiPC;
+import DoAnOOP.SanPham.PC.PC;
 import DoAnOOP.ThongTin.Address;
 import DoAnOOP.ThongTin.Date;
 import DoAnOOP.ThongTin.Provider;
@@ -151,5 +153,28 @@ public class Main {
         Laptop laptop9 = new Laptop("HP Spectre x360 14 ef0030TU 6K773PA","Intel Core i7-1255U 1.7GHz up to 4.7GHz 12MB","16GB LPDDR4x 4266MHz (Onboard)",null,null,51990000f,48,"HP001","13.5 inch", "3K2K (3000 x 2000)","VP");
 //        Laptop10
         Laptop laptop10 = new Laptop("HP Omen 16 b0127TX 4Y0W7PA","HP Omen 16 b0127TX 4Y0W7PA","16GB (2x8GB) DDR4 3200Mhz (2 khe, max 64GB RAM)",null,null,45990000f,48,"HP002","16.1 inch", "QHD (2560 x 1440)","GA");
+    }
+
+    public void initLoaiPC() {
+        LoaiPC loaiPC1 = new LoaiPC("Gaming","Danh cho nguoi dung co nhu cau choi game, thiet ke do hoa.");
+        LoaiPC loaiPC2 = new LoaiPC("Van Phong","Danh cho nguoi dung co nhu cau su dung co ban.");
+    }
+
+    public void initPC() {
+        // PC1
+        PC pc1 = new PC("GVN POSEIDON 9 i3090 ( Cougar )","GVN POSEIDON 9 i3090 ( Cougar )","Corsair Dominator Platinum 32GB (2x16GB) RGB 5600 DDR5 White",null,null,125000000f,60,"GE001","ASUS ROG STRIX Z690-A GAMING WIFI DDR5","Cougar ConQuer 2 - Full Tower","SamSung 980 PRO 1TB M.2 PCIe gen 4 NVMe","Tùy chọn nâng cấp","Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO x 2","Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO","GA");
+        // PC2
+        PC pc2 = new PC("GVN ProArt Plus 9 a4090", "GVN ProArt Plus 9 a4090", "Kingston Fury Beast RGB 64GB (2x32GB) bus 5600 DDR5", null, null, 120000000f, 60, "GE002", "ASUS ProArt X670E-CREATOR WIFI (DDR5)", "NZXT H7 Flow Black", "Kingston KC3000 1TB M.2 PCIe gen 4 NVMe", "Seagate Barracuda 2TB 7200rpm", "Cooler Master SICKLEFLOW 120 ARGB 3 IN 1", "Cooler Master SICKLEFLOW 120 ARGB 3 IN 1", "GA");
+        // PC3
+        PC pc3 = new PC("GVN TITAN Plus i3080Ti", "Intel Core i9 12900K", "Kingston Fury Beast RGB 32GB (2x16GB) bus 5600 DDR5 (KF556C40BBAK2-32)", null, null, 89000000f, 60, "GE003", "MSI MAG X570S TOMAHAWK WIFI", "GE003", "SamSung 980 PRO 500GB M.2 PCIe gen 4 NVMe", "Tùy chọn nâng cấp", "Cooler Master SICKLEFLOW 120 ARGB 3 IN 1", "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G", "GA");
+        // PC4
+        PC pc4 = new PC("MSI GeForce RTX 3080 Ti GAMING X TRIO 12G", "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G", "Corsair Vengeance RS RGB 32gb (2x16GB) bus 3600", null, null, 67000000f, 60, "GE004", "MSI MAG X570S TOMAHAWK WIFI", "MSI MAG X570S TOMAHAWK WIFI", "SamSung 980 PRO 500GB M.2 PCIe gen 4 NVMe", "Tùy chọn nâng cấp", "Corsair H150i ELITE CAPELLIX", "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G", "GA");
+        // PC5
+        PC pc5 = new PC("GVN PHANTOM Plus a3080Ti","AMD Ryzen 7 5800X3D","AMD Ryzen 7 5800X3D",null,null,67000000f,60,"GE005","MSI MAG X570S TOMAHAWK WIFI","MSI MAG X570S TOMAHAWK WIFI","SamSung 980 PRO 500GB M.2 PCIe gen 4 NVMe","Tùy chọn nâng cấp","Corsair H150i ELITE CAPELLIX","MSI GeForce RTX 3080 Ti GAMING X TRIO 12G","GA");
+        // PC6
+        PC pc6 = new PC("GVN Homework Athlon", "Athlon 3000G / 5MB / 3.5GHz / 2 nhân 4 luồng / AM4", "RAM Corsair Vengeance LPX 8GB bus 3200", null, null, 5000000, 36, "GE006", "RAM Corsair Vengeance LPX 8GB bus 3200", "Jetek EM4", "	Jetek EM4", "Tùy chọn nâng cấp", "JONSBO CR-1000 PLUS", "Khong co", "VP");
+        // PC7
+
+
     }
 }
