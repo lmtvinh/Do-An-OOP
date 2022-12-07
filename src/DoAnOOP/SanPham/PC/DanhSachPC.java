@@ -127,14 +127,14 @@ public class DanhSachPC {
     public void findHangSanXuat(String nameMaker) {
         int count = 0, flag = 0;
         for (int i = 0; i < length; i++){
-            if (Objects.equals(arrPC[i].getThongTinNXS().getTenNSX(), nameMaker)) {
+            if (arrPC[i].getThongTinNXS(nameMaker) != null) {
                 count++;
             }
         }
         if (count != 0) {
             PC[] b = new PC[count];
             for (int i = 0; i < count; i++) {
-                if (arrPC[i].getThongTinNXS().getTenNSX().contains(nameMaker)) {
+                if (arrPC[i].getThongTinNXS(nameMaker) != null) {
                     b[flag] = arrPC[i];
                     flag++;
                 }

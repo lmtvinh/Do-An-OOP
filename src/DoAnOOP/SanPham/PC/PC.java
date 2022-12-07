@@ -1,8 +1,6 @@
 package DoAnOOP.SanPham.PC;
 
 import DoAnOOP.SanPham.SanPham;
-import DoAnOOP.ThongTin.Maker;
-import DoAnOOP.ThongTin.Provider;
 
 import java.util.Scanner;
 
@@ -16,8 +14,8 @@ public class PC extends SanPham {
     public PC() {
     }
 
-    public PC(String tenSanPham, String CPU, String ramCapacity, Maker thongTinNXS, Provider thongTinNCC, float price, int thoiGianBaoHanh, String maPC, String mainboard, String casePC, String SSD, String HHD, String cooling, String VGA,String maLoaiPC) {
-        super(tenSanPham, CPU, ramCapacity, thongTinNXS, thongTinNCC, price, thoiGianBaoHanh);
+    public PC(String tenSanPham, String CPU, String ramCapacity, String maNXS, String maNCC, float price, int thoiGianBaoHanh, String maPC, String mainboard, String casePC, String SSD, String HHD, String cooling, String VGA,String maLoaiPC) {
+        super(tenSanPham, CPU, ramCapacity, maNXS, maNCC, price, thoiGianBaoHanh);
         this.maPC = maPC;
         this.mainboard = mainboard;
         this.casePC = casePC;

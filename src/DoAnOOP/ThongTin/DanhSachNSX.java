@@ -45,4 +45,13 @@ public class DanhSachNSX {
         }
         System.out.println("Khong co Id trong danh sach");
     }
+
+    public Maker findById(String idCanTim) {
+        for (int i = 0;i < length; i++) {
+            if (Objects.equals(makers[i].getMaNSX(), idCanTim)) {
+                return makers[i];
+            }
+        }
+        return null;
+    }
 }

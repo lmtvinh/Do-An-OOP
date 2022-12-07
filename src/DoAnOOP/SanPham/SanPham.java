@@ -1,27 +1,25 @@
 package DoAnOOP.SanPham;
 
+import DoAnOOP.KhoDuLieu.TongHopDuLieu;
 import DoAnOOP.ThongTin.Maker;
-import DoAnOOP.ThongTin.Provider;
 
 import java.util.Scanner;
 
 public class SanPham {
     final static Scanner scanner = new Scanner(System.in);
-    protected String maSanPham, CPU, ramCapacity, tenSanPham;
-    protected Maker thongTinNXS;
-    protected Provider thongTinNCC;
+    protected String maSanPham, CPU, ramCapacity, tenSanPham, maNXS, maNCC;
     protected float price;
     protected int thoiGianBaoHanh;
 
     public SanPham() {
     }
 
-    public SanPham(String tenSanPham, String CPU, String ramCapacity, Maker thongTinNXS, Provider thongTinNCC, float price, int thoiGianBaoHanh) {
+    public SanPham(String tenSanPham, String CPU, String ramCapacity, String maNXS, String maNCC, float price, int thoiGianBaoHanh) {
         this.tenSanPham = tenSanPham;
         this.CPU = CPU;
         this.ramCapacity = ramCapacity;
-        this.thongTinNXS = thongTinNXS;
-        this.thongTinNCC = thongTinNCC;
+        this.maNXS = maNXS;
+        this.maNCC = maNCC;
         this.price = price;
         this.thoiGianBaoHanh = thoiGianBaoHanh;
     }
@@ -50,20 +48,28 @@ public class SanPham {
         this.ramCapacity = ramCapacity;
     }
 
-    public Maker getThongTinNXS() {
-        return thongTinNXS;
+    public String getTenSanPham() {
+        return tenSanPham;
     }
 
-    public void setThongTinNXS(Maker thongTinNXS) {
-        this.thongTinNXS = thongTinNXS;
+    public void setTenSanPham(String tenSanPham) {
+        this.tenSanPham = tenSanPham;
     }
 
-    public Provider getThongTinNCC() {
-        return thongTinNCC;
+    public String getMaNXS() {
+        return maNXS;
     }
 
-    public void setThongTinNCC(Provider thongTinNCC) {
-        this.thongTinNCC = thongTinNCC;
+    public void setMaNXS(String maNXS) {
+        this.maNXS = maNXS;
+    }
+
+    public String getMaNCC() {
+        return maNCC;
+    }
+
+    public void setMaNCC(String maNCC) {
+        this.maNCC = maNCC;
     }
 
     public float getPrice() {
@@ -82,6 +88,10 @@ public class SanPham {
         this.thoiGianBaoHanh = thoiGianBaoHanh;
     }
 
+    public Maker getThongTinNXS(String idCanCheck) {
+        return TongHopDuLieu.getDanhSachNSX().findById(idCanCheck);
+    }
+
     public void input() {
         System.out.print("Nhap Ten San Pham: ");
         tenSanPham = scanner.nextLine();
@@ -89,10 +99,10 @@ public class SanPham {
         CPU = scanner.nextLine();
         System.out.print("Nhap Thong Tin Ram: ");
         ramCapacity = scanner.nextLine();
-        System.out.println("Nhap Thong Tin Nha Cung Cap.");
-        thongTinNCC.input();
-        System.out.println("Nhap Thong Tin Nha San Xuat.");
-        thongTinNXS.input();
+        System.out.println("Nhap Ma Nha Cung Cap.");
+        maNCC = scanner.nextLine();
+        System.out.println("Nhap Ma Nha San Xuat.");
+        maNCC = scanner.nextLine();
         System.out.print("Thoi gian bao hanh cua san pham: ");
         thoiGianBaoHanh = Integer.parseInt(scanner.nextLine());
         System.out.print("Gia: ");
