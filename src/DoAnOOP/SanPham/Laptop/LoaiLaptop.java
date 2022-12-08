@@ -1,8 +1,10 @@
 package DoAnOOP.SanPham.Laptop;
 
+import DoAnOOP.Output;
+
 import java.util.Scanner;
 
-public class LoaiLaptop {
+public class LoaiLaptop implements Output {
     static final Scanner scanner = new Scanner(System.in);
     private String tenLoai, ghiChu;
     private static String maLoaiLaptop;
@@ -49,5 +51,15 @@ public class LoaiLaptop {
         tenLoai = scanner.nextLine();
         System.out.print("Nhap Ghi chu(neu co): ");
         ghiChu = scanner.nextLine();
+    }
+
+    @Override
+    public String getThuocTinh() {
+        return null;
+    }
+
+    @Override
+    public String getDuLieu() {
+        return null;
     }
 }

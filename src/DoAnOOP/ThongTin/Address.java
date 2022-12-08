@@ -2,7 +2,7 @@ package DoAnOOP.ThongTin;
 
 import java.util.Scanner;
 
-public class Address {
+public class Address  {
     final static Scanner scanner = new Scanner(System.in);
     private String apartmentNumber, street, precinct, district, city;
     public Address() {
@@ -73,4 +73,14 @@ public class Address {
     public String toString() {
         return ""+getApartmentNumber()+","+getStreet()+","+getPrecinct()+","+getCity();
     }
+
+//    @Override
+//    public String getThuocTinh() {
+//        return null;
+//    }
+//
+//    @Override
+//    public String getDuLieu() {
+//        return null;
+//    }
 }

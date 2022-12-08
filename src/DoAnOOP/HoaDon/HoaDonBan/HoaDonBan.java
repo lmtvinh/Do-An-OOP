@@ -1,6 +1,7 @@
 package DoAnOOP.HoaDon.HoaDonBan;
 
 import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.Output;
 import DoAnOOP.People.Customer;
 import DoAnOOP.People.Employee;
 import DoAnOOP.ThongTin.Address;
@@ -10,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class HoaDonBan {
+public class HoaDonBan implements Output {
     static final Scanner scanner = new Scanner(System.in);
     private String maHoaDon, maKhachHang, maNhanVien;
     private Address address;
@@ -25,10 +26,9 @@ public class HoaDonBan {
         HoaDonBan.idIncrement++;
     }
 
-    public HoaDonBan(String maKhachHang, String maNhanVien, LocalDateTime ngayBan) {
+    public HoaDonBan(String maKhachHang, String maNhanVien) {
         this.maKhachHang = maKhachHang;
         this.maNhanVien = maNhanVien;
-        this.ngayBan = ngayBan;
     }
 
     public String formattedDate() {
@@ -96,4 +96,13 @@ public class HoaDonBan {
         return tongTien;
     }
 
+    @Override
+    public String[] getThuocTinh() {
+        return new String[]{"Ma Hoa Don","Ma Nhan Vien","Ten Nhan Vien","Ma Khach Hang","Ten Khach Hang","Tong Tien"};
+    }
+
+    @Override
+    public String[] getDuLieu() {
+        return new String[]{this.maHoaDon,this.maNhanVien,Database.getDanhSachNhanVien().getByIdEmployee(this.getMaNhanVien()).getFullname(),this.maKhachHang,Database.getDanhSachKhachHang().getByIdCustomer(this.maKhachHang).getFullname(),""+this.tongTien};
+    }
 }

@@ -1,10 +1,11 @@
 package DoAnOOP.HoaDon.PhieuNhap;
 
 import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.Output;
 
 import java.util.Scanner;
 
-public class ChiTietPhieuNhap {
+public class ChiTietPhieuNhap implements Output {
     final static Scanner scanner = new Scanner(System.in);
     private String maPhieuNhap, maSanPham;
     private int soLuong;
@@ -61,5 +62,15 @@ public class ChiTietPhieuNhap {
 
     public PhieuNhap getPhieuNhap() {
         return Database.getDanhSachPhieuNhap().getByIdPhieuNhap(getMaPhieuNhap());
+    }
+
+    @Override
+    public String[] getThuocTinh() {
+        return new String[]{"Ten San Pham","So Luong","Thanh Tien"};
+    }
+
+    @Override
+    public String[] getDuLieu() {
+        return new String[]{Database.getDanhSachLaptop().getByIdLaptop(this.getMaSanPham()).getTenSanPham(),""+this.soLuong,""+this.getThanhTienLaptop()};
     }
 }

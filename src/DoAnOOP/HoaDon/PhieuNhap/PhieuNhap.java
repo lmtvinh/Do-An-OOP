@@ -1,6 +1,7 @@
 package DoAnOOP.HoaDon.PhieuNhap;
 
 import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.Output;
 import DoAnOOP.People.Employee;
 import DoAnOOP.ThongTin.Date;
 import DoAnOOP.ThongTin.Provider;
@@ -8,7 +9,7 @@ import DoAnOOP.ThongTin.Provider;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class PhieuNhap {
+public class PhieuNhap implements Output {
     final static Scanner scanner = new Scanner(System.in);
     private String maPhieuNhap, maNhanVien, maNhaCungCap;
     private Date ngayNhap;
@@ -85,5 +86,15 @@ public class PhieuNhap {
         maNhaCungCap = scanner.nextLine();
         System.out.println("Nhap Thong tin Ngay Nhap.");
         ngayNhap.input();
+    }
+
+    @Override
+    public String[] getThuocTinh() {
+        return new String[]{"Ma Phieu Nhap","Ma Nhap Vien","Ten Nhan Vien","Ma Nha Cung Cap","Ten Nha Cung Cap","Ngay nhap"};
+    }
+
+    @Override
+    public String[] getDuLieu() {
+        return new String[]{this.maPhieuNhap,this.maNhanVien,Database.getDanhSachNhanVien().getByIdEmployee(this.maNhanVien).getFullname(),this.maNhaCungCap,this.ngayNhap.toString()};
     }
 }

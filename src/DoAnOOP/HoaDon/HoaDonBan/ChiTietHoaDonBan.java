@@ -2,10 +2,11 @@ package DoAnOOP.HoaDon.HoaDonBan;
 
 import DoAnOOP.Help.Check;
 import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.Output;
 
 import java.util.Scanner;
 
-public class ChiTietHoaDonBan {
+public class ChiTietHoaDonBan implements Output {
     final static Scanner scanner = new Scanner(System.in);
     private String maHD, maSP;
     private int soLuong;
@@ -43,6 +44,10 @@ public class ChiTietHoaDonBan {
         this.soLuong = soLuong;
     }
 
+    public float getThanhTien() {
+        return Database.getDanhSachSanPham().getByIdSanPham(getMaSP()).getPrice()*soLuong;
+    }
+
     public float getThanhTienLaptop() {
         float tien;
         tien = Database.getDanhSachLaptop().getByIdLaptop(getMaSP()).getPrice()*soLuong;
@@ -66,5 +71,15 @@ public class ChiTietHoaDonBan {
         maSP = scanner.nextLine();
         System.out.print("Nhap So Luong: ");
         soLuong = Check.checkInputInteger();
+    }
+
+    @Override
+    public String[] getThuocTinh() {
+        return new String[]{"Ten San Pham","So luong","Thanh tien"};
+    }
+
+    @Override
+    public String[] getDuLieu() {
+        return new String[]{Database.getDanhSachSanPham().getByIdSanPham(this.maSP).getTenSanPham(),""+this.soLuong,""+getThanhTien()};
     }
 }

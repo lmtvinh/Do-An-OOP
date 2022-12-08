@@ -1,12 +1,12 @@
 package DoAnOOP.SanPham;
 
 import DoAnOOP.KhoDuLieu.Database;
-import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.Output;
 import DoAnOOP.ThongTin.Maker;
 
 import java.util.Scanner;
 
-public class SanPham {
+public class SanPham implements Output {
     final static Scanner scanner = new Scanner(System.in);
     protected String maSanPham, CPU, ramCapacity, tenSanPham, maNXS, maNCC;
     protected float price;
@@ -108,6 +108,16 @@ public class SanPham {
         thoiGianBaoHanh = Integer.parseInt(scanner.nextLine());
         System.out.print("Gia: ");
         price = Float.parseFloat(scanner.nextLine());
+    }
+
+    @Override
+    public String[] getThuocTinh() {
+        return new String[]{"Ma San Pham","Ten San Pham","CPU","Ram","Nha Cung Cap","Nha San Xuat","Thoi han bao hanh","Gia"};
+    }
+
+    @Override
+    public String[] getDuLieu() {
+        return new String[]{this.maSanPham,this.tenSanPham,this.CPU,this.ramCapacity,Database.getDanhSachNCC().getByIdProvider(this.maNCC).getTenNCC(),Database.getDanhSachNSX().findById(this.maNXS).getTenNSX(),""+this.thoiGianBaoHanh,""+this.price};
     }
 
 //    public void output() {

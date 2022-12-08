@@ -1,10 +1,12 @@
 package DoAnOOP.SanPham.Laptop;
 
+import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.Output;
 import DoAnOOP.SanPham.SanPham;
 
 import java.util.Scanner;
 
-public class Laptop extends SanPham {
+public class Laptop extends SanPham implements Output {
     static final Scanner scanner = new Scanner(System.in);
     private String maLaptop;
     private String screensize, resolution;
@@ -68,5 +70,15 @@ public class Laptop extends SanPham {
         resolution = scanner.nextLine();
         System.out.print("Nhap Ma Loai Laptop.");
         maLoaiLaptop = scanner.nextLine();
+    }
+
+    @Override
+    public String[] getThuocTinh() {
+        return new String[]{"Ma San Pham","Ten San Pham","CPU","Ram","Nha Cung Cap","Nha San Xuat","Thoi han bao hanh","Gia","Kich thuoc Man hinh Laptop(inch)","Do phan giai Man hinh Laptop","Loai Laptop"};
+    }
+
+    @Override
+    public String[] getDuLieu() {
+        return new String[]{this.maSanPham,this.tenSanPham,this.CPU,this.ramCapacity, Database.getDanhSachNCC().getByIdProvider(this.maNCC).getTenNCC(),Database.getDanhSachNSX().findById(this.maNXS).getTenNSX(),""+this.thoiGianBaoHanh,""+this.price,this.screensize,this.resolution,Database.getDanhSachLoaiPC().getByIdLoaiPC(this.maLoaiLaptop).getTenLoai()};
     }
 }

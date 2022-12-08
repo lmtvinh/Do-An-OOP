@@ -1,8 +1,10 @@
 package DoAnOOP.ThongTin;
 
+import DoAnOOP.Output;
+
 import java.util.Scanner;
 
-public class Maker {
+public class Maker implements Output {
     final static Scanner scanner = new Scanner(System.in);
     private String maNSX, tenNSX;
     public static String maNhaSanXuat;
@@ -55,5 +57,15 @@ public class Maker {
     @Override
     public String toString() {
         return getTenNSX() + "," + quocGia.toString();
+    }
+
+    @Override
+    public String[] getThuocTinh() {
+        return new String[]{"Ma Nha San Xuat","Ten Nha San Xuat","Quoc Gia"};
+    }
+
+    @Override
+    public String[] getDuLieu() {
+        return new String[]{this.maNSX,this.tenNSX,this.quocGia.getTenQuocGia()};
     }
 }

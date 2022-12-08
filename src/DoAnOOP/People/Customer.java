@@ -1,21 +1,20 @@
 package DoAnOOP.People;
 
 import DoAnOOP.Help.Check;
+import DoAnOOP.Output;
 import DoAnOOP.ThongTin.Address;
 import DoAnOOP.ThongTin.Date;
 
 import java.util.Scanner;
 
-public class Customer extends Person  {
+public class Customer extends Person implements Output {
     static final Scanner scanner = new Scanner(System.in);
     private String maKhachHang;
-    static private int phanLoaiKhachHang;
     public Customer() {
     }
 
-    public Customer(String maKhachHang, int phanLoaiKhachHang) {
+    public Customer(String maKhachHang) {
         this.maKhachHang = maKhachHang;
-        this.phanLoaiKhachHang = phanLoaiKhachHang;
     }
 
     public Customer(String fullname, String email, Address address, Date dateOfBirth, String maKhachHang) {
@@ -31,30 +30,25 @@ public class Customer extends Person  {
         this.maKhachHang = maKhachHang;
     }
 
-    public int getPhanLoaiKhachHang() {
-        return phanLoaiKhachHang;
-    }
-
-    public void setPhanLoaiKhachHang(int phanLoaiKhachHang) {
-        this.phanLoaiKhachHang = phanLoaiKhachHang;
-    }
-
     @Override
     public void input() {
         super.input();
-        String luachon;
         System.out.print("Nhap ma khach hang: ");
         maKhachHang = Check.checkMKH();
-        // System.out.println("Khach hang thuoc nhom nao?");
-        // System.out.println("1.Nhom I(Giam gia 25%): ");
-        // System.out.println("2.Nhom II(Giam gia 15%): ");
-        // System.out.println("3.Nhom IV(Giam gia 10%): ");
-        // System.out.print("Nhap: ");
-        // phanLoaiKhachHang = Check.checkPLKH();
     }
 
-    public void output() {
-        System.out.printf("%-8s%-25s%-15s%-12s\n",getMaKhachHang(),null,getPhanLoaiKhachHang());
+//    public void output() {
+//        System.out.printf("%-8s%-25s%-15s%-12s\n",getMaKhachHang(),null,getPhanLoaiKhachHang());
+//    }
+
+    @Override
+    public String[] getThuocTinh() {
+        return new String[]{"Ma Khach Hang","Ten Khach Hang","Email","Dia chi","Ngay Sinh"};
+    }
+
+    @Override
+    public String[] getDuLieu() {
+        return new String[]{this.maKhachHang,this.fullname,this.email,this.address.toString(),this.dateOfBirth.toString()};
     }
 
 //    public static void main(String[] args) {

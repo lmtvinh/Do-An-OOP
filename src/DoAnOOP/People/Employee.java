@@ -1,12 +1,13 @@
 package DoAnOOP.People;
 
+import DoAnOOP.Output;
 import DoAnOOP.ThongTin.Address;
 import DoAnOOP.ThongTin.Date;
 import DoAnOOP.Help.Check;
 
 import java.util.Scanner;
 
-public class Employee extends Person {
+public class Employee extends Person implements Output {
     static final Scanner scanner = new Scanner(System.in);
     private String maNV;
     private float heSoLuong, luongCoBan, soGioLam;
@@ -113,5 +114,15 @@ public class Employee extends Person {
         Employee e = new Employee();
         e.input();
         e.output();
+    }
+
+    @Override
+    public String[] getThuocTinh() {
+        return new String[]{"Ma Nhan Vien","Ten Nhan Vien","Email","Dia Chi","Luong co ban","So gio lam","Luong"};
+    }
+
+    @Override
+    public String[] getDuLieu() {
+        return new String[]{this.maNV,this.fullname,this.email,this.address.toString(),""+this.luongCoBan,""+this.soGioLam,""+tinhLuong()};
     }
 }

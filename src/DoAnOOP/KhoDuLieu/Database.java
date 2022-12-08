@@ -7,6 +7,7 @@ import DoAnOOP.HoaDon.PhieuNhap.DanhSachChiTietPhieuNhap;
 import DoAnOOP.HoaDon.PhieuNhap.DanhSachPhieuNhap;
 import DoAnOOP.People.DanhSachKhachHang;
 import DoAnOOP.People.DanhSachNhanVien;
+import DoAnOOP.SanPham.DanhSachSanPham;
 import DoAnOOP.SanPham.Laptop.DanhSachLaptop;
 import DoAnOOP.SanPham.Laptop.DanhSachLoaiLaptop;
 import DoAnOOP.SanPham.PC.DanhSachLoaiPC;
@@ -21,6 +22,8 @@ public class Database {
     private static DanhSachLoaiLaptop danhSachLoaiLaptop = null;
     private static DanhSachPC danhSachPC = null;
     private static DanhSachLoaiPC danhSachLoaiPC = null;
+
+    private static DanhSachSanPham danhSachSanPham = null;
 
     private static DanhSachKhachHang danhSachKhachHang = null;
     private static DanhSachNhanVien danhSachNhanVien = null;
@@ -78,6 +81,14 @@ public class Database {
 //            danhSachLoaiLaptop.docFile();
         }
         return  danhSachLoaiPC;
+    }
+
+    public static DanhSachSanPham getDanhSachSanPham() {
+        if (danhSachSanPham == null) {
+            danhSachSanPham = new DanhSachSanPham();
+//            danhSachSanPham.docFile();
+        }
+        return danhSachSanPham;
     }
 
     public static DanhSachKhachHang getDanhSachKhachHang() {

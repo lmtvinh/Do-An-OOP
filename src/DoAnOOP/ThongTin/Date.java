@@ -51,4 +51,14 @@ public class Date {
     public String toString() {
         return String.format("%d/%d/%d",day,month,year);
     }
+
+//    @Override
+//    public String[] getThuocTinh() {
+//        return null;
+//    }
+//
+//    @Override
+//    public String getDuLieu() {
+//        return null;
+//    }
 }

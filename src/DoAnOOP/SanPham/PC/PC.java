@@ -1,10 +1,12 @@
 package DoAnOOP.SanPham.PC;
 
+import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.Output;
 import DoAnOOP.SanPham.SanPham;
 
 import java.util.Scanner;
 
-public class PC extends SanPham {
+public class PC extends SanPham implements Output {
     static final Scanner scanner = new Scanner(System.in);
     public static int id = 0;
     private String maPC;
@@ -95,8 +97,6 @@ public class PC extends SanPham {
         super.input();
         System.out.print("Nhap Thong tin ve Mainboard: ");
         mainboard = scanner.nextLine();
-        System.out.print("Nhap Thong tin ve CPU: ");
-        CPU = scanner.nextLine();
         System.out.print("Nhap Thong tin ve Case PC: ");
         casePC = scanner.nextLine();
         System.out.print("Nhap Thong tin ve SSD: ");
@@ -109,6 +109,16 @@ public class PC extends SanPham {
         VGA = scanner.nextLine();
         System.out.print("Nhap Ma Loai PC.");
         maLoaiPC = scanner.nextLine();
+    }
+
+    @Override
+    public String[] getThuocTinh() {
+        return new String[]{"Ma San Pham","Ten San Pham","CPU","Ram","Nha Cung Cap","Nha San Xuat","Thoi han bao hanh","Gia","Mainboard","Case","SSD","HHD","Tan nhiet","VGD","Loai PC"};
+    }
+
+    @Override
+    public String[] getDuLieu() {
+        return new String[]{this.maSanPham,this.tenSanPham,this.CPU,this.ramCapacity, Database.getDanhSachNCC().getByIdProvider(this.maNCC).getTenNCC(),Database.getDanhSachNSX().findById(this.maNXS).getTenNSX(),""+this.thoiGianBaoHanh,""+this.price,this.mainboard,this.casePC,this.SSD,this.HHD,this.cooling,Database.getDanhSachLoaiPC().getByIdLoaiPC(this.maLoaiPC).getTenLoai()};
     }
 
 //    public void output() {

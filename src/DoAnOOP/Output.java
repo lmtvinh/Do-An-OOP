@@ -1,2 +1,6 @@
-package DoAnOOP;public interface Output {
+package DoAnOOP;
+
+public interface Output {
+    String[] getThuocTinh();
+    String[] getDuLieu();
 }

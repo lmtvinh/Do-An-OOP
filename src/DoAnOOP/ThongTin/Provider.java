@@ -1,8 +1,10 @@
 package DoAnOOP.ThongTin;
 
+import DoAnOOP.Output;
+
 import java.util.Scanner;
 
-public class Provider {
+public class Provider implements Output {
 	Scanner sc = new Scanner(System.in);
 	protected String maNCC;
 	protected String tenNCC;
@@ -67,8 +69,18 @@ public class Provider {
         System.out.print("Nhap So dien thoai: ");
         phoneNumber = sc.nextLine();
 	}
-	public void output() {
-		System.out.printf("%-20s%-20s%-20s%-20s\n","Ma NCC","Ten NCC","Quoc Gia","Dien thoai");
-        System.out.printf("%-20s%-20s%-20s%-20s\n", (Object) maNCC,tenNCC,quocGia,phoneNumber);
+	// public void output() {
+	// 	System.out.printf("%-20s%-20s%-20s%-20s\n","Ma NCC","Ten NCC","Quoc Gia","Dien thoai");
+    //     System.out.printf("%-20s%-20s%-20s%-20s\n", (Object) maNCC,tenNCC,quocGia,phoneNumber);
+	// }
+
+	@Override
+	public String[] getThuocTinh() {
+		return new String[]{"Ma Nha Cung Cap","Ten Nha Cung Cap","Quoc Gia","So Dien Thoai"};
+	}
+
+	@Override
+	public String[] getDuLieu() {
+		return new String[]{this.maNCC,this.tenNCC,this.quocGia.getTenQuocGia(),this.phoneNumber};
 	}
 }

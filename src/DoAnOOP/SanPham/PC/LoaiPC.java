@@ -1,8 +1,10 @@
 package DoAnOOP.SanPham.PC;
 
+import DoAnOOP.Output;
+
 import java.util.Scanner;
 
-public class LoaiPC {
+public class LoaiPC implements Output {
     static final Scanner scanner = new Scanner(System.in);
     private String tenLoai, ghiChu;
     private static String maLoai;
@@ -58,5 +60,15 @@ public class LoaiPC {
 
     public String toString() {
         return String.format("%d, %s, %s",maLoai,tenLoai,ghiChu);
+    }
+
+    @Override
+    public String[] getThuocTinh() {
+        return new String[]{"Ma loai","Ten loai","Ghi Chu"};
+    }
+
+    @Override
+    public String[] getDuLieu() {
+        return new String[]{this.getMaLoai(),this.tenLoai,this.ghiChu};
     }
 }
