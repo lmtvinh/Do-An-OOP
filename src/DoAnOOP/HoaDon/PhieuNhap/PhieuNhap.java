@@ -13,6 +13,7 @@ public class PhieuNhap {
     private String maPhieuNhap, maNhanVien, maNhaCungCap;
     private Date ngayNhap;
     private static int idIncrement = 0;
+    private int tongTien;
 
     public PhieuNhap() {
         maPhieuNhap = "PN" + PhieuNhap.idIncrement;
@@ -70,6 +71,10 @@ public class PhieuNhap {
     }
 
     public void getTongTien() {
+        for (int i = 0; i < Database.getDanhSachChiTietPhieuNhap().getChiTietPhieuNhap(getMaPhieuNhap()).size();i++) {
+            tongTien += Database.getChiTietPhieuNhap(getMaPhieuNhap()).getThanhTienPC();
+            tongTien += Database.getChiTietPhieuNhap(getMaPhieuNhap()).getThanhTienLaptop();
+        }
     }
 
     public void input() {
