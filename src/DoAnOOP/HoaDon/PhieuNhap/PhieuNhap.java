@@ -5,6 +5,7 @@ import DoAnOOP.People.Employee;
 import DoAnOOP.ThongTin.Date;
 import DoAnOOP.ThongTin.Provider;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PhieuNhap {
@@ -62,6 +63,13 @@ public class PhieuNhap {
 
     public Provider getNhaCungCap() {
         return Database.getDanhSachNCC().getByIdProvider(getMaNhaCungCap());
+    }
+
+    public ArrayList<ChiTietPhieuNhap> getChiTietPhieuNhap() {
+        return Database.getDanhSachChiTietPhieuNhap().getChiTietPhieuNhap(getMaPhieuNhap());
+    }
+
+    public void getTongTien() {
     }
 
     public void input() {

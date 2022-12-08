@@ -75,7 +75,7 @@ public class HoaDonBan {
     public Customer getCustomer() {
         return Database.getDanhSachKhachHang().getByIdCustomer(getMaKhachHang());
     }
-     public ArrayList<ChiTietHoaDonBan> getChiTietHoaDon() {
+     public ArrayList<ChiTietHoaDonBan> getChiTietHoaDonBan() {
          return Database.getDanhSachChiTietHoaDonBan().getChiTietHoaDonBan(getMaHoaDon());
      }
 
