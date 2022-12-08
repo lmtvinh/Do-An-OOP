@@ -59,5 +59,7 @@ public class ChiTietPhieuNhap {
         return Database.getDanhSachPC().getByIdPC(getMaSanPham()).getPrice()*soLuong;
     }
 
-
+    public PhieuNhap getPhieuNhap() {
+        return Database.getDanhSachPhieuNhap().getByIdPhieuNhap(getMaPhieuNhap());
+    }
 }

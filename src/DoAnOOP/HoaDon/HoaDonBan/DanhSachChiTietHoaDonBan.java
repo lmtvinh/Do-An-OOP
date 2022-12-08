@@ -1,6 +1,7 @@
 package DoAnOOP.HoaDon.HoaDonBan;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class DanhSachChiTietHoaDonBan {
@@ -23,7 +24,7 @@ public class DanhSachChiTietHoaDonBan {
 
     public void setChiTietHoaDonBan(String maHoaDonCanSua, ChiTietHoaDonBan newChiTietHoaDonBan) {
         for (int i = 0; i < chiTietHoaDonBans.size(); i++ ){
-            if (chiTietHoaDonBans.get(i).getMaHD() == maHoaDonCanSua) {
+            if (Objects.equals(chiTietHoaDonBans.get(i).getMaHD(), maHoaDonCanSua)) {
                 chiTietHoaDonBans.set(i, newChiTietHoaDonBan);
                 return;
             }
@@ -33,7 +34,7 @@ public class DanhSachChiTietHoaDonBan {
 
     public void removeChiTietHoaDonBan(String maHoaDonBanCanXoa, ChiTietHoaDonBan newChiTietHoaDonBan) {
         for (int i = 0; i < chiTietHoaDonBans.size(); i++){
-            if (chiTietHoaDonBans.get(i).getMaHD() == maHoaDonBanCanXoa) {
+            if (Objects.equals(chiTietHoaDonBans.get(i).getMaHD(), maHoaDonBanCanXoa)) {
                 chiTietHoaDonBans.remove(i);
                 return;
             }
@@ -43,7 +44,7 @@ public class DanhSachChiTietHoaDonBan {
 
     public ChiTietHoaDonBan getByIdChiTietHoaDonBan(String maHoaDonCanTim) {
         for (int i = 0; i < chiTietHoaDonBans.size(); i++) {
-            if (chiTietHoaDonBans.get(i).getMaHD() == maHoaDonCanTim) {
+            if (Objects.equals(chiTietHoaDonBans.get(i).getMaHD(), maHoaDonCanTim)) {
                 return chiTietHoaDonBans.get(i);
             }
         }
@@ -53,7 +54,7 @@ public class DanhSachChiTietHoaDonBan {
     public ArrayList<ChiTietHoaDonBan> getChiTietHoaDonBan(String idHoaDon) {
         ArrayList<ChiTietHoaDonBan> arr = new ArrayList<>();
         for (int i = 0; i < chiTietHoaDonBans.size(); i++) {
-            if (chiTietHoaDonBans.get(i).getMaHD() == idHoaDon) {
+            if (Objects.equals(chiTietHoaDonBans.get(i).getMaHD(), idHoaDon)) {
                 arr.add(chiTietHoaDonBans.get(i));
             }
         }

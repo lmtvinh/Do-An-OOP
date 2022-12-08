@@ -2,6 +2,7 @@ package DoAnOOP.KhoDuLieu;
 
 import DoAnOOP.HoaDon.HoaDonBan.DanhSachChiTietHoaDonBan;
 import DoAnOOP.HoaDon.HoaDonBan.DanhSachHoaDonBan;
+import DoAnOOP.HoaDon.PhieuNhap.DanhSachPhieuNhap;
 import DoAnOOP.People.DanhSachKhachHang;
 import DoAnOOP.People.DanhSachNhanVien;
 import DoAnOOP.SanPham.Laptop.DanhSachLaptop;
@@ -24,6 +25,9 @@ public class Database {
 
     private static DanhSachHoaDonBan danhSachHoaDonBan = null;
     private static DanhSachChiTietHoaDonBan danhSachChiTietHoaDonBan = null;
+
+    private static DanhSachPhieuNhap danhSachPhieuNhap = null;
+
 
     public static  DanhSachNSX getDanhSachNSX() {
         if (danhSachNSX == null) {
@@ -103,5 +107,13 @@ public class Database {
 //            danhSachChiTietHoaDonBan.docFile();
         }
         return danhSachChiTietHoaDonBan;
+    }
+
+    public static DanhSachPhieuNhap getDanhSachPhieuNhap() {
+        if (danhSachPhieuNhap == null) {
+            danhSachPhieuNhap = new DanhSachPhieuNhap();
+//            danhSachPhieuNhap.docFile();
+        }
+        return danhSachPhieuNhap;
     }
 }
