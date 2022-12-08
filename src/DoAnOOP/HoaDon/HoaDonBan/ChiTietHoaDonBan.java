@@ -10,7 +10,10 @@ public class ChiTietHoaDonBan {
     private String maHD, maSP;
     private int soLuong;
 
-    public void ChiTietHoaDonBan(String maHD, String maSP, int soLuong){
+    public ChiTietHoaDonBan() {
+    }
+
+    public ChiTietHoaDonBan(String maHD, String maSP, int soLuong){
         this.maHD = maHD;
         this.maSP = maSP;
         this.soLuong = soLuong;

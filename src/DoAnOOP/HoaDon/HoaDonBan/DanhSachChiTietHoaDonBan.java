@@ -3,8 +3,6 @@ package DoAnOOP.HoaDon.HoaDonBan;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import DoAnOOP.KhoDuLieu.Database;
-
 public class DanhSachChiTietHoaDonBan {
     final static Scanner scanner = new Scanner(System.in);
     ArrayList<ChiTietHoaDonBan> chiTietHoaDonBans;
@@ -50,5 +48,15 @@ public class DanhSachChiTietHoaDonBan {
             }
         }
         return null;
+    }
+
+    public ArrayList<ChiTietHoaDonBan> getChiTietHoaDonBan(String idHoaDon) {
+        ArrayList<ChiTietHoaDonBan> arr = new ArrayList<>();
+        for (int i = 0; i < chiTietHoaDonBans.size(); i++) {
+            if (chiTietHoaDonBans.get(i).getMaHD() == idHoaDon) {
+                arr.add(chiTietHoaDonBans.get(i));
+            }
+        }
+        return arr;
     }
 }

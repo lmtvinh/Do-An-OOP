@@ -7,6 +7,7 @@ import DoAnOOP.ThongTin.Address;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HoaDonBan {
@@ -74,11 +75,9 @@ public class HoaDonBan {
     public Customer getCustomer() {
         return Database.getDanhSachKhachHang().getByIdCustomer(getMaKhachHang());
     }
-    // public ChiTietHoaDonBan[] getChiTietHoaDon() {
-    //     for (int i = 0; i < Database.getDanhSachChiTietHoaDonBan().lengthDanhSachChiTietHoaDonBan(); i++) {
-            
-    //     }
-    // }
+     public ArrayList<ChiTietHoaDonBan> getChiTietHoaDon() {
+         return Database.getDanhSachChiTietHoaDonBan().getChiTietHoaDonBan(getMaHoaDon());
+     }
 
     public void input() {
         System.out.print("Nhap ma nhan vien: ");
@@ -87,5 +86,9 @@ public class HoaDonBan {
         maKhachHang = scanner.nextLine();
         System.out.println("Ngay Ban: " + formattedDate());
     }
+
+    // public float getTongTien() {
+        
+    // }
 
 }

@@ -18,7 +18,7 @@ public class DanhSachHoaDonBan {
 
     public void setHoaDonBan(String maHoaDonCanSua, HoaDonBan newHoaDonBan) {
         for (int i = 0; i < hoaDonBans.size(); i++) {
-            if (hoaDonBans.get(i).getMaHoaDon() == maHoaDonCanSua) {
+            if (Objects.equals(hoaDonBans.get(i).getMaHoaDon(), maHoaDonCanSua)) {
                 hoaDonBans.set(i, newHoaDonBan);
             }
         }
@@ -26,7 +26,7 @@ public class DanhSachHoaDonBan {
 
     public void removeHoaDonBan(String maHoaDonCanXoa) {
         for (int i = 0; i < hoaDonBans.size(); i++) {
-            if (hoaDonBans.get(i).getMaHoaDon() == maHoaDonCanXoa) {
+            if (Objects.equals(hoaDonBans.get(i).getMaHoaDon(), maHoaDonCanXoa)) {
                 hoaDonBans.remove(i);
             }
         }

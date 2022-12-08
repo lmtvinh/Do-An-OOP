@@ -8,10 +8,12 @@ import DoAnOOP.SanPham.Laptop.DanhSachLaptop;
 import DoAnOOP.SanPham.Laptop.DanhSachLoaiLaptop;
 import DoAnOOP.SanPham.PC.DanhSachLoaiPC;
 import DoAnOOP.SanPham.PC.DanhSachPC;
+import DoAnOOP.ThongTin.DanhSachNCC;
 import DoAnOOP.ThongTin.DanhSachNSX;
 
 public class Database {
     private static DanhSachNSX danhSachNSX = null;
+    private static DanhSachNCC danhSachNCC = null;
     private static DanhSachLaptop danhSachLaptop = null;
     private static DanhSachLoaiLaptop danhSachLoaiLaptop = null;
     private static DanhSachPC danhSachPC = null;
@@ -29,6 +31,14 @@ public class Database {
 //            danhSachNSX.docFile();
         }
         return danhSachNSX;
+    }
+
+    public static DanhSachNCC getDanhSachNCC() {
+        if (danhSachNCC == null) {
+            danhSachNCC = new DanhSachNCC();
+//            danhSachNCC.docFile();
+        }
+        return danhSachNCC;
     }
 
     public static DanhSachLaptop getDanhSachLaptop() {

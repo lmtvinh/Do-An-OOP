@@ -8,25 +8,20 @@ import DoAnOOP.ThongTin.Provider;
 import java.util.Scanner;
 
 public class PhieuNhap {
-    final static Scanner scanner = new Scanner(System.in); 
+    final static Scanner scanner = new Scanner(System.in);
     private String maPhieuNhap, maNhanVien, maNhaCungCap;
     private Date ngayNhap;
+    private static int idIncrement = 0;
+
     public PhieuNhap() {
+        maPhieuNhap = "PN" + PhieuNhap.idIncrement;
+        PhieuNhap.idIncrement++;
     }
 
-    public PhieuNhap(String maPhieuNhap, String maNhanVien, String maNhaCungCap, Date ngayNhap) {
-        this.maPhieuNhap = maPhieuNhap;
+    public PhieuNhap(String maNhanVien, String maNhaCungCap, Date ngayNhap) {
         this.maNhanVien = maNhanVien;
         this.maNhaCungCap = maNhaCungCap;
         this.ngayNhap = ngayNhap;
-    }
-
-    public String getMaPhieuNhap() {
-        return maPhieuNhap;
-    }
-
-    public void setMaPhieuNhap(String maPhieuNhap) {
-        this.maPhieuNhap = maPhieuNhap;
     }
 
     public String getMaNhanVien() {
@@ -57,7 +52,24 @@ public class PhieuNhap {
         return Database.getDanhSachNhanVien().getByIdEmployee(getMaNhanVien());
     }
 
+    public String getMaPhieuNhap() {
+        return maPhieuNhap;
+    }
+
+    public void setMaPhieuNhap(String maPhieuNhap) {
+        this.maPhieuNhap = maPhieuNhap;
+    }
+
     public Provider getNhaCungCap() {
-        return Database.get
+        return Database.getDanhSachNCC().getByIdProvider(getMaNhaCungCap());
+    }
+
+    public void input() {
+        System.out.print("Nhap Ma Nhan Vien: ");
+        maNhanVien = scanner.nextLine();
+        System.out.print("Nhap Ma Nha Cung Cap: ");
+        maNhaCungCap = scanner.nextLine();
+        System.out.println("Nhap Thong tin Ngay Nhap.");
+        ngayNhap.input();
     }
 }
