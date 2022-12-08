@@ -15,6 +15,7 @@ public class HoaDonBan {
     private String maHoaDon, maKhachHang, maNhanVien;
     private Address address;
     private LocalDateTime ngayBan;
+    private int tongTien;
     private static int idIncrement = 0;
 
     public HoaDonBan() {
@@ -87,8 +88,12 @@ public class HoaDonBan {
         System.out.println("Ngay Ban: " + formattedDate());
     }
 
-    // public float getTongTien() {
-        
-    // }
+    public int getTongTien() {
+        for (int i = 0; i < Database.getDanhSachChiTietHoaDonBan().getChiTietHoaDonBan(getMaHoaDon()).size(); i++) {
+            tongTien += Database.getChiTietPhieuNhap(getMaHoaDon()).getThanhTienLaptop();
+            tongTien += Database.getChiTietPhieuNhap(getMaHoaDon()).getThanhTienPC();
+        }
+        return tongTien;
+    }
 
 }
