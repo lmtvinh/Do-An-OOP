@@ -71,13 +71,13 @@ public class PhieuNhap implements Output {
         return Database.getDanhSachChiTietPhieuNhap().getChiTietPhieuNhap(getMaPhieuNhap());
     }
 
-    public int getTongTien() {
-        for (int i = 0; i < Database.getDanhSachChiTietPhieuNhap().getChiTietPhieuNhap(getMaPhieuNhap()).size();i++) {
-            tongTien += Database.getChiTietPhieuNhap(getMaPhieuNhap()).getThanhTienPC();
-            tongTien += Database.getChiTietPhieuNhap(getMaPhieuNhap()).getThanhTienLaptop();
-        }
-        return tongTien;
-    }
+//    public int getTongTien() {
+//        for (int i = 0; i < Database.getDanhSachChiTietPhieuNhap().getChiTietPhieuNhap(getMaPhieuNhap()).size();i++) {
+//            tongTien += Database.getChiTietPhieuNhap(getMaPhieuNhap()).getThanhTienPC();
+//            tongTien += Database.getChiTietPhieuNhap(getMaPhieuNhap()).getThanhTienLaptop();
+//        }
+//        return tongTien;
+//    }
 
     public void input() {
         System.out.print("Nhap Ma Nhan Vien: ");

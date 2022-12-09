@@ -1,10 +1,13 @@
 package DoAnOOP.ThongTin;
 
+import DoAnOOP.File.ADanhSach;
+
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class DanhSachNCC {
+public class DanhSachNCC extends ADanhSach {
+    public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachNCC.bin";
     final static Scanner scanner = new Scanner(System.in);
     ArrayList<Provider> providers;
 
@@ -39,5 +42,10 @@ public class DanhSachNCC {
             }
         }
         return null;
+    }
+
+    @Override
+    public void copyFrom(ADanhSach newDanhSach) {
+        this.providers = ((DanhSachNCC)newDanhSach).providers;
     }
 }

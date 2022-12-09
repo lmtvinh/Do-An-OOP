@@ -1,27 +1,35 @@
 package DoAnOOP.SanPham;
 
+import DoAnOOP.Help.Check;
 import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.Output;
-import DoAnOOP.Help.Check;
+import DoAnOOP.SanPham.PC.PC;
 import DoAnOOP.ThongTin.Maker;
+import DoAnOOP.ThongTin.Provider;
 
 import java.util.Scanner;
 
 public class SanPham implements Output {
     final static Scanner scanner = new Scanner(System.in);
-    protected String maSanPham, CPU, ramCapacity, tenSanPham, maNXS, maNCC;
-    protected int price;
-    protected int thoiGianBaoHanh;
+    protected String maSanPham,tenSanPham, mainboard, CPU, ramCapacity, maNXS, maNCC, SSD, HHD, cooling, VGA, idMaLoai;
+    protected int price, thoiGianBaoHanh;
 
     public SanPham() {
     }
 
-    public SanPham(String tenSanPham, String CPU, String ramCapacity, String maNXS, String maNCC, int price, int thoiGianBaoHanh) {
+    public SanPham(String maSanPham, String tenSanPham, String mainboard, String CPU, String ramCapacity, String maNXS, String maNCC, String SSD, String HHD, String cooling, String VGA, String idMaLoai, int price, int thoiGianBaoHanh) {
+        this.maSanPham = maSanPham;
         this.tenSanPham = tenSanPham;
+        this.mainboard = mainboard;
         this.CPU = CPU;
         this.ramCapacity = ramCapacity;
         this.maNXS = maNXS;
         this.maNCC = maNCC;
+        this.SSD = SSD;
+        this.HHD = HHD;
+        this.cooling = cooling;
+        this.VGA = VGA;
+        this.idMaLoai = idMaLoai;
         this.price = price;
         this.thoiGianBaoHanh = thoiGianBaoHanh;
     }
@@ -32,6 +40,22 @@ public class SanPham implements Output {
 
     public void setMaSanPham(String maSanPham) {
         this.maSanPham = maSanPham;
+    }
+
+    public String getTenSanPham() {
+        return tenSanPham;
+    }
+
+    public void setTenSanPham(String tenSanPham) {
+        this.tenSanPham = tenSanPham;
+    }
+
+    public String getMainboard() {
+        return mainboard;
+    }
+
+    public void setMainboard(String mainboard) {
+        this.mainboard = mainboard;
     }
 
     public String getCPU() {
@@ -50,14 +74,6 @@ public class SanPham implements Output {
         this.ramCapacity = ramCapacity;
     }
 
-    public String getTenSanPham() {
-        return tenSanPham;
-    }
-
-    public void setTenSanPham(String tenSanPham) {
-        this.tenSanPham = tenSanPham;
-    }
-
     public String getMaNXS() {
         return maNXS;
     }
@@ -72,6 +88,46 @@ public class SanPham implements Output {
 
     public void setMaNCC(String maNCC) {
         this.maNCC = maNCC;
+    }
+
+    public String getSSD() {
+        return SSD;
+    }
+
+    public void setSSD(String SSD) {
+        this.SSD = SSD;
+    }
+
+    public String getHHD() {
+        return HHD;
+    }
+
+    public void setHHD(String HHD) {
+        this.HHD = HHD;
+    }
+
+    public String getCooling() {
+        return cooling;
+    }
+
+    public void setCooling(String cooling) {
+        this.cooling = cooling;
+    }
+
+    public String getVGA() {
+        return VGA;
+    }
+
+    public void setVGA(String VGA) {
+        this.VGA = VGA;
+    }
+
+    public String getIdMaLoai() {
+        return idMaLoai;
+    }
+
+    public void setIdMaLoai(String idMaLoai) {
+        this.idMaLoai = idMaLoai;
     }
 
     public int getPrice() {
@@ -94,34 +150,51 @@ public class SanPham implements Output {
         return Database.getDanhSachNSX().findById(idCanCheck);
     }
 
+    public Provider getThongTinNCC(String idCanCheck) {
+        return Database.getDanhSachNCC().getByIdProvider(idCanCheck);
+    }
+
     public void input() {
+        System.out.print("Nhap Ma San Pham: ");
+        maSanPham = scanner.nextLine();
         System.out.print("Nhap Ten San Pham: ");
         tenSanPham = scanner.nextLine();
+        System.out.print("Nhap Thong Tin Mainboard: ");
+        mainboard = scanner.nextLine();
         System.out.print("Nhap Thong Tin CPU: ");
         CPU = scanner.nextLine();
         System.out.print("Nhap Thong Tin Ram: ");
         ramCapacity = scanner.nextLine();
-        System.out.println("Nhap Ma Nha Cung Cap.");
+        System.out.print("Nhap Thong Tin SSD: ");
+        SSD = scanner.nextLine();
+        System.out.print("Nhap Thong Tin HHD: ");
+        HHD = scanner.nextLine();
+        System.out.print("Nhap Thong Tin Tan Nhiet: ");
+        cooling = scanner.nextLine();
+        System.out.print("Nhap Thong Tin VGA: ");
+        VGA = scanner.nextLine();
+        System.out.print("Nhap Gia Ban: ");
+        price = Check.checkInputInteger();
+        System.out.print("Nhap Ma Nha Cung Cap.");
         maNCC = scanner.nextLine();
-        System.out.println("Nhap Ma Nha San Xuat.");
+        System.out.print("Nhap Ma Nha San Xuat.");
         maNCC = scanner.nextLine();
         System.out.print("Thoi gian bao hanh cua san pham: ");
-        thoiGianBaoHanh = Integer.parseInt(scanner.nextLine());
-        System.out.print("Gia: ");
-        price = Check.checkInputInteger();
+        thoiGianBaoHanh = Check.checkInputInteger();
+        System.out.print("Nhap Ma Loai San Pham: ");
+        idMaLoai = scanner.nextLine();
     }
-
+//in ra all + nhom san pham
     @Override
     public String[] getThuocTinh() {
-        return new String[]{"Ma San Pham","Ten San Pham","CPU","Ram","Nha Cung Cap","Nha San Xuat","Thoi han bao hanh","Gia"};
+        return new String[]{"Ma Sa"};
     }
+
+//
 
     @Override
     public String[] getDuLieu() {
-        return new String[]{this.maSanPham,this.tenSanPham,this.CPU,this.ramCapacity,Database.getDanhSachNCC().getByIdProvider(this.maNCC).getTenNCC(),Database.getDanhSachNSX().findById(this.maNXS).getTenNSX(),""+this.thoiGianBaoHanh,""+this.price};
+        return new String[]{this.maSanPham,this.tenSanPham,this.CPU,this.ramCapacity,Database.getDanhSachNCC().getByIdProvider(this.maNCC).getTenNCC(),Database.getDanhSachNSX().findById(this.maNXS).getTenNSX(),""+this.thoiGianBaoHanh,""+this.price,this instanceof PC ?"PC":"LAPTOP"};
     }
 
-//    public void output() {
-//        System.out.printf("%");
-//    }
 }

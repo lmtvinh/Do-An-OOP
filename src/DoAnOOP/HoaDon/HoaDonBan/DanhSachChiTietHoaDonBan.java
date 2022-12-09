@@ -1,10 +1,13 @@
 package DoAnOOP.HoaDon.HoaDonBan;
 
+import DoAnOOP.File.ADanhSach;
+
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class DanhSachChiTietHoaDonBan {
+public class DanhSachChiTietHoaDonBan extends ADanhSach {
+    public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachChiTietHoaDonBan.bin";
     final static Scanner scanner = new Scanner(System.in);
     ArrayList<ChiTietHoaDonBan> chiTietHoaDonBans;
 
@@ -59,5 +62,10 @@ public class DanhSachChiTietHoaDonBan {
             }
         }
         return arr;
+    }
+
+    @Override
+    public void copyFrom(ADanhSach newDanhSach) {
+        this.chiTietHoaDonBans = ((DanhSachChiTietHoaDonBan)newDanhSach).chiTietHoaDonBans;
     }
 }

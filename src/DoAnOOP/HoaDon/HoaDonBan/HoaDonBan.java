@@ -88,13 +88,13 @@ public class HoaDonBan implements Output {
         System.out.println("Ngay Ban: " + formattedDate());
     }
 
-    public int getTongTien() {
-        for (int i = 0; i < Database.getDanhSachChiTietHoaDonBan().getChiTietHoaDonBan(getMaHoaDon()).size(); i++) {
-            tongTien += Database.getChiTietPhieuNhap(getMaHoaDon()).getThanhTienLaptop();
-            tongTien += Database.getChiTietPhieuNhap(getMaHoaDon()).getThanhTienPC();
-        }
-        return tongTien;
-    }
+//    public int getTongTien() {
+//        for (int i = 0; i < Database.getDanhSachChiTietHoaDonBan().getChiTietHoaDonBan(getMaHoaDon()).size(); i++) {
+//            tongTien += Database.getChiTietPhieuNhap(getMaHoaDon()).getThanhTienLaptop();
+//            tongTien += Database.getChiTietPhieuNhap(getMaHoaDon()).getThanhTienPC();
+//        }
+//        return tongTien;
+//    }
 
     @Override
     public String[] getThuocTinh() {

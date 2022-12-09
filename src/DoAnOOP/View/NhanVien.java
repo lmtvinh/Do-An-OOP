@@ -10,8 +10,7 @@ public class NhanVien {
         System.out.println("1.Quan Li Phieu Nhap.");
         System.out.println("2.Quan Li Hoa Don Ban.");
         System.out.println("3.Quan Li Khach Hang.");
-        System.out.println("4.Quan Li Laptop.");
-        System.out.println("5.Quan Li PC.");
+        System.out.println("4.Quan Li San Pham.");
         System.out.println("0.Thoat");
     }
 
@@ -32,10 +31,7 @@ public class NhanVien {
                     Database.getDanhSachKhachHang().menu();
                 }
                 case "4" -> {
-                    Database.getDanhSachLaptop().menuLaptop();
-                }
-                case "5" -> {
-                    Database.getDanhSachPC().menuPC();
+                    Database.getDanhSachSanPham().menu();
                 }
                 case "0" -> {
                     System.err.println("Thoat.");

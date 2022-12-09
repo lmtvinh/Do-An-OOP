@@ -1,11 +1,13 @@
 package DoAnOOP.People;
 
+import DoAnOOP.File.ADanhSach;
 import DoAnOOP.Help.HoTro;
 
 import java.util.Objects;
 import java.util.Scanner;
 
-public class DanhSachKhachHang {
+public class DanhSachKhachHang extends ADanhSach {
+    public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachKhachHang.bin";
 
     static final Scanner scanner = new Scanner(System.in);
     private Customer[] customers;
@@ -146,4 +148,8 @@ public class DanhSachKhachHang {
         return null;
     }
 
+    @Override
+    public void copyFrom(ADanhSach newDanhSach) {
+        this.customers = ((DanhSachKhachHang)newDanhSach).customers;
+    }
 }

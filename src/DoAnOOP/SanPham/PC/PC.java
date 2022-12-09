@@ -118,7 +118,7 @@ public class PC extends SanPham implements Output {
 
     @Override
     public String[] getDuLieu() {
-        return new String[]{this.maSanPham,this.tenSanPham,this.CPU,this.ramCapacity, Database.getDanhSachNCC().getByIdProvider(this.maNCC).getTenNCC(),Database.getDanhSachNSX().findById(this.maNXS).getTenNSX(),""+this.thoiGianBaoHanh,""+this.price,this.mainboard,this.casePC,this.SSD,this.HHD,this.cooling,Database.getDanhSachLoaiPC().getByIdLoaiPC(this.maLoaiPC).getTenLoai()};
+        return new String[]{this.maSanPham,this.tenSanPham,this.CPU,this.ramCapacity, Database.getDanhSachNCC().getByIdProvider(this.maNCC).getTenNCC(),Database.getDanhSachNSX().findById(this.maNXS).getTenNSX(),""+this.thoiGianBaoHanh,""+this.price,this.mainboard,this.casePC,this.SSD,this.HHD,this.cooling,Database.getDanhSachSanPham().get};
     }
 
 //    public void output() {

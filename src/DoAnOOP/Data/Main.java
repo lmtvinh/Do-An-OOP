@@ -1,15 +1,14 @@
 package DoAnOOP.Data;
 
-import DoAnOOP.Help.HoTro;
 import DoAnOOP.HoaDon.HoaDonBan.ChiTietHoaDonBan;
 import DoAnOOP.HoaDon.HoaDonBan.HoaDonBan;
 import DoAnOOP.HoaDon.PhieuNhap.ChiTietPhieuNhap;
 import DoAnOOP.HoaDon.PhieuNhap.PhieuNhap;
+import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.People.Customer;
 import DoAnOOP.People.Employee;
 import DoAnOOP.SanPham.Laptop.Laptop;
-import DoAnOOP.SanPham.Laptop.LoaiLaptop;
-import DoAnOOP.SanPham.PC.LoaiPC;
+import DoAnOOP.SanPham.LoaiSanPham;
 import DoAnOOP.SanPham.PC.PC;
 import DoAnOOP.ThongTin.*;
 
@@ -18,7 +17,7 @@ import java.io.File;
 public class Main {
 
     public static void removeAllData() {
-        File listFile = new File(HoTro.dirPath);
+        File listFile = new File("D:\\Do An OOP\\DoAnOOP");
         if (!listFile.exists()) {
                 listFile.mkdir();
         }
@@ -34,9 +33,8 @@ public class Main {
         initCustomer();
         initEmployee();
         initLaptop();
-        initLoaiLaptop();
         initPC();
-        initLoaiPC();
+        initLoaiSanPham();
         initProvider();
         initMaker();
         initHoaDonBan();
@@ -87,6 +85,16 @@ public class Main {
         Address a10 = new Address("45","A10","Phuong 10","Quan 3","TP HCM");
         Date d10 = new Date(5,8,1999);
         Employee e10 = new Employee("Tran Luong Thieu H","tlth@gmail.com",a10,d10,"NV006","nhanvien",2F,5000000,155);
+        Database.getDanhSachNhanVien().addEmployee(e1);
+        Database.getDanhSachNhanVien().addEmployee(e2);
+        Database.getDanhSachNhanVien().addEmployee(e3);
+        Database.getDanhSachNhanVien().addEmployee(e4);
+        Database.getDanhSachNhanVien().addEmployee(e5);
+        Database.getDanhSachNhanVien().addEmployee(e6);
+        Database.getDanhSachNhanVien().addEmployee(e7);
+        Database.getDanhSachNhanVien().addEmployee(e8);
+        Database.getDanhSachNhanVien().addEmployee(e9);
+        Database.getDanhSachNhanVien().addEmployee(e10);
     }
 
     public static void initCustomer() {
@@ -130,6 +138,16 @@ public class Main {
         Address a10 = new Address("150","Dao Duy Anh","Phuong 9","Quan Phu Nhuan","TP HCM");
         Date d10 = new Date(10,10,2000);
         Customer c10 = new Customer("Nguyen Tan Hoang","nguyentanhoang@gmail.com",a10,d10,"KH010");
+        Database.getDanhSachKhachHang().addCustomer(c1);
+        Database.getDanhSachKhachHang().addCustomer(c2);
+        Database.getDanhSachKhachHang().addCustomer(c3);
+        Database.getDanhSachKhachHang().addCustomer(c4);
+        Database.getDanhSachKhachHang().addCustomer(c5);
+        Database.getDanhSachKhachHang().addCustomer(c6);
+        Database.getDanhSachKhachHang().addCustomer(c7);
+        Database.getDanhSachKhachHang().addCustomer(c8);
+        Database.getDanhSachKhachHang().addCustomer(c9);
+        Database.getDanhSachKhachHang().addCustomer(c10);
     }
 
     public static void initProvider() {
@@ -140,6 +158,8 @@ public class Main {
         // Thegioididong
         Address address2 = new Address("440", "Tran Hung Dao", "11", "5", "TP Ho Chi Minh");
         Provider provider2 = new Provider("TGDD", "thegioididong", quocGia, address2, "1800 1060");
+        Database.getDanhSachNCC().addProvider(provider1);
+        Database.getDanhSachNCC().addProvider(provider2);
     }
 
     public static void initMaker() {
@@ -158,12 +178,17 @@ public class Main {
         // Hang San Xuat HP Inc.
         QuocGia quocGia5 = new QuocGia("+1", "Hoa Ky");
         Maker maker5 = new Maker("HP", "HP Inc.", quocGia5);
+        Database.getDanhSachNSX().addMaker(maker1);
+        Database.getDanhSachNSX().addMaker(maker2);
+        Database.getDanhSachNSX().addMaker(maker3);
+        Database.getDanhSachNSX().addMaker(maker4);
+        Database.getDanhSachNSX().addMaker(maker5);
     }
 
-    public static void initLoaiLaptop() {
-        LoaiLaptop loaiLaptop1 = new LoaiLaptop("Gaming","Danh cho nguoi dung co nhu cau choi game va lam do hoa.");
-        LoaiLaptop loaiLaptop2 = new LoaiLaptop("Van phong","Danh cho nguoi dung co nhu cau su dung cac tac vu co ban.");
-    }
+//    public static void initLoaiLaptop() {
+//        LoaiLaptop loaiLaptop1 = new LoaiLaptop("Gaming","Danh cho nguoi dung co nhu cau choi game va lam do hoa.");
+//        LoaiLaptop loaiLaptop2 = new LoaiLaptop("Van phong","Danh cho nguoi dung co nhu cau su dung cac tac vu co ban.");
+//    }
 
     public static void initLaptop() {
 //        ASUS
@@ -191,11 +216,23 @@ public class Main {
         Laptop laptop9 = new Laptop("HP Spectre x360 14 ef0030TU 6K773PA","Intel Core i7-1255U 1.7GHz up to 4.7GHz 12MB","16GB LPDDR4x 4266MHz (Onboard)","HP","GVN",51990000,48,"LP009","13.5 inch", "3K2K (3000 x 2000)","VP");
 //        Laptop10
         Laptop laptop10 = new Laptop("HP Omen 16 b0127TX 4Y0W7PA","HP Omen 16 b0127TX 4Y0W7PA","16GB (2x8GB) DDR4 3200Mhz (2 khe, max 64GB RAM)","HP","GVN",45990000,48,"LP010","16.1 inch", "QHD (2560 x 1440)","GA");
+        Database.getDanhSachSanPham().addSanPham(laptop1);
+        Database.getDanhSachSanPham().addSanPham(laptop2);
+        Database.getDanhSachSanPham().addSanPham(laptop3);
+        Database.getDanhSachSanPham().addSanPham(laptop4);
+        Database.getDanhSachSanPham().addSanPham(laptop5);
+        Database.getDanhSachSanPham().addSanPham(laptop6);
+        Database.getDanhSachSanPham().addSanPham(laptop7);
+        Database.getDanhSachSanPham().addSanPham(laptop8);
+        Database.getDanhSachSanPham().addSanPham(laptop9);
+        Database.getDanhSachSanPham().addSanPham(laptop10);
     }
 
-    public static void initLoaiPC() {
-        LoaiPC loaiPC1 = new LoaiPC("Gaming","Danh cho nguoi dung co nhu cau choi game, thiet ke do hoa.");
-        LoaiPC loaiPC2 = new LoaiPC("Van Phong","Danh cho nguoi dung co nhu cau su dung co ban.");
+    public static void initLoaiSanPham() {
+        LoaiSanPham loaiSP1 = new LoaiSanPham("GA","Gaming","Danh cho nguoi dung co nhu cau choi game, thiet ke do hoa.");
+        LoaiSanPham loaiSP2 = new LoaiSanPham("VP","Van Phong","Danh cho nguoi dung co nhu cau su dung co ban.");
+        Database.getDanhSachLoaiSanPham().addLoaiSanPham(loaiSP1);
+        Database.getDanhSachLoaiSanPham().addLoaiSanPham(loaiSP2);
     }
 
     public static void initPC() {
@@ -219,6 +256,16 @@ public class Main {
         PC pc9 = new PC("GVN PHANTOM Plus i4080", "Intel Core i7 13700K", "Intel Core i7 13700K", "GVN", "GVN", 90000000, 60, "PC009", "GIGABYTE Z690 AERO D DDR5", "Corsair 5000D AIRFLOW Tempered Glass White", "Corsair 5000D AIRFLOW Tempered Glass White", "Tùy chọn nâng cấp", "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO", "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO", "GA");
         // PC10
         PC pc10 = new PC("Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO", "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO", "PNY XLR8 Silver 1x8GB 3600 RGB x 2", "GVN", "GVN", 23000000, 60, "PC010", "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)", "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)", "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)", "Tùy chọn nâng cấp", "DEEPCOOL AG400 ARGB", "DEEPCOOL AG400 ARGB", "GA");
+        Database.getDanhSachSanPham().addSanPham(pc1);
+        Database.getDanhSachSanPham().addSanPham(pc2);
+        Database.getDanhSachSanPham().addSanPham(pc3);
+        Database.getDanhSachSanPham().addSanPham(pc4);
+        Database.getDanhSachSanPham().addSanPham(pc5);
+        Database.getDanhSachSanPham().addSanPham(pc6);
+        Database.getDanhSachSanPham().addSanPham(pc7);
+        Database.getDanhSachSanPham().addSanPham(pc8);
+        Database.getDanhSachSanPham().addSanPham(pc9);
+        Database.getDanhSachSanPham().addSanPham(pc10);
     }
 
     public static void initHoaDonBan() {
@@ -242,6 +289,16 @@ public class Main {
         HoaDonBan hoaDonBan9 = new HoaDonBan("KH009", "NV005");
         // HD10
         HoaDonBan hoaDonBan10 = new HoaDonBan("KH001", "NV003");
+        Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan1);
+        Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan2);
+        Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan3);
+        Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan4);
+        Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan5);
+        Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan6);
+        Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan7);
+        Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan8);
+        Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan9);
+        Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan10);
     }
 
     public static void initChiTietHoaDonBan() {
@@ -265,6 +322,16 @@ public class Main {
         ChiTietHoaDonBan chiTietHoaDonBan9 = new ChiTietHoaDonBan("HD9", "PC003", 6);
         // CTHD10
         ChiTietHoaDonBan chiTietHoaDonBan10 = new ChiTietHoaDonBan("HD10", "PC005", 6);
+        Database.getDanhSachChiTietHoaDonBan().addChiTietHoaDonBan(chiTietHoaDonBan1);
+        Database.getDanhSachChiTietHoaDonBan().addChiTietHoaDonBan(chiTietHoaDonBan2);
+        Database.getDanhSachChiTietHoaDonBan().addChiTietHoaDonBan(chiTietHoaDonBan3);
+        Database.getDanhSachChiTietHoaDonBan().addChiTietHoaDonBan(chiTietHoaDonBan4);
+        Database.getDanhSachChiTietHoaDonBan().addChiTietHoaDonBan(chiTietHoaDonBan5);
+        Database.getDanhSachChiTietHoaDonBan().addChiTietHoaDonBan(chiTietHoaDonBan6);
+        Database.getDanhSachChiTietHoaDonBan().addChiTietHoaDonBan(chiTietHoaDonBan7);
+        Database.getDanhSachChiTietHoaDonBan().addChiTietHoaDonBan(chiTietHoaDonBan8);
+        Database.getDanhSachChiTietHoaDonBan().addChiTietHoaDonBan(chiTietHoaDonBan9);
+        Database.getDanhSachChiTietHoaDonBan().addChiTietHoaDonBan(chiTietHoaDonBan10);
     }
 
     public static void initPhieuNhap() {
@@ -298,6 +365,16 @@ public class Main {
         // PN10
         Date date10 = new Date(16, 2, 2022);
         PhieuNhap phieuNhap10 = new PhieuNhap("QL001", "GVN", date10);
+        Database.getDanhSachPhieuNhap().addPhieuNhap(phieuNhap1);
+        Database.getDanhSachPhieuNhap().addPhieuNhap(phieuNhap2);
+        Database.getDanhSachPhieuNhap().addPhieuNhap(phieuNhap3);
+        Database.getDanhSachPhieuNhap().addPhieuNhap(phieuNhap4);
+        Database.getDanhSachPhieuNhap().addPhieuNhap(phieuNhap5);
+        Database.getDanhSachPhieuNhap().addPhieuNhap(phieuNhap6);
+        Database.getDanhSachPhieuNhap().addPhieuNhap(phieuNhap7);
+        Database.getDanhSachPhieuNhap().addPhieuNhap(phieuNhap8);
+        Database.getDanhSachPhieuNhap().addPhieuNhap(phieuNhap9);
+        Database.getDanhSachPhieuNhap().addPhieuNhap(phieuNhap10);
     }
 
     public static void initChiTietPhieuNhap() {
@@ -321,5 +398,15 @@ public class Main {
         ChiTietPhieuNhap chiTietPhieuNhap9 = new ChiTietPhieuNhap("PN9", "PC001", 5);
         // CTPN10
         ChiTietPhieuNhap chiTietPhieuNhap10 = new ChiTietPhieuNhap("PN10", "LP010", 5);
+        Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(chiTietPhieuNhap1);
+        Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(chiTietPhieuNhap2);
+        Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(chiTietPhieuNhap3);
+        Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(chiTietPhieuNhap4);
+        Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(chiTietPhieuNhap5);
+        Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(chiTietPhieuNhap6);
+        Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(chiTietPhieuNhap7);
+        Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(chiTietPhieuNhap8);
+        Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(chiTietPhieuNhap9);
+        Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(chiTietPhieuNhap10);
     }
 }

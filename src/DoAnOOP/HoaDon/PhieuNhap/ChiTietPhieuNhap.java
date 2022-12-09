@@ -52,12 +52,16 @@ public class ChiTietPhieuNhap implements Output {
         System.out.print("Nhap So luong: ");
     }
 
-    public float getThanhTienLaptop() {
-        return Database.getDanhSachLaptop().getByIdLaptop(getMaSanPham()).getPrice()*soLuong;
-    }
+//    public float getThanhTienLaptop() {
+//        return Database.getDanhSachLaptop().getByIdLaptop(getMaSanPham()).getPrice()*soLuong;
+//    }
 
-    public float getThanhTienPC() {
-        return Database.getDanhSachPC().getByIdPC(getMaSanPham()).getPrice()*soLuong;
+//    public float getThanhTienPC() {
+//        return Database.getDanhSachPC().getByIdPC(getMaSanPham()).getPrice()*soLuong;
+//    }
+
+    public int getThanhTienSanPham() {
+        return Database.getDanhSachSanPham().getByIdSanPham(getMaSanPham()).getPrice()*soLuong;
     }
 
     public PhieuNhap getPhieuNhap() {
@@ -71,6 +75,6 @@ public class ChiTietPhieuNhap implements Output {
 
     @Override
     public String[] getDuLieu() {
-        return new String[]{Database.getDanhSachLaptop().getByIdLaptop(this.getMaSanPham()).getTenSanPham(),""+this.soLuong,""+this.getThanhTienLaptop()};
+        return new String[]{Database.getDanhSachSanPham().getByIdSanPham(this.getMaSanPham()).getTenSanPham(),""+this.soLuong,""+this.getThanhTienSanPham()};
     }
 }

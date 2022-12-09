@@ -1,9 +1,12 @@
 package DoAnOOP.ThongTin;
 
+import DoAnOOP.File.ADanhSach;
+
 import java.util.Objects;
 import java.util.Scanner;
 
-public class DanhSachNSX {
+public class DanhSachNSX extends ADanhSach {
+    public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachNSX.bin";
     static final Scanner scanner = new Scanner(System.in);
     private int length = Maker.id;
     private Maker[] makers = new Maker[length];
@@ -53,5 +56,11 @@ public class DanhSachNSX {
             }
         }
         return null;
+    }
+
+
+    @Override
+    public void copyFrom(ADanhSach newDanhSach) {
+        this.makers = ((DanhSachNSX)newDanhSach).makers;
     }
 }

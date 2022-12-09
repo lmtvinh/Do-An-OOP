@@ -1,11 +1,15 @@
 package DoAnOOP.People;
 
+import DoAnOOP.File.ADanhSach;
 import DoAnOOP.Help.HoTro;
+import DoAnOOP.Table;
 
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class DanhSachNhanVien {
+public class DanhSachNhanVien extends ADanhSach {
+    public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachNhanVien.bin";
     static final Scanner scanner = new Scanner(System.in);
     private Employee[] employees;
     private int length;
@@ -78,10 +82,11 @@ public class DanhSachNhanVien {
     }
 
     public void output() {
-        System.out.printf("%-15s%-25s%-15s%-12s%-12s\n","Ma Nhan Vien","Ten Nhan Vien","Luong Co Ban","So Gio Lam","Luong");
+        ArrayList<Employee> arrayListEmployee = new ArrayList<>();
         for (int i = 0; i < length; i++) {
-            employees[i].output();
+            arrayListEmployee.add(employees[i]);
         }
+        Table.createTable(arrayListEmployee);
     }
 
     public void menuQL() {
@@ -164,5 +169,10 @@ public class DanhSachNhanVien {
             }
         }
         return null;
+    }
+
+    @Override
+    public void copyFrom(ADanhSach newDanhSach) {
+        this.employees = ((DanhSachNhanVien)newDanhSach).employees;
     }
 }

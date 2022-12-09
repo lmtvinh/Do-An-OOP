@@ -48,17 +48,17 @@ public class ChiTietHoaDonBan implements Output {
         return Database.getDanhSachSanPham().getByIdSanPham(getMaSP()).getPrice()*soLuong;
     }
 
-    public float getThanhTienLaptop() {
-        float tien;
-        tien = Database.getDanhSachLaptop().getByIdLaptop(getMaSP()).getPrice()*soLuong;
-        return tien;
-    }
-
-    public float getThanhTienPC() {
-        float tien;
-        tien = Database.getDanhSachPC().getByIdPC(getMaSP()).getPrice()*soLuong;
-        return tien;
-    }
+//    public float getThanhTienLaptop() {
+//        float tien;
+//        tien = Database.getDanhSachLaptop().getByIdLaptop(getMaSP()).getPrice()*soLuong;
+//        return tien;
+//    }
+//
+//    public float getThanhTienPC() {
+//        float tien;
+//        tien = Database.getDanhSachPC().getByIdPC(getMaSP()).getPrice()*soLuong;
+//        return tien;
+//    }
 
     public HoaDonBan getHoaDonBan() {
         return Database.getDanhSachHoaDonBan().getByIdHoaDonBan(getMaHD());
