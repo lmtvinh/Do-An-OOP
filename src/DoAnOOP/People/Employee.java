@@ -9,22 +9,24 @@ import java.util.Scanner;
 
 public class Employee extends Person implements Output {
     static final Scanner scanner = new Scanner(System.in);
-    private String maNV;
+    private String maNV, matKhau;
     private float heSoLuong, luongCoBan, soGioLam;
 
     public Employee() {
     }
 
-    public Employee(String maNV, float heSoLuong, float luongCoBan, float soGioLam) {
+    public Employee(String maNV,String matKhau, float heSoLuong, float luongCoBan, float soGioLam) {
+        this.matKhau = matKhau;
         this.maNV = maNV;
         this.heSoLuong = heSoLuong;
         this.luongCoBan = luongCoBan;
         this.soGioLam = soGioLam;
     }
 
-    public Employee(String fullname, String email, Address address, Date dateOfBirth, String maNV, float heSoLuong, float luongCoBan, float soGioLam) {
+    public Employee(String fullname, String email, Address address, Date dateOfBirth, String maNV,String matKhau, float heSoLuong, float luongCoBan, float soGioLam) {
         super(fullname, email, address, dateOfBirth);
         this.maNV = maNV;
+        this.matKhau = matKhau;
         this.heSoLuong = heSoLuong;
         this.luongCoBan = luongCoBan;
         this.soGioLam = soGioLam;
@@ -36,6 +38,14 @@ public class Employee extends Person implements Output {
 
     public void setMaNV(String maNV) {
         this.maNV = maNV;
+    }
+
+    public String getMatKhau() {
+        return matKhau;
+    }
+
+    public void setMatKhau(String matKhau) {
+        this.matKhau = matKhau;
     }
 
     public double getHeSoLuong() {

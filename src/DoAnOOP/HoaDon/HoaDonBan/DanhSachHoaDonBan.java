@@ -40,4 +40,87 @@ public class DanhSachHoaDonBan {
         }
         return null;
     }
+
+    public void output() {
+
+    }
+
+    public void menuQL() {
+        String luachon;
+        do {
+            System.out.println("Menu Hoa Don Ban.");
+            System.out.println("1.Xem Hoa Don Ban.");
+            System.out.println("2.Them Hoa Don Ban.");
+            System.out.println("3.Sua Hoa Don Ban.");
+            System.out.println("4.Xoa Hoa Don Ban.");
+            System.out.println("0.Thoat.");
+            System.out.print("Nhap lua chon cua ban: ");
+            luachon = scanner.nextLine();
+            switch (luachon) {
+                case "1" -> {
+                    output();
+                }
+                case "2" -> {
+                    System.out.println("Nhap thong tin Hoa Don Ban can them.");
+                    HoaDonBan newHoaDonBan = new HoaDonBan();
+                    newHoaDonBan.input();
+                    addHoaDonBan(newHoaDonBan);
+                }
+                case "3" -> {
+                    System.out.println("Nhap thong tin Hoa Don Ban can them.");
+                    HoaDonBan newHoaDonBan = new HoaDonBan();
+                    newHoaDonBan.input();
+                    System.out.print("Nhap Ma Hoa Don Ban can sua: ");
+                    String manewHoaDonBanSua = scanner.nextLine();
+                    setHoaDonBan(manewHoaDonBanSua, newHoaDonBan);
+                }
+                case "4" -> {
+                    System.out.print("Nhap Ma Hoa Don Ban can xoa: ");
+                    String maHoaDonBanCanXoa = scanner.nextLine();
+                    removeHoaDonBan(maHoaDonBanCanXoa);
+                }
+                case "0" -> {
+                    System.err.println("Thoat.");
+                }
+                default -> {
+                    System.err.println("LUA CHON CUA BAN KHONG PHU HOP.");
+                }
+            }
+        } while (luachon != "0");
+    }
+
+    public void menuNV() {
+        String luachon;
+        do {
+            System.out.println("Menu Hoa Don Ban.");
+            System.out.println("1.Xem Hoa Don Ban.");
+            System.out.println("2.Them Hoa Don Ban.");
+            System.out.println("3.Xoa Hoa Don Ban.");
+            System.out.println("0.Thoat.");
+            System.out.print("Nhap lua chon cua ban: ");
+            luachon = scanner.nextLine();
+            switch(luachon) {
+                case "1" -> {
+                    output();
+                }
+                case "2" -> {
+                    System.out.println("Nhap thong tin Hoa Don Ban can them.");
+                    HoaDonBan newHoaDonBan = new HoaDonBan();
+                    newHoaDonBan.input();
+                    addHoaDonBan(newHoaDonBan);
+                }
+                case "3" -> {
+                    System.out.print("Nhap Ma Hoa Don Ban can xoa: ");
+                    String maHoaDonBanCanXoa = scanner.nextLine();
+                    removeHoaDonBan(maHoaDonBanCanXoa);
+                }
+                case "0" -> {
+                    System.err.println("THOAT.");
+                }
+                default -> {
+                    System.err.println("LUA CHON CUA BAN KHONG PHU HOP.");
+                }
+            }
+        }while(luachon != "0");
+    }
 }

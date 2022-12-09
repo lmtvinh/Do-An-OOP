@@ -1,7 +1,9 @@
 package DoAnOOP.SanPham.Laptop;
 
-import java.util.Scanner;
+import DoAnOOP.Help.Check;
+
 import java.util.Objects;
+import java.util.Scanner;
 
 public class DanhSachLaptop {
     final static Scanner scanner = new Scanner(System.in);
@@ -282,5 +284,101 @@ public class DanhSachLaptop {
             }
         }
         return null;
+    }
+
+    public void menuLaptop() {
+        String luachon;
+        do {
+            System.out.println("MENU Laptop");
+            System.out.println("1.Them vao Laptop");
+            System.out.println("2.Sua Danh Sach Laptop.");
+            System.out.println("3.Xoa Laptop trong Danh Sach.");
+            System.out.println("4.Xem Danh Sach Laptop");
+            System.out.println("4.Sap xep Danh sach Laptop theo gia ban Tang Dan.");
+            System.out.println("5.Sap xep Danh sach Laptop theo gia ban Giam Dan.");
+            System.out.println("6.Tim Kiem Theo Ma San Pham.");
+            System.out.println("7.Tim Kiem San Pham Theo Ten CPU.");
+            System.out.println("8.Tim Kiem San Pham Theo Dung luong Ram.");
+            System.out.println("9.Tim Kiem San Pham Theo Kich Thuoc Man Hinh.");
+            System.out.println("10.Tim Kiem San Pham Theo Do Phan Giai.");
+            System.out.println("11.Tim kiem San Pham Theo Gia.");
+            System.out.println("0.Thoat.");
+            System.out.print("Nhap lua chon cua ban: ");
+            luachon = scanner.nextLine();
+            switch (luachon) {
+                case "1" -> {
+                    System.out.println("Nhap thong tin Laptop can them vao Danh Sach.");
+                    Laptop newLaptop = new Laptop();
+                    newLaptop.input();
+                    addLaptop(newLaptop);
+                }
+                case "2" -> {
+                    System.out.println("Danh Sach Laptop.");
+//                    output();
+                    System.out.print("Nhap ma Laptop can sua: ");
+                    String maLaptopCanSua = scanner.nextLine();
+                    updateLaptop(maLaptopCanSua);
+                }
+                case "3" -> {
+                    System.out.println("Danh Sach Laptop.");
+//                    output();
+                    removeLaptop();
+                }
+                case "4" -> {
+                    sortByAscendingPrice();
+                }
+                case "5" -> {
+                    sortByDescendingPrice();
+                }
+                case "6" -> {
+                    System.out.println("Danh Sach Laptop.");
+//                    output();
+                    System.out.print("Nhap ma Laptop: ");
+                    String maLaptop = scanner.nextLine();
+                    findByMaSanPham(maLaptop);
+                }
+                case "7" -> {
+                    System.out.println("Danh Sach Laptop.");
+//                    output();
+                    System.out.print("Nhap ten CPU: ");
+                    String tenCPUCanTim = scanner.nextLine();
+                    findByCPU(tenCPUCanTim);
+                }
+                case "8" -> {
+                    System.out.println("Danh Sach Laptop.");
+//                    output();
+                    System.out.print("Nhap dung luong Ram: ");
+                    String ramCapacity = scanner.nextLine();
+                    findByRamCapacity(ramCapacity);
+                }
+                case "9" -> {
+                    System.out.println("Danh Sach Laptop.");
+//                    output();
+                    System.out.print("Nhap Kich thuoc Man Hinh Laptop: ");
+                    String kichThuocManHinhLaptop = scanner.nextLine();
+                    findByScreensize(kichThuocManHinhLaptop);
+                }
+                case "10" -> {
+                    System.out.println("Danh Sach Laptop.");
+//                    output();
+                    System.out.print("Nhap Do phan giai Ma Hinh Laptop: ");
+                    String doPhanGiai = scanner.nextLine();
+                    findByResolution(doPhanGiai);
+                }
+                case "11" -> {
+                    System.out.print("Nhap gia min: ");
+                    int min = Check.checkInputInteger();
+                    System.out.print("Nhap gia max: ");
+                    int max = Check.checkInputInteger();
+                    findByPrice(min, max);
+                }
+                case "0" -> {
+                    System.err.println("Thoat.");
+                }
+                default -> {
+                    System.err.println("LUA CHON CUA BAN KHONG PHU HOP.");
+                }
+            }
+        } while (luachon != "0");
     }
 }

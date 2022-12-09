@@ -1,5 +1,7 @@
 package DoAnOOP.SanPham.PC;
 
+import DoAnOOP.Help.Check;
+
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -98,7 +100,7 @@ public class DanhSachPC {
             System.out.println("\n\tKHONG TIM THAY THONG TIN CUA SAN PHAM.");
         }
     }
-    public void findByPrice(float min, float max) {
+    public void findByPrice(int min, int max) {
         int count = 0, flag = 0;
         for (int i = 0; i < length; i++) {
             if (arrPC[i].getPrice() >= min && arrPC[i].getPrice() <= max) {
@@ -336,5 +338,85 @@ public class DanhSachPC {
             }
         }
         return null;
+    }
+
+    public void menuPC() {
+        String luachon;
+        do {
+            System.out.println("MENU PC");
+            System.out.println("1.Them vao PC");
+            System.out.println("2.Sua Danh Sach PC.");
+            System.out.println("3.Xoa PC trong Danh Sach.");
+            System.out.println("4.Xem Danh Sach PC");
+            System.out.println("4.Sap xep Danh sach PC theo gia ban Tang Dan.");
+            System.out.println("5.Sap xep Danh sach PC theo gia ban Giam Dan.");
+            System.out.println("6.Tim Kiem Theo Ma San Pham.");
+            System.out.println("7.Tim Kiem San Pham Theo Ten CPU.");
+            System.out.println("8.Tim Kiem San Pham Theo Dung luong Ram.");
+            System.out.println("9.Tim Kiem San Pham Theo Gia.");
+            System.out.println("0.Thoat.");
+            System.out.print("Nhap lua chon cua ban: ");
+            luachon = scanner.nextLine();
+            switch (luachon) {
+                case "1" -> {
+                    System.out.println("Nhap thong tin PC can them vao Danh Sach.");
+                    PC newPC = new PC();
+                    newPC.input();
+                    addPC(newPC);
+                }
+                case "2" -> {
+                    System.out.println("Danh Sach PC.");
+//                    output();
+                    System.out.print("Nhap ma PC can sua: ");
+                    String maPCCanSua = scanner.nextLine();
+                    updatePC(maPCCanSua);
+                }
+                case "3" -> {
+                    System.out.println("Danh Sach PC.");
+//                    output();
+                    removePC();
+                }
+                case "4" -> {
+                    sortByAscendingPrice();
+                }
+                case "5" -> {
+                    sortByDescendingPrice();
+                }
+                case "6" -> {
+                    System.out.println("Danh Sach PC.");
+//                    output();
+                    System.out.print("Nhap ma PC: ");
+                    String maPC = scanner.nextLine();
+                    findByMaSanPham(maPC);
+                }
+                case "7" -> {
+                    System.out.println("Danh Sach PC.");
+//                    output();
+                    System.out.print("Nhap ten CPU: ");
+                    String tenCPUCanTim = scanner.nextLine();
+                    findByCPU(tenCPUCanTim);
+                }
+                case "8" -> {
+                    System.out.println("Danh Sach PC.");
+//                    output();
+                    System.out.print("Nhap dung luong Ram: ");
+                    String ramCapacity = scanner.nextLine();
+                    findByRamCapacity(ramCapacity);
+                }
+                case "9" -> {
+                    System.out.print("Nhap gia min: ");
+                    int min = Check.checkInputInteger();
+                    System.out.print("Nhap gia max: ");
+                    int max = Check.checkInputInteger();
+                    findByPrice(min, max);
+                }
+                case "0" -> {
+                    System.err.println("Thoat.");
+                }
+                default -> {
+                    System.err.println("LUA CHON CUA BAN KHONG PHU HOP.");
+                }
+            }
+        } while (luachon != "0");
     }
 }

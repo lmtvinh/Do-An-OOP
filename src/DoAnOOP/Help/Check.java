@@ -103,4 +103,13 @@ public class Check {
             System.out.print("Moi nhap lai: ");
         }
     }
+
+    public static String inputEmpty() {
+        String input = scanner.nextLine();
+        while (input.trim().equals("")){
+            System.out.println("Không được để trống. Vui lòng nhập lại: ");
+            input = scanner.nextLine();
+        }
+        return input;
+    }
 }

@@ -21,7 +21,7 @@ public class Laptop extends SanPham implements Output {
         this.maLoaiLaptop = maLoaiLaptop;
     }
 
-    public Laptop(String tenSanPham, String CPU, String ramCapacity, String maNXS, String maNCC, float price, int thoiGianBaoHanh, String maLaptop, String screensize, String resolution, String maLoaiLaptop) {
+    public Laptop(String tenSanPham, String CPU, String ramCapacity, String maNXS, String maNCC, int price, int thoiGianBaoHanh, String maLaptop, String screensize, String resolution, String maLoaiLaptop) {
         super(tenSanPham, CPU, ramCapacity, maNXS, maNCC, price, thoiGianBaoHanh);
         this.maLaptop = maLaptop;
         this.screensize = screensize;

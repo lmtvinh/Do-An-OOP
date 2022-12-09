@@ -16,7 +16,7 @@ public class PC extends SanPham implements Output {
     public PC() {
     }
 
-    public PC(String tenSanPham, String CPU, String ramCapacity, String maNXS, String maNCC, float price, int thoiGianBaoHanh, String maPC, String mainboard, String casePC, String SSD, String HHD, String cooling, String VGA,String maLoaiPC) {
+    public PC(String tenSanPham, String CPU, String ramCapacity, String maNXS, String maNCC, int price, int thoiGianBaoHanh, String maPC, String mainboard, String casePC, String SSD, String HHD, String cooling, String VGA,String maLoaiPC) {
         super(tenSanPham, CPU, ramCapacity, maNXS, maNCC, price, thoiGianBaoHanh);
         this.maPC = maPC;
         this.mainboard = mainboard;

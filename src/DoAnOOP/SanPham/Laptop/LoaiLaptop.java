@@ -54,12 +54,12 @@ public class LoaiLaptop implements Output {
     }
 
     @Override
-    public String getThuocTinh() {
+    public String[] getThuocTinh() {
         return null;
     }
 
     @Override
-    public String getDuLieu() {
+    public String[] getDuLieu() {
         return null;
     }
 }

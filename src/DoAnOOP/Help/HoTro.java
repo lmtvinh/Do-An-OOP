@@ -15,5 +15,6 @@ public class HoTro {
     //     bot.mouseRelease(InputEvent.BUTTON1_MASK);
     // }
 
+    public static String dirPath = System.getProperty("user.dir") + "\\data\\";
 
 }

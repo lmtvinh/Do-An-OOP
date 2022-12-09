@@ -89,70 +89,47 @@ public class DanhSachKhachHang {
         }
     }
 
-    public void menu(String username, String password) {
-        if (username.equals("admin") && password.equals("admin")) {
-            String luachon;
-            do {
-                HoTro.clearConsole();
-                System.out.println("-------------------Menu--------------------");
-                System.out.println("1.Them Khach Hang vao Danh sach Khach Hang.");
-                System.out.println("2.Sua Danh Sach Khach Hang.");
-                System.out.println("3.Xoa Danh Sach Khach Hang.");
-                System.out.println("4.Xem Danh Sach Khach Hang.");
-                System.out.println("0.Thoat");
-                System.out.print("Nhap lua chon cua ban: ");
-                luachon = scanner.nextLine();
-                switch (luachon) {
-                    case "1" -> {
-                        Customer a = new Customer();
-                        customers = new Customer[length];
-                        System.out.println("Nhap thong tin cua Khach Hang.");
-                        a.input();
-                        addCustomer(a);
-                    }
-                    case "2" -> {
-                        System.out.println("Danh sach Khach Hang.");
-                        output();
-                        System.out.print("Nhap Ma Khach Hang muon sua: ");
-                        String index = scanner.nextLine();
-                        updateCustomer(index);
-                    }
-                    case "3" -> {
-                        removeCustomer();
-                    }
-                    case "4" -> {
-                        output();
-                    }
-                    case "0" -> {
-                        System.out.println("Thoat");
-                    }
-                    default -> {
-                        System.out.println("Lua chon cua ban khong phu hop");
-                    }
+    public void menu() {
+        String luachon;
+        do {
+            HoTro.clearConsole();
+            System.out.println("-------------------Menu--------------------");
+            System.out.println("1.Them Khach Hang vao Danh sach Khach Hang.");
+            System.out.println("2.Sua Danh Sach Khach Hang.");
+            System.out.println("3.Xoa Danh Sach Khach Hang.");
+            System.out.println("4.Xem Danh Sach Khach Hang.");
+            System.out.println("0.Thoat");
+            System.out.print("Nhap lua chon cua ban: ");
+            luachon = scanner.nextLine();
+            switch (luachon) {
+                case "1" -> {
+                    Customer a = new Customer();
+                    customers = new Customer[length];
+                    System.out.println("Nhap thong tin cua Khach Hang.");
+                    a.input();
+                    addCustomer(a);
                 }
-            } while (luachon != "0");
-        } else {
-            String luachon;
-            do {
-                HoTro.clearConsole();
-                System.out.println("-------------------Menu-------------------");
-                System.out.println("1.Hien thi Danh sach thong tin Khach Hang.");
-                System.out.println("0.Thoat");
-                System.out.print("Nhap lua chon cua ban: ");
-                luachon = scanner.nextLine();
-                switch (luachon) {
-                    case "1" -> {
-                        output();
-                    }
-                    case "0" -> {
-                        System.out.println("THOAT!!!");
-                    }
-                    default -> {
-                        System.out.println("LUA CHON CUA BAN KHONG PHU HOP.");
-                    }
+                case "2" -> {
+                    System.out.println("Danh sach Khach Hang.");
+                    output();
+                    System.out.print("Nhap Ma Khach Hang muon sua: ");
+                    String index = scanner.nextLine();
+                    updateCustomer(index);
                 }
-            } while (luachon != "0");
-        }
+                case "3" -> {
+                    removeCustomer();
+                }
+                case "4" -> {
+                    output();
+                }
+                case "0" -> {
+                    System.out.println("Thoat");
+                }
+                default -> {
+                    System.out.println("Lua chon cua ban khong phu hop");
+                }
+            }
+        } while (luachon != "0");
     }
 
 //    public static void main(String[] args) {

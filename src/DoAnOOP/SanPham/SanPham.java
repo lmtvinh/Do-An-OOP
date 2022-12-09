@@ -2,6 +2,7 @@ package DoAnOOP.SanPham;
 
 import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.Output;
+import DoAnOOP.Help.Check;
 import DoAnOOP.ThongTin.Maker;
 
 import java.util.Scanner;
@@ -9,13 +10,13 @@ import java.util.Scanner;
 public class SanPham implements Output {
     final static Scanner scanner = new Scanner(System.in);
     protected String maSanPham, CPU, ramCapacity, tenSanPham, maNXS, maNCC;
-    protected float price;
+    protected int price;
     protected int thoiGianBaoHanh;
 
     public SanPham() {
     }
 
-    public SanPham(String tenSanPham, String CPU, String ramCapacity, String maNXS, String maNCC, float price, int thoiGianBaoHanh) {
+    public SanPham(String tenSanPham, String CPU, String ramCapacity, String maNXS, String maNCC, int price, int thoiGianBaoHanh) {
         this.tenSanPham = tenSanPham;
         this.CPU = CPU;
         this.ramCapacity = ramCapacity;
@@ -73,11 +74,11 @@ public class SanPham implements Output {
         this.maNCC = maNCC;
     }
 
-    public float getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -107,7 +108,7 @@ public class SanPham implements Output {
         System.out.print("Thoi gian bao hanh cua san pham: ");
         thoiGianBaoHanh = Integer.parseInt(scanner.nextLine());
         System.out.print("Gia: ");
-        price = Float.parseFloat(scanner.nextLine());
+        price = Check.checkInputInteger();
     }
 
     @Override

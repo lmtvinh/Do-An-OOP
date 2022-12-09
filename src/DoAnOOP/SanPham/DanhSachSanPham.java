@@ -43,4 +43,11 @@ public class DanhSachSanPham {
         }
         return null;
     }
+
+//    public void menu() {
+//        String luachon;
+//        do {
+//            System.out.println("MENU SAN PHAM.");
+//        }
+//    }
 }

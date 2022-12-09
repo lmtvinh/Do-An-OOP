@@ -142,4 +142,31 @@ public class Database {
     public static ChiTietPhieuNhap getChiTietPhieuNhap(String maPhieuNhap) {
         return null;
     }
+
+    public static void xuatFielDatabase() {
+        if (danhSachSanPham != null) {
+//            danhSachSanPham.xuatFie();
+        }
+        if (danhSachNCC != null) {
+//            danhSachNCC.xuatFile();
+        }
+        if (danhSachPhieuNhap != null) {
+//            danhSachPhieuNhap.xuatFile();
+        }
+        if (danhSachHoaDonBan != null) {
+//            danhSachHoaDonBan.xuatFile();
+        }
+        if (danhSachKhachHang != null) {
+//            danhSachKhachHang.xuatFile();
+        }
+        if (danhSachNhanVien != null) {
+//            danhSachNhanVien.xuatFile();
+        }
+        if (danhSachNCC != null) {
+//            danhSachNCC.xuatFile();
+        }
+        if (danhSachNSX != null) {
+//           danhSachNSX.xuatFile();
+        }
+    }
 }

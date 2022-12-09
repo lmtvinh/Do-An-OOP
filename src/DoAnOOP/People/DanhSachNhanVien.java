@@ -84,78 +84,77 @@ public class DanhSachNhanVien {
         }
     }
 
-    public void menu(String user, String password) {
+    public void menuQL() {
         String luachon;
-        if (user.equals("admin") && password.equals("admin")) {
-            do {
-                System.out.println("---------------Menu-------------");
-                System.out.println("1.Them vao Danh sach Nhan Vien.");
-                System.out.println("2.Sua Danh sach Nhan Vien.");
-                System.out.println("3.Xoa Danh sach Nhan Vien.");
-                System.out.println("4.Xem Danh sach Nhan Vien.");
-                System.out.println("0.Thoat");
-                System.out.print("Nhap lua chon cua ban: ");
-                luachon = scanner.nextLine();
-                switch (luachon) {
-                    case "1" -> {
-                        HoTro.clearConsole();
-                        employees = new Employee[length];
-                        System.out.println("Nhap Thong tin cua Nhan vien can them.");
-                        Employee a = new Employee();
-                        a.input();
-                        addEmployee(a);
-                    }
-                    case "2" -> {
-                        HoTro.clearConsole();
-                        System.out.println("Danh sach Nhan vien hien tai.");
-                        output();
-                        System.out.println("Nhap ma so Nhan vien can sua: ");
-                        String index = scanner.nextLine();
-                        updateEmployee(index);
-                    }
-                    case "3" -> {
-                        HoTro.clearConsole();
-                        removeEmployee();
-                    }
-                    case "4" -> {
-                        HoTro.clearConsole();
-                        System.out.println("Danh sach Nhan vien hien tai.");
-                        output();
-                    }
-                    case "0" -> {
-                        HoTro.clearConsole();
-                        System.out.println("THOAT");
-                    }
-                    default -> {
-                        HoTro.clearConsole();
-                        System.err.println("LUA CHON CUA BAN KHONG PHU HOP.");
-                    }
+        do {
+            System.out.println("---------------Menu-------------");
+            System.out.println("1.Them vao Danh sach Nhan Vien.");
+            System.out.println("2.Sua Danh sach Nhan Vien.");
+            System.out.println("3.Xoa Danh sach Nhan Vien.");
+            System.out.println("4.Xem Danh sach Nhan Vien.");
+            System.out.println("0.Thoat");
+            System.out.print("Nhap lua chon cua ban: ");
+            luachon = scanner.nextLine();
+            switch (luachon) {
+                case "1" -> {
+                    HoTro.clearConsole();
+                    employees = new Employee[length];
+                    System.out.println("Nhap Thong tin cua Nhan vien can them.");
+                    Employee a = new Employee();
+                    a.input();
+                    addEmployee(a);
                 }
-                break;
-            } while (luachon != "0");
-        }
-        else {
-            do {
-                System.out.println("---------------Menu-------------");
-                System.out.println("1.Xem danh sach Nhan Vien.");
-                System.out.println("0.Thoat");
-                System.out.print("Nhap lua chon cua ban: ");
-                luachon = scanner.nextLine();
-                switch (Integer.parseInt(luachon)) {
-                    case 1 -> {
-                        HoTro.clearConsole();
-                        System.out.println("Danh sach Nhan Vien cua Cua Hang.");
-                        output();
-                    } case 0 -> {
-                        HoTro.clearConsole();
-                        System.out.println("Thoat");
-                    }default ->  {
-                        System.err.println("Lua chon cua ban khong phu hop.");
-                    }
+                case "2" -> {
+                    HoTro.clearConsole();
+                    System.out.println("Danh sach Nhan vien hien tai.");
+                    output();
+                    System.out.println("Nhap ma so Nhan vien can sua: ");
+                    String index = scanner.nextLine();
+                    updateEmployee(index);
                 }
-            } while (luachon != "0");
-        }
-        System.out.println("End");
+                case "3" -> {
+                    HoTro.clearConsole();
+                    removeEmployee();
+                }
+                case "4" -> {
+                    HoTro.clearConsole();
+                    System.out.println("Danh sach Nhan vien hien tai.");
+                    output();
+                }
+                case "0" -> {
+                    HoTro.clearConsole();
+                    System.out.println("THOAT");
+                }
+                default -> {
+                    HoTro.clearConsole();
+                    System.err.println("LUA CHON CUA BAN KHONG PHU HOP.");
+                }
+            }
+            break;
+        } while (luachon != "0");
+    }
+
+    public void menuNV() {
+        String luachon;
+        do {
+            System.out.println("---------------Menu-------------");
+            System.out.println("1.Xem danh sach Nhan Vien.");
+            System.out.println("0.Thoat");
+            System.out.print("Nhap lua chon cua ban: ");
+            luachon = scanner.nextLine();
+            switch (Integer.parseInt(luachon)) {
+                case 1 -> {
+                    HoTro.clearConsole();
+                    System.out.println("Danh sach Nhan Vien cua Cua Hang.");
+                    output();
+                } case 0 -> {
+                    HoTro.clearConsole();
+                    System.out.println("Thoat");
+                }default ->  {
+                    System.err.println("Lua chon cua ban khong phu hop.");
+                }
+            }
+        } while (luachon != "0");
     }
 
     public Employee getByIdEmployee(String idCanCheck) {
