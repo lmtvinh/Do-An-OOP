@@ -11,8 +11,7 @@ public class QuanLy {
         System.out.println("2.Quan Li Hoa Don Ban.");
         System.out.println("3.Quan Li Nhan Vien.");
         System.out.println("4.Quan Li Khach Hang.");
-        System.out.println("5.Quan Li Laptop.");
-        System.out.println("6.Quan Li PC.");
+        System.out.println("5.Quan Li San Pham.");
         System.out.println("0.Thoat");
     }
     public static void run() {
@@ -35,10 +34,7 @@ public class QuanLy {
                     Database.getDanhSachKhachHang().menu();
                 }
                 case "5" -> {
-                    Database.getDanhSachLaptop().menuLaptop();
-                }
-                case "6" -> {
-                    Database.getDanhSachPC().menuPC();
+                    Database.getDanhSachSanPham().menu();
                 }
                 case "0" -> {
                     System.out.println("DANG XUAT.");

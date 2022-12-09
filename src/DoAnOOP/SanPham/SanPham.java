@@ -3,7 +3,6 @@ package DoAnOOP.SanPham;
 import DoAnOOP.Help.Check;
 import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.Output;
-import DoAnOOP.SanPham.PC.PC;
 import DoAnOOP.ThongTin.Maker;
 import DoAnOOP.ThongTin.Provider;
 
@@ -187,14 +186,14 @@ public class SanPham implements Output {
 //in ra all + nhom san pham
     @Override
     public String[] getThuocTinh() {
-        return new String[]{"Ma Sa"};
+        return new String[]{"Ma San Pham","Ten San Pham","Mainboard","CPU","Ram","SSD","HHD","Tan Nhiet","VGA","Gia Ban","Thong tin Nha Cung Cap","Thong tin Nha San Xuat","Thoi gian bao hanh","Ma Loai"};
     }
 
 //
 
     @Override
     public String[] getDuLieu() {
-        return new String[]{this.maSanPham,this.tenSanPham,this.CPU,this.ramCapacity,Database.getDanhSachNCC().getByIdProvider(this.maNCC).getTenNCC(),Database.getDanhSachNSX().findById(this.maNXS).getTenNSX(),""+this.thoiGianBaoHanh,""+this.price,this instanceof PC ?"PC":"LAPTOP"};
+        return new String[]{this.maSanPham, this.tenSanPham, this.mainboard, this.CPU, this.ramCapacity, this.SSD, this.HHD, this.cooling, this.VGA,""+this.price, Database.getDanhSachNCC().getByIdProvider(this.maNCC).getTenNCC(), Database.getDanhSachNSX().findById(this.maNXS).getTenNSX(),""+this.thoiGianBaoHanh, Database.getDanhSachLoaiSanPham().getById(this.idMaLoai).getTenLoai() };
     }
 
 }
