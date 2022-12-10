@@ -13,6 +13,7 @@ public class Main {
         System.out.print("Nhap mat khau: ");
         String matKhau = Check.inputEmpty().trim();
         Employee user = Database.getDanhSachNhanVien().getByIdEmployee(maNhanVien);
+        System.out.println(Database.getDanhSachNhanVien().getByIdEmployee(maNhanVien));
         if (user == null) {
             System.out.println("Ma nhan vien khong ton tai");
             return false;
