@@ -11,10 +11,22 @@ public class DanhSachNSX extends ADanhSach {
     private int length = Maker.id;
     private Maker[] makers = new Maker[length];
 
+
+
     public void addMaker(Maker newMaker) {
-        makers[length] = newMaker;
-        length++;
-        Maker.id++;
+        if(length == 0) {
+            makers = new Maker[1];
+            makers[0] = newMaker;
+            length++;
+        } else {
+            Maker[] temp = new Maker[length + 1];
+            for (int i = 0; i < length; i++) {
+                temp[i] = makers[i];
+            }
+            temp[length] = newMaker;
+            makers = temp;
+            length++;
+        }
     }
 
     public void set(Maker a, int index, Maker[] arr) {

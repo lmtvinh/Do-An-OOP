@@ -12,7 +12,7 @@ public class Maker implements Output {
     private QuocGia quocGia;
 
     public Maker() {
-        id++;
+        Maker.id++;
     }
 
     public Maker(String maNSX, String tenNSX, QuocGia quocGia) {

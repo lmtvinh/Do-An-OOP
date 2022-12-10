@@ -32,8 +32,6 @@ public class Main {
                 removeAllData();
                 initCustomer();
                 initEmployee();
-                initLaptop();
-                initPC();
                 initLoaiSanPham();
                 initProvider();
                 initMaker();
@@ -41,6 +39,15 @@ public class Main {
                 initChiTietHoaDonBan();
                 initPhieuNhap();
                 initChiTietPhieuNhap();
+                Database.getDanhSachKhachHang().ghiFile("D:\\Do An OOP\\DoAnOOP");
+                Database.getDanhSachNhanVien().ghiFile("D:\\Do An OOP\\DoAnOOP");
+                Database.getDanhSachSanPham().ghiFile("D:\\Do An OOP\\DoAnOOP");
+                Database.getDanhSachLoaiSanPham().ghiFile("D:\\Do An OOP\\DoAnOOP");
+                Database.getDanhSachNSX().ghiFile("D:\\Do An OOP\\DoAnOOP");
+                Database.getDanhSachNCC().ghiFile("D:\\Do An OOP\\DoAnOOP");
+                Database.getDanhSachHoaDonBan().ghiFile("D:\\Do An OOP\\DoAnOOP");
+                Database.getDanhSachChiTietHoaDonBan().ghiFile("D:\\Do An OOP\\DoAnOOP");
+                Database.getDanhSachPhieuNhap().ghiFile("D:\\Do An OOP\\DoAnOOP");
         }
 
         public static void initEmployee() {
@@ -175,22 +182,22 @@ public class Main {
                 // Hang San Xuat Dell
                 QuocGia quocGia1 = new QuocGia("+1", "Hoa Ky");
                 Maker maker1 = new Maker("DE", "DELL", quocGia1);
+                Database.getDanhSachNSX().addMaker(maker1);
                 // Hang San Xuat ACER
                 QuocGia quocGia2 = new QuocGia("+886", "Dai Loan");
                 Maker maker2 = new Maker("AC", "ACER", quocGia2);
+                Database.getDanhSachNSX().addMaker(maker2);
                 // Hang San Xuat ASUS
                 QuocGia quocGia3 = new QuocGia("+886", "Dai Loan");
                 Maker maker3 = new Maker("AS", "ASUS", quocGia3);
+                Database.getDanhSachNSX().addMaker(maker3);
                 // Hang San Xuat LENOVO
                 QuocGia quocGia4 = new QuocGia("+86", "Trung Quoc");
                 Maker maker4 = new Maker("LE", "LENOVO", quocGia4);
+                Database.getDanhSachNSX().addMaker(maker4);
                 // Hang San Xuat HP Inc.
                 QuocGia quocGia5 = new QuocGia("+1", "Hoa Ky");
                 Maker maker5 = new Maker("HP", "HP Inc.", quocGia5);
-                Database.getDanhSachNSX().addMaker(maker1);
-                Database.getDanhSachNSX().addMaker(maker2);
-                Database.getDanhSachNSX().addMaker(maker3);
-                Database.getDanhSachNSX().addMaker(maker4);
                 Database.getDanhSachNSX().addMaker(maker5);
         }
 

@@ -9,20 +9,18 @@ import java.util.Scanner;
 public class DanhSachChiTietHoaDonBan extends ADanhSach {
     public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachChiTietHoaDonBan.bin";
     final static Scanner scanner = new Scanner(System.in);
-    ArrayList<ChiTietHoaDonBan> chiTietHoaDonBans;
+    ArrayList<ChiTietHoaDonBan> chiTietHoaDonBans = new ArrayList<ChiTietHoaDonBan>();
 
     public int lengthDanhSachChiTietHoaDonBan() {
         return chiTietHoaDonBans.size();
     }
 
     public void DanhSachChiTietHoaDonBan() {
-        chiTietHoaDonBans = new ArrayList<ChiTietHoaDonBan>();
+
     }
 
     public void addChiTietHoaDonBan(ChiTietHoaDonBan newChiTietHoaDonBan) {
-        for (int i = 0; i < chiTietHoaDonBans.size(); i++) {
-            chiTietHoaDonBans.add(newChiTietHoaDonBan);
-        }
+        chiTietHoaDonBans.add(newChiTietHoaDonBan);
     }
 
     public void setChiTietHoaDonBan(String maHoaDonCanSua, ChiTietHoaDonBan newChiTietHoaDonBan) {
