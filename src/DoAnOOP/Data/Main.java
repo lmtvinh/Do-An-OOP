@@ -39,15 +39,16 @@ public class Main {
                 initChiTietHoaDonBan();
                 initPhieuNhap();
                 initChiTietPhieuNhap();
-                Database.getDanhSachKhachHang().ghiFile("D:\\Do An OOP\\DoAnOOP");
-                Database.getDanhSachNhanVien().ghiFile("D:\\Do An OOP\\DoAnOOP");
-                Database.getDanhSachSanPham().ghiFile("D:\\Do An OOP\\DoAnOOP");
-                Database.getDanhSachLoaiSanPham().ghiFile("D:\\Do An OOP\\DoAnOOP");
-                Database.getDanhSachNSX().ghiFile("D:\\Do An OOP\\DoAnOOP");
-                Database.getDanhSachNCC().ghiFile("D:\\Do An OOP\\DoAnOOP");
-                Database.getDanhSachHoaDonBan().ghiFile("D:\\Do An OOP\\DoAnOOP");
-                Database.getDanhSachChiTietHoaDonBan().ghiFile("D:\\Do An OOP\\DoAnOOP");
-                Database.getDanhSachPhieuNhap().ghiFile("D:\\Do An OOP\\DoAnOOP");
+                Database.getDanhSachKhachHang().ghiFile("D:\\Do An OOP\\DoAnOOP\\DanhSachKhachHang.bin");
+                Database.getDanhSachNhanVien().ghiFile("D:\\Do An OOP\\DoAnOOP\\DanhSachNhanVien.bin");
+                Database.getDanhSachSanPham().ghiFile("D:\\Do An OOP\\DoAnOOP\\DanhSachSanPham.bin");
+                Database.getDanhSachLoaiSanPham().ghiFile("D:\\Do An OOP\\DoAnOOP\\DanhSachLoaiSanPham.bin");
+                Database.getDanhSachNSX().ghiFile("D:\\Do An OOP\\DoAnOOP\\DanhSachNSX.bin");
+                Database.getDanhSachNCC().ghiFile("D:\\Do An OOP\\DoAnOOP\\DanhSachNCC.bin");
+                Database.getDanhSachHoaDonBan().ghiFile("D:\\Do An OOP\\DoAnOOP\\DanhSachHoaDonBan.bin");
+                Database.getDanhSachChiTietHoaDonBan().ghiFile("D:\\Do An OOP\\DoAnOOP\\DanhSachChiTietHoaDonBan.bin");
+                Database.getDanhSachPhieuNhap().ghiFile("D:\\Do An OOP\\DoAnOOP\\DanhSachPhieuNhap.bin");
+                Database.getDanhSachChiTietPhieuNhap().ghiFile("D:\\Do An OOP\\DoAnOOP\\DanhSachChiTietPhieuNhap.bin");
         }
 
         public static void initEmployee() {
@@ -371,15 +372,19 @@ public class Main {
 
         public static void initPC() {
                 // PC1
-                // PC pc1 = new PC("GVN POSEIDON 9 i3090 ( Cougar )", "GVN POSEIDON 9 i3090 ( Cougar )",
-                //                 "Corsair Dominator Platinum 32GB (2x16GB) RGB 5600 DDR5 White", "GVN", "GVN", 125000000,
-                //                 60, "PC001", "ASUS ROG STRIX Z690-A GAMING WIFI DDR5", "Cougar ConQuer 2 - Full Tower",
-                //                 "SamSung 980 PRO 1TB M.2 PCIe gen 4 NVMe", "Tùy chọn nâng cấp",
-                //                 "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO x 2",
-                //                 "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO", "GA");
+                // PC pc1 = new PC("GVN POSEIDON 9 i3090 ( Cougar )", "GVN POSEIDON 9 i3090 (
+                // Cougar )",
+                // "Corsair Dominator Platinum 32GB (2x16GB) RGB 5600 DDR5 White", "GVN", "GVN",
+                // 125000000,
+                // 60, "PC001", "ASUS ROG STRIX Z690-A GAMING WIFI DDR5", "Cougar ConQuer 2 -
+                // Full Tower",
+                // "SamSung 980 PRO 1TB M.2 PCIe gen 4 NVMe", "Tùy chọn nâng cấp",
+                // "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO x 2",
+                // "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO",
+                // "GA");
                 PC pc1 = new PC("SP011",
-                                "GVN POSEIDON 9 i3090 ( Cougar )", 
-                                "ASUS ROG STRIX Z690-A GAMING WIFI DDR5", 
+                                "GVN POSEIDON 9 i3090 ( Cougar )",
+                                "ASUS ROG STRIX Z690-A GAMING WIFI DDR5",
                                 "AMD Ryzen 9 7950X / 4.5GHz Boost 5.7GHz / 16 nhân 32 luồng / 81MB / AM5",
                                 "Corsair Dominator Platinum 32GB (2x16GB) RGB 5600 DDR5 White",
                                 "GVN", "GVN",
@@ -391,11 +396,13 @@ public class Main {
                                 "Cougar ConQuer 2 - Full Tower");
                 // PC2
                 // PC pc2 = new PC("GVN ProArt Plus 9 a4090", "GVN ProArt Plus 9 a4090",
-                //                 "Kingston Fury Beast RGB 64GB (2x32GB) bus 5600 DDR5", "GVN", "GVN", 120000000, 60,
-                //                 "PC002", "ASUS ProArt X670E-CREATOR WIFI (DDR5)", "NZXT H7 Flow Black",
-                //                 "Kingston KC3000 1TB M.2 PCIe gen 4 NVMe", "Seagate Barracuda 2TB 7200rpm",
-                //                 "Cooler Master SICKLEFLOW 120 ARGB 3 IN 1", "Cooler Master SICKLEFLOW 120 ARGB 3 IN 1",
-                //                 "GA");
+                // "Kingston Fury Beast RGB 64GB (2x32GB) bus 5600 DDR5", "GVN", "GVN",
+                // 120000000, 60,
+                // "PC002", "ASUS ProArt X670E-CREATOR WIFI (DDR5)", "NZXT H7 Flow Black",
+                // "Kingston KC3000 1TB M.2 PCIe gen 4 NVMe", "Seagate Barracuda 2TB 7200rpm",
+                // "Cooler Master SICKLEFLOW 120 ARGB 3 IN 1", "Cooler Master SICKLEFLOW 120
+                // ARGB 3 IN 1",
+                // "GA");
                 PC pc2 = new PC("SP012",
                                 "GVN ProArt Plus 9 a4090",
                                 "ASUS ProArt X670E-CREATOR WIFI (DDR5)",
@@ -410,11 +417,13 @@ public class Main {
                                 "NZXT H7 Flow Black");
                 // PC3
                 // PC pc3 = new PC("GVN TITAN Plus i3080Ti", "Intel Core i9 12900K",
-                //                 "Kingston Fury Beast RGB 32GB (2x16GB) bus 5600 DDR5 (KF556C40BBAK2-32)", "GVN", "GVN",
-                //                 89000000, 60, "PC003", "MSI MAG X570S TOMAHAWK WIFI", "PC003",
-                //                 "SamSung 980 PRO 500GB M.2 PCIe gen 4 NVMe", "Tùy chọn nâng cấp",
-                //                 "Cooler Master SICKLEFLOW 120 ARGB 3 IN 1", "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G",
-                //                 "GA");
+                // "Kingston Fury Beast RGB 32GB (2x16GB) bus 5600 DDR5 (KF556C40BBAK2-32)",
+                // "GVN", "GVN",
+                // 89000000, 60, "PC003", "MSI MAG X570S TOMAHAWK WIFI", "PC003",
+                // "SamSung 980 PRO 500GB M.2 PCIe gen 4 NVMe", "Tùy chọn nâng cấp",
+                // "Cooler Master SICKLEFLOW 120 ARGB 3 IN 1", "MSI GeForce RTX 3080 Ti GAMING X
+                // TRIO 12G",
+                // "GA");
                 PC pc3 = new PC("SP013",
                                 "GVN TITAN Plus i3080Ti",
                                 "ASUS ROG MAXIMUS Z690 HERO DDR5",
@@ -429,11 +438,13 @@ public class Main {
                                 "ASUS ROG Strix Helios GX601");
                 // PC4
                 // PC pc4 = new PC("MSI GeForce RTX 3080 Ti GAMING X TRIO 12G",
-                //                 "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G",
-                //                 "Corsair Vengeance RS RGB 32gb (2x16GB) bus 3600", "GVN", "GVN", 67000000, 60, "PC004",
-                //                 "MSI MAG X570S TOMAHAWK WIFI", "MSI MAG X570S TOMAHAWK WIFI",
-                //                 "SamSung 980 PRO 500GB M.2 PCIe gen 4 NVMe", "Tùy chọn nâng cấp",
-                //                 "Corsair H150i ELITE CAPELLIX", "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G", "GA");
+                // "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G",
+                // "Corsair Vengeance RS RGB 32gb (2x16GB) bus 3600", "GVN", "GVN", 67000000,
+                // 60, "PC004",
+                // "MSI MAG X570S TOMAHAWK WIFI", "MSI MAG X570S TOMAHAWK WIFI",
+                // "SamSung 980 PRO 500GB M.2 PCIe gen 4 NVMe", "Tùy chọn nâng cấp",
+                // "Corsair H150i ELITE CAPELLIX", "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G",
+                // "GA");
                 PC pc4 = new PC("SP014",
                                 "GVN PHANTOM Plus i3070 WHITE",
                                 "ASUS ROG STRIX Z690-A GAMING WIFI DDR5",
@@ -447,10 +458,13 @@ public class Main {
                                 "GA", 67000000, 60,
                                 "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO");
                 // PC5
-                // PC pc5 = new PC("GVN PHANTOM Plus a3080Ti", "AMD Ryzen 7 5800X3D", "AMD Ryzen 7 5800X3D", "GVN", "GVN",
-                //                 67000000, 60, "PC005", "MSI MAG X570S TOMAHAWK WIFI", "MSI MAG X570S TOMAHAWK WIFI",
-                //                 "SamSung 980 PRO 500GB M.2 PCIe gen 4 NVMe", "Tùy chọn nâng cấp",
-                //                 "Corsair H150i ELITE CAPELLIX", "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G", "GA");
+                // PC pc5 = new PC("GVN PHANTOM Plus a3080Ti", "AMD Ryzen 7 5800X3D", "AMD Ryzen
+                // 7 5800X3D", "GVN", "GVN",
+                // 67000000, 60, "PC005", "MSI MAG X570S TOMAHAWK WIFI", "MSI MAG X570S TOMAHAWK
+                // WIFI",
+                // "SamSung 980 PRO 500GB M.2 PCIe gen 4 NVMe", "Tùy chọn nâng cấp",
+                // "Corsair H150i ELITE CAPELLIX", "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G",
+                // "GA");
                 PC pc5 = new PC("SP015",
                                 "GVN PHANTOM Plus a3080Ti",
                                 "MSI MAG X570S TOMAHAWK WIFI",
@@ -464,10 +478,11 @@ public class Main {
                                 "GA", 67000000, 60,
                                 "Corsair 4000D AIRFLOW White");
                 // PC6
-                // PC pc6 = new PC("GVN Homework Athlon", "Athlon 3000G / 5MB / 3.5GHz / 2 nhân 4 luồng / AM4",
-                //                 "RAM Corsair Vengeance LPX 8GB bus 3200", "GVN", "GVN", 5000000, 36, "PC006",
-                //                 "RAM Corsair Vengeance LPX 8GB bus 3200", "Jetek EM4", "	Jetek EM4",
-                //                 "Tùy chọn nâng cấp", "JONSBO CR-1000 PLUS", "Khong co", "VP");
+                // PC pc6 = new PC("GVN Homework Athlon", "Athlon 3000G / 5MB / 3.5GHz / 2 nhân
+                // 4 luồng / AM4",
+                // "RAM Corsair Vengeance LPX 8GB bus 3200", "GVN", "GVN", 5000000, 36, "PC006",
+                // "RAM Corsair Vengeance LPX 8GB bus 3200", "Jetek EM4", " Jetek EM4",
+                // "Tùy chọn nâng cấp", "JONSBO CR-1000 PLUS", "Khong co", "VP");
                 PC pc6 = new PC("SP016",
                                 "GVN Homework Athlon",
                                 "ASUS PRIME A320M-E",
@@ -481,11 +496,13 @@ public class Main {
                                 "VP", 67000000, 60,
                                 "Jetek EM4");
                 // PC7
-                // PC pc7 = new PC("GVN VIPER i3050 WHITE", "Intel Core i5 12400F", "PNY XLR8 Silver 1x8GB 3600 RGB x 2",
-                //                 "GVN", "GVN", 21490000, 60, "PC007", "MSI MAG B660M MORTAR DDR4",
-                //                 "1st Player XF White (4 fan RGB)", "SSD Kingston NV2 250GB M.2 PCIe NVMe Gen4",
-                //                 "Tùy chọn nâng cấp", "ID COOLING SE-214-XT ARGB WHITE",
-                //                 "GIGABYTE GeForce RTX 3050 EAGLE OC 8G", "GA");
+                // PC pc7 = new PC("GVN VIPER i3050 WHITE", "Intel Core i5 12400F", "PNY XLR8
+                // Silver 1x8GB 3600 RGB x 2",
+                // "GVN", "GVN", 21490000, 60, "PC007", "MSI MAG B660M MORTAR DDR4",
+                // "1st Player XF White (4 fan RGB)", "SSD Kingston NV2 250GB M.2 PCIe NVMe
+                // Gen4",
+                // "Tùy chọn nâng cấp", "ID COOLING SE-214-XT ARGB WHITE",
+                // "GIGABYTE GeForce RTX 3050 EAGLE OC 8G", "GA");
                 PC pc7 = new PC("SP017",
                                 "GVN VIPER i3050 WHITE",
                                 "MSI MAG B660M MORTAR DDR4",
@@ -496,15 +513,17 @@ public class Main {
                                 "Tùy Chọn Nâng Cấp",
                                 "ID COOLING SE-214-XT ARGB WHITE",
                                 "GIGABYTE GeForce RTX 3050 EAGLE OC 8G",
-                                "GA", 
+                                "GA",
                                 21490000, 60,
                                 "1st Player XF White (4 fan RGB)");
                 // PC8
                 // PC pc8 = new PC("GVN TITAN Plus i3080Ti", "Intel Core i9 12900K",
-                //                 "Kingston Fury Beast RGB 32GB (2x16GB) bus 5600 DDR5 (KF556C40BBAK2-32)", "GVN", "GVN",
-                //                 89000000, 60, "PC008", "ASUS ROG MAXIMUS Z690 HERO DDR5", "ASUS ROG Strix Helios GX601",
-                //                 "SamSung 980 PRO 500GB M.2 PCIe gen 4 NVMe", "Tùy chọn nâng cấp",
-                //                 "ASUS ROG RYUJIN II 360", "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G", "GA");
+                // "Kingston Fury Beast RGB 32GB (2x16GB) bus 5600 DDR5 (KF556C40BBAK2-32)",
+                // "GVN", "GVN",
+                // 89000000, 60, "PC008", "ASUS ROG MAXIMUS Z690 HERO DDR5", "ASUS ROG Strix
+                // Helios GX601",
+                // "SamSung 980 PRO 500GB M.2 PCIe gen 4 NVMe", "Tùy chọn nâng cấp",
+                // "ASUS ROG RYUJIN II 360", "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G", "GA");
                 PC pc8 = new PC("SP018",
                                 "GVN VIPER i3050 WHITE",
                                 "ASUS ROG MAXIMUS Z690 HERO DDR5",
@@ -519,12 +538,14 @@ public class Main {
                                 89000000, 60,
                                 "ASUS ROG Strix Helios GX601");
                 // PC9
-                // PC pc9 = new PC("GVN PHANTOM Plus i4080", "Intel Core i7 13700K", "Intel Core i7 13700K", "GVN", "GVN",
-                //                 90000000, 60, "PC009", "GIGABYTE Z690 AERO D DDR5",
-                //                 "Corsair 5000D AIRFLOW Tempered Glass White",
-                //                 "Corsair 5000D AIRFLOW Tempered Glass White", "Tùy chọn nâng cấp",
-                //                 "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO",
-                //                 "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO", "GA");
+                // PC pc9 = new PC("GVN PHANTOM Plus i4080", "Intel Core i7 13700K", "Intel Core
+                // i7 13700K", "GVN", "GVN",
+                // 90000000, 60, "PC009", "GIGABYTE Z690 AERO D DDR5",
+                // "Corsair 5000D AIRFLOW Tempered Glass White",
+                // "Corsair 5000D AIRFLOW Tempered Glass White", "Tùy chọn nâng cấp",
+                // "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO",
+                // "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO",
+                // "GA");
                 PC pc9 = new PC("SP018",
                                 "GVN PHANTOM Plus i4080",
                                 "GIGABYTE Z690 AERO D DDR5",
@@ -539,13 +560,14 @@ public class Main {
                                 89000000, 60,
                                 "ASUS ROG Strix Helios GX601");
                 // PC10
-                // PC pc10 = new PC("Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO",
-                //                 "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO",
-                //                 "PNY XLR8 Silver 1x8GB 3600 RGB x 2", "GVN", "GVN", 23000000, 60, "PC010",
-                //                 "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)",
-                //                 "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)",
-                //                 "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)", "Tùy chọn nâng cấp",
-                //                 "DEEPCOOL AG400 ARGB", "DEEPCOOL AG400 ARGB", "GA");
+                // PC pc10 = new PC("Corsair LL120 RGB LED 120mm White — Triple Pack with
+                // Lighting Node PRO",
+                // "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO",
+                // "PNY XLR8 Silver 1x8GB 3600 RGB x 2", "GVN", "GVN", 23000000, 60, "PC010",
+                // "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)",
+                // "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)",
+                // "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)", "Tùy chọn nâng cấp",
+                // "DEEPCOOL AG400 ARGB", "DEEPCOOL AG400 ARGB", "GA");
                 PC pc10 = new PC("SP019",
                                 "GVN ProArt Plus 7 a3090Ti",
                                 "ASUS TUF GAMING X670E-PLUS WIFI (DDR5)",
