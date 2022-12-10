@@ -174,9 +174,9 @@ public class SanPham implements Output {
         VGA = scanner.nextLine();
         System.out.print("Nhap Gia Ban: ");
         price = Check.checkInputInteger();
-        System.out.print("Nhap Ma Nha Cung Cap.");
+        System.out.print("Nhap Ma Nha Cung Cap: ");
         maNCC = scanner.nextLine();
-        System.out.print("Nhap Ma Nha San Xuat.");
+        System.out.print("Nhap Ma Nha San Xuat: ");
         maNCC = scanner.nextLine();
         System.out.print("Thoi gian bao hanh cua san pham: ");
         thoiGianBaoHanh = Check.checkInputInteger();
@@ -189,11 +189,25 @@ public class SanPham implements Output {
         return new String[]{"Ma San Pham","Ten San Pham","Mainboard","CPU","Ram","SSD","HHD","Tan Nhiet","VGA","Gia Ban","Thong tin Nha Cung Cap","Thong tin Nha San Xuat","Thoi gian bao hanh","Ma Loai"};
     }
 
-//
-
     @Override
     public String[] getDuLieu() {
         return new String[]{this.maSanPham, this.tenSanPham, this.mainboard, this.CPU, this.ramCapacity, this.SSD, this.HHD, this.cooling, this.VGA,""+this.price, Database.getDanhSachNCC().getByIdProvider(this.maNCC).getTenNCC(), Database.getDanhSachNSX().findById(this.maNXS).getTenNSX(),""+this.thoiGianBaoHanh, Database.getDanhSachLoaiSanPham().getById(this.idMaLoai).getTenLoai() };
+    }
+
+    public void output() {
+        System.out.println("Ten San Pham: " + getTenSanPham());
+        System.out.println("Mainboared: " + getMainboard());
+        System.out.println("CPU: " + getCPU());
+        System.out.println("Ram: " + getRamCapacity());
+        System.out.println("SSD: " + getSSD());
+        System.out.println("HHD: " + getHHD());
+        System.out.println("Tan Nhiet: " + getCooling());
+        System.out.println("VGA: " + getVGA());
+        System.out.println("Gia Ban: " + getPrice());
+        System.out.println("Ten Nha Cung Cap: " + Database.getDanhSachNCC().getByIdProvider(getMaNCC()));
+        System.out.println("Ten Nha San Xuat: " + Database.getDanhSachNSX().findById(getMaNXS()));
+        System.out.println("Thoi Gian Bao Hanh: " + thoiGianBaoHanh);
+        System.out.println("Ten Loai San Pham: " + Database.getDanhSachLoaiSanPham().getById(getIdMaLoai()).getTenLoai());
     }
 
 }

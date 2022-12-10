@@ -10,7 +10,6 @@ import DoAnOOP.People.Employee;
 import DoAnOOP.SanPham.Laptop.Laptop;
 import DoAnOOP.SanPham.LoaiSanPham;
 import DoAnOOP.SanPham.PC.PC;
-import DoAnOOP.SanPham.SanPham;
 import DoAnOOP.ThongTin.*;
 
 import java.io.File;
@@ -533,13 +532,26 @@ public class Main {
                                 89000000, 60,
                                 "ASUS ROG Strix Helios GX601");
                 // PC10
-                PC pc10 = new PC("Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO",
-                                "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO",
-                                "PNY XLR8 Silver 1x8GB 3600 RGB x 2", "GVN", "GVN", 23000000, 60, "PC010",
-                                "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)",
-                                "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)",
-                                "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)", "Tùy chọn nâng cấp",
-                                "DEEPCOOL AG400 ARGB", "DEEPCOOL AG400 ARGB", "GA");
+                // PC pc10 = new PC("Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO",
+                //                 "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO",
+                //                 "PNY XLR8 Silver 1x8GB 3600 RGB x 2", "GVN", "GVN", 23000000, 60, "PC010",
+                //                 "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)",
+                //                 "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)",
+                //                 "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)", "Tùy chọn nâng cấp",
+                //                 "DEEPCOOL AG400 ARGB", "DEEPCOOL AG400 ARGB", "GA");
+                PC pc10 = new PC("SP019",
+                                "GVN ProArt Plus 7 a3090Ti",
+                                "ASUS TUF GAMING X670E-PLUS WIFI (DDR5)",
+                                "AMD Ryzen 7 7700X / 4.5GHz Boost 5.4GHz / 8 nhân 16 luồng / 40MB / AM5",
+                                "Kingston Fury Beast RGB 32GB (2x16GB) bus 5600 DDR5",
+                                "GVN", "GVN",
+                                "Kingston KC3000 512GB M.2 PCIe gen 4 NVMe",
+                                "Seagate Barracuda 2TB 7200rpm",
+                                "Corsair LL120 RGB LED 120mm — Triple Pack with Lighting Node PRO",
+                                "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G",
+                                "GA",
+                                87000000, 60,
+                                "ASUS TUF Gaming GeForce RTX 3090 Ti OC edition 24G");
                 Database.getDanhSachSanPham().addSanPham(pc1);
                 Database.getDanhSachSanPham().addSanPham(pc2);
                 Database.getDanhSachSanPham().addSanPham(pc3);

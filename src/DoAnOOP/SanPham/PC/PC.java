@@ -24,6 +24,14 @@ public class PC extends SanPham implements Output {
         casePC = scanner.nextLine();
     }
 
+    public String getCasePC() {
+        return casePC;
+    }
+
+    public void setCasePC(String casePC) {
+        this.casePC = casePC;
+    }
+
     @Override
     public String[] getThuocTinh() {
         return new String[]{"Ma San Pham","Ten San Pham","Mainboard","CPU","Ram","SSD","HHD","Tan Nhiet","VGA","Gia Ban","Thong tin Nha Cung Cap","Thong tin Nha San Xuat","Thoi gian bao hanh","Ma Loai","Case PC"};
@@ -34,7 +42,9 @@ public class PC extends SanPham implements Output {
         return new String[]{this.maSanPham, this.tenSanPham, this.mainboard, this.CPU, this.ramCapacity, this.SSD, this.HHD, this.cooling, this.VGA,""+this.price, Database.getDanhSachNCC().getByIdProvider(this.maNCC).getTenNCC(), Database.getDanhSachNSX().findById(this.maNXS).getTenNSX(),""+this.thoiGianBaoHanh, Database.getDanhSachLoaiSanPham().getById(this.idMaLoai).getTenLoai(),this.casePC};
     }
 
-//    public void output() {
-//
-//    }
+    @Override
+   public void output() {
+        super.output();
+        System.out.println("Case PC: " + getCasePC());
+   }
 }
