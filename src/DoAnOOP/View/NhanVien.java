@@ -9,11 +9,12 @@ import java.util.Scanner;
 public class NhanVien{
     final static Scanner scanner = new Scanner(System.in);
     private static void menu() {
-        System.out.println("1.Quan Li Phieu Nhap.");
-        System.out.println("2.Quan Li Hoa Don Ban.");
-        System.out.println("3.Quan Li Khach Hang.");
-        System.out.println("4.Quan Li San Pham.");
-        System.out.println("0.Thoat");
+        System.out.println("\n\n\t\tMENU DÀNH CHO QUẢN LÍ.");
+        System.out.println("1.Quản Lí Phiếu Nhập.");
+        System.out.println("2.Quản Lí Hóa Đơn Bán.");
+        System.out.println("3.Quản Lí Khách Hàng.");
+        System.out.println("4.Quản Lí Sản Phẩm.");
+        System.out.println("0.Thoát");
     }
 
     public static void run() {
@@ -36,10 +37,10 @@ public class NhanVien{
                     Database.getDanhSachSanPham().menu();
                 }
                 case "0" -> {
-                    System.err.println("Thoat.");
+                    System.err.println("Thoát.");
                 }
                 default -> {
-                    System.err.println("LUA CHON CUA BAN KHONG PHU HOP.");
+                    System.err.println("LỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
         } while(luachon != "0");
