@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class QuocGia implements Serializable {
     @Serial
-    private static long serialVersion = 45645446546l;
+    private static long serialVersionUID = 45645446546L;
     static final Scanner scanner = new Scanner(System.in);
     private String maQuocGia, tenQuocGia;
     public QuocGia() {

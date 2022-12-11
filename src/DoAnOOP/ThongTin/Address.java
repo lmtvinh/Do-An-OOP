@@ -1,8 +1,12 @@
 package DoAnOOP.ThongTin;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Address  {
+public class Address implements Serializable {
+    @Serial
+    private static long serialVersionUID = 46465487979L;
     final static Scanner scanner = new Scanner(System.in);
     private String apartmentNumber, street, precinct, district, city;
     public Address() {

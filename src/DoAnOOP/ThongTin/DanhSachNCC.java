@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class DanhSachNCC extends ADanhSach implements Serializable {
     @Serial
-    private static long serialVersion = 45465465l;
+    private static long serialVersionUID = 45465465L;
     public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachNCC.bin";
     final static Scanner scanner = new Scanner(System.in);
     ArrayList<Provider> providers;

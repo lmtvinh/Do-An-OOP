@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class Person implements Output, Serializable {
     @Serial
-    private static long serialVersion = -4641318484654l;
+    private static long serialVersionUID = -4641318484654L;
     static final Scanner in=new Scanner(System.in);
 
     protected String fullname, email;

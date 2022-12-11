@@ -1,8 +1,12 @@
 package DoAnOOP.SanPham;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class LoaiSanPham {
+public class LoaiSanPham implements Serializable{
+    @Serial
+    private static long serialVersionUID = 546546464L;
     final static Scanner scanner = new Scanner(System.in);
     private String maLoai, tenLoai, ghiChu;
 

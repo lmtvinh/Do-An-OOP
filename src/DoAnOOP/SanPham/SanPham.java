@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class SanPham implements Output, Serializable {
     @Serial
-    private static long serialVersion = 54561331213l;
+    private static long serialVersionUID = 54561331213L;
     final static Scanner scanner = new Scanner(System.in);
     protected String maSanPham,tenSanPham, mainboard, CPU, ramCapacity, maNXS, maNCC, SSD, HHD, cooling, VGA, idMaLoai;
     protected int price, thoiGianBaoHanh;

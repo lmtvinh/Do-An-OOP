@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Maker implements Output, Serializable {
     @Serial
-    private static long serialVersion = 1533353556l;
+    private static long serialVersionUID = 1533353556L;
     final static Scanner scanner = new Scanner(System.in);
     private String maNSX, tenNSX;
     public static String maNhaSanXuat;

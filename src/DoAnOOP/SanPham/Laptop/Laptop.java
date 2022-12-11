@@ -4,9 +4,13 @@ import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.Output;
 import DoAnOOP.SanPham.SanPham;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Laptop extends SanPham implements Output {
+public class Laptop extends SanPham implements Output, Serializable {
+    @Serial
+    private static long serialVersionUID = 46456457978L;
     static final Scanner scanner = new Scanner(System.in);
     private String screensize, resolution;
     public Laptop() {

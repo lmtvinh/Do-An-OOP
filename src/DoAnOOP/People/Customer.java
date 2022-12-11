@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class Customer extends Person implements Output, Serializable {
     @Serial
-    private static long serialVersion = -123546455l;
+    private static long serialVersionUID = -123546455L;
     static final Scanner scanner = new Scanner(System.in);
     private String maKhachHang;
     public Customer() {

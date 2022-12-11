@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Provider implements Output, Serializable {
 	@Serial
-	private static long serialVersion = 45645648897l;
+	private static long serialVersionUID = 45645648897L;
 	Scanner sc = new Scanner(System.in);
 	protected String maNCC;
 	protected String tenNCC;

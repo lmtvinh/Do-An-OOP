@@ -1,8 +1,12 @@
 package DoAnOOP.ThongTin;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Date {
+public class Date implements Serializable{
+    @Serial
+    private static long serialVersionUID = 46547987987L;
     static final Scanner scanner = new Scanner(System.in);
     private int day,month,year;
     public Date() {
