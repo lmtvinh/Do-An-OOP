@@ -4,9 +4,13 @@ import DoAnOOP.Help.Check;
 import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.Output;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class ChiTietHoaDonBan implements Output {
+public class ChiTietHoaDonBan implements Output, Serializable {
+    @Serial
+    private static final long serialVersion = -456541231254l;
     final static Scanner scanner = new Scanner(System.in);
     private String maHD, maSP;
     private int soLuong;

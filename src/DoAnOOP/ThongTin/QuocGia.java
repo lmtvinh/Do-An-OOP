@@ -1,8 +1,12 @@
 package DoAnOOP.ThongTin;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class QuocGia {
+public class QuocGia implements Serializable {
+    @Serial
+    private static long serialVersion = 45645446546l;
     static final Scanner scanner = new Scanner(System.in);
     private String maQuocGia, tenQuocGia;
     public QuocGia() {

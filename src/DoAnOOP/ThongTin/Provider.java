@@ -2,9 +2,13 @@ package DoAnOOP.ThongTin;
 
 import DoAnOOP.Output;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Provider implements Output {
+public class Provider implements Output, Serializable {
+	@Serial
+	private static long serialVersion = 45645648897l;
 	Scanner sc = new Scanner(System.in);
 	protected String maNCC;
 	protected String tenNCC;

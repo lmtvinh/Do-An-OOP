@@ -3,9 +3,13 @@ package DoAnOOP.HoaDon.PhieuNhap;
 import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.Output;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class ChiTietPhieuNhap implements Output {
+public class ChiTietPhieuNhap implements Output, Serializable {
+    @Serial
+    private static final long serialVersion = -55545321321l;
     final static Scanner scanner = new Scanner(System.in);
     private String maPhieuNhap, maSanPham;
     private int soLuong;

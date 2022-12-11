@@ -6,10 +6,14 @@ import DoAnOOP.People.Employee;
 import DoAnOOP.ThongTin.Date;
 import DoAnOOP.ThongTin.Provider;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class PhieuNhap implements Output {
+public class PhieuNhap implements Output, Serializable {
+    @Serial
+    private static long serialVersion = -4651454612311l;
     final static Scanner scanner = new Scanner(System.in);
     private String maPhieuNhap, maNhanVien, maNhaCungCap;
     private Date ngayNhap;

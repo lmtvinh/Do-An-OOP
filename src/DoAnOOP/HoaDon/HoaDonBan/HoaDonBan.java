@@ -6,12 +6,16 @@ import DoAnOOP.People.Customer;
 import DoAnOOP.People.Employee;
 import DoAnOOP.ThongTin.Address;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class HoaDonBan implements Output {
+public class HoaDonBan implements Output, Serializable {
+    @Serial
+    private static final long serialVersion = -464542135464646l;
     static final Scanner scanner = new Scanner(System.in);
     private String maHoaDon, maKhachHang, maNhanVien;
     private Address address;

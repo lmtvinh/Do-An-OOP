@@ -6,9 +6,13 @@ import DoAnOOP.Output;
 import DoAnOOP.ThongTin.Maker;
 import DoAnOOP.ThongTin.Provider;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class SanPham implements Output {
+public class SanPham implements Output, Serializable {
+    @Serial
+    private static long serialVersion = 54561331213l;
     final static Scanner scanner = new Scanner(System.in);
     protected String maSanPham,tenSanPham, mainboard, CPU, ramCapacity, maNXS, maNCC, SSD, HHD, cooling, VGA, idMaLoai;
     protected int price, thoiGianBaoHanh;

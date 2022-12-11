@@ -5,9 +5,13 @@ import DoAnOOP.ThongTin.Date;
 import DoAnOOP.Help.Check;
 import DoAnOOP.ThongTin.Address;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Person implements Output {
+public class Person implements Output, Serializable {
+    @Serial
+    private static long serialVersion = -4641318484654l;
     static final Scanner in=new Scanner(System.in);
 
     protected String fullname, email;
