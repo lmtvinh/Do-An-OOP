@@ -15,7 +15,6 @@ import DoAnOOP.ThongTin.*;
 import java.io.File;
 
 public class Main {
-
         public static void removeAllData() {
                 File listFile = new File("D:\\Do An OOP\\DoAnOOP");
                 if (!listFile.exists()) {

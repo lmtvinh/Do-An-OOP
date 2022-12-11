@@ -1,5 +1,6 @@
 package DoAnOOP.HoaDon.PhieuNhap;
 
+import DoAnOOP.Help.Check;
 import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.Output;
 import DoAnOOP.People.Employee;
@@ -85,7 +86,7 @@ public class PhieuNhap implements Output, Serializable {
 
     public void input() {
         System.out.print("Nhap Ma Nhan Vien: ");
-        maNhanVien = scanner.nextLine();
+        maNhanVien = Check.checkMSNV();
         System.out.print("Nhap Ma Nha Cung Cap: ");
         maNhaCungCap = scanner.nextLine();
         System.out.println("Nhap Thong tin Ngay Nhap.");

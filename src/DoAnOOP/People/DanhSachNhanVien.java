@@ -58,7 +58,7 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
     }
 
     public void removeEmployee() {
-        System.out.print("\nNhap ma nhan vien: ");
+        System.out.print("\nNhập Mã Nhân Viên Bạn Cần Xóa Khỏi Danh Sách: ");
         String check = scanner.nextLine();
         for (int i =0;i < length; i++){
             boolean result = get(i).getMaNV().equalsIgnoreCase(check);
@@ -96,28 +96,28 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
     public void menuQL() {
         String luachon;
         do {
-            System.out.println("---------------Menu-------------");
-            System.out.println("1.Them vao Danh sach Nhan Vien.");
-            System.out.println("2.Sua Danh sach Nhan Vien.");
-            System.out.println("3.Xoa Danh sach Nhan Vien.");
-            System.out.println("4.Xem Danh sach Nhan Vien.");
-            System.out.println("0.Thoat");
-            System.out.print("Nhap lua chon cua ban: ");
+            System.out.println("Menu Quản Lí Nhân Viên Của Cửa Hàng");
+            System.out.println("1.Thêm Nhân Viên Vào Danh Sách.");
+            System.out.println("2.Sửa Danh Sách Nhân Viên.");
+            System.out.println("3.Xóa Danh Sách Nhân Viên.");
+            System.out.println("4.Xem Danh Sách Nhân Viên.");
+            System.out.println("0.Thoát");
+            System.out.print("Nhập Lựa Chọn Của Bạn: ");
             luachon = scanner.nextLine();
             switch (luachon) {
                 case "1" -> {
                     HoTro.clearConsole();
                     employees = new Employee[length];
-                    System.out.println("Nhap Thong tin cua Nhan vien can them.");
+                    System.out.println("Nhập Thông Tin Của Nhân Viên Cần Thêm Vào Danh Sách.");
                     Employee a = new Employee();
                     a.input();
                     addEmployee(a);
                 }
                 case "2" -> {
                     HoTro.clearConsole();
-                    System.out.println("Danh sach Nhan vien hien tai.");
+                    System.out.println("Danh Sách Nhân Viên Hiện Tại.");
                     output();
-                    System.out.println("Nhap ma so Nhan vien can sua: ");
+                    System.out.println("Nhập Mã Số Nhân Viên Cần Sửa: ");
                     String index = scanner.nextLine();
                     updateEmployee(index);
                 }
@@ -178,5 +178,6 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
     @Override
     public void copyFrom(ADanhSach newDanhSach) {
         this.employees = ((DanhSachNhanVien)newDanhSach).employees;
+        this.length = ((DanhSachNhanVien)newDanhSach).length;
     }
 }

@@ -1,6 +1,7 @@
 package DoAnOOP.HoaDon.PhieuNhap;
 
 import DoAnOOP.File.ADanhSach;
+import DoAnOOP.Table;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -56,48 +57,55 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
         return null;
     }
 
-    public void output() {
+    public void getAll() {
+//        Table.createTable(phieuNhaps);
+        Table.printTable(phieuNhaps);
     }
 
     public void menuQL() {
         String luachon;
         do {
-            System.out.println("Menu Phieu Nhap.");
-            System.out.println("1.Xem Phieu Nhap.");
-            System.out.println("2.Them Phieu Nhap.");
-            System.out.println("3.Sua Phieu Nhap.");
-            System.out.println("4.Xoa Phieu Nhap.");
-            System.out.println("0.Thoat.");
-            System.out.print("Nhap lua chon cua ban: ");
+            System.out.println("Menu Phiếu Nhập Của Cửa Hàng.");
+            System.out.println("1.Xem Thông Tin Phiếu Nhập.");
+            System.out.println("2.Thêm Thông Tin Phiếu Nhập.");
+            System.out.println("3.Sửa Thông Tin Phiếu Nhập.");
+            System.out.println("4.Xóa Phiếu Nhập Trong Danh Sách.");
+            System.out.println("0.Thoát.");
+            System.out.print("Nhập Lựa Chọn Của Bạn: ");
             luachon = scanner.nextLine();
             switch (luachon) {
                 case "1" -> {
-                    output();
+                    System.out.println("Danh Sách Thông Tin Phiếu Nhập.");
+                    getAll();
                 }
                 case "2" -> {
-                    System.out.println("Nhap thong tin Phieu Nhap can them.");
+                    System.out.println("Nhập Thông Tin Phiếu Nhập Cần Thêm.");
                     PhieuNhap newPhieuNhap = new PhieuNhap();
                     newPhieuNhap.input();
                     addPhieuNhap(newPhieuNhap);
                 }
                 case "3" -> {
-                    System.out.println("Nhap thong tin Phieu Nhap can them.");
+                    System.out.println("Danh Sách Thông Tin Phiếu Nhập.");
+                    getAll();
+                    System.out.println("Nhập Thông Tin Phiếu Nhập Cần Thêm.");
                     PhieuNhap newPhieuNhap = new PhieuNhap();
                     newPhieuNhap.input();
-                    System.out.print("Nhap Ma Phieu Nhap can sua: ");
+                    System.out.print("Nhập Mã Phiếu Nhập Cần Sửa: ");
                     String maPhieuNhapCanSua = scanner.nextLine();
                     setPhieuNhaps(maPhieuNhapCanSua,newPhieuNhap);
                 }
                 case "4" -> {
-                    System.out.print("Nhap Ma Phieu Nhap can xoa: ");
+                    System.out.println("Danh Sách Thông Tin Phiếu Nhập.");
+                    getAll();
+                    System.out.print("Nhập Mã Phiếu Nhập Cần Xóa: ");
                     String maPhieuNhapCanXoa = scanner.nextLine();
                     removePhieuNhap(maPhieuNhapCanXoa);
                 }
                 case "0" -> {
-                    System.err.println("Thoat.");
+                    System.err.println("THOÁT.");
                 }
                 default -> {
-                    System.err.println("LUA CHON CUA BAN KHONG PHU HOP.");
+                    System.err.println("LỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
         } while(luachon != "0");

@@ -155,5 +155,6 @@ public class DanhSachKhachHang extends ADanhSach implements Serializable {
     @Override
     public void copyFrom(ADanhSach newDanhSach) {
         this.customers = ((DanhSachKhachHang)newDanhSach).customers;
+        this.length = ((DanhSachKhachHang)newDanhSach).length;
     }
 }
