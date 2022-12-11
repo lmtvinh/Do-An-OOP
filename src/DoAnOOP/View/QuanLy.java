@@ -7,18 +7,18 @@ import java.util.Scanner;
 public class QuanLy {
     final static Scanner scanner = new Scanner(System.in);
     private static void menu() {
-        System.out.println("1.Quan Li Phieu Nhap.");
-        System.out.println("2.Quan Li Hoa Don Ban.");
-        System.out.println("3.Quan Li Nhan Vien.");
-        System.out.println("4.Quan Li Khach Hang.");
-        System.out.println("5.Quan Li San Pham.");
-        System.out.println("0.Thoat");
+        System.out.println("1.Quản Lí Phiếu Nhập.");
+        System.out.println("2.Quản Lí Hóa Đơn Bán.");
+        System.out.println("3.Quản Lí Nhân Viên.");
+        System.out.println("4.Quản Lí Khách Hàng.");
+        System.out.println("5.Quản Lí Sản Phẩm.");
+        System.out.println("0.Thoát");
     }
     public static void run() {
         String luachon;
         do {
             menu();
-            System.out.print("Nhap lua chon cua ban: ");
+            System.out.print("Nhập Lựa Chọn Của Bạn: ");
             luachon = scanner.nextLine();
             switch (luachon) {
                 case "1"-> {
@@ -37,12 +37,12 @@ public class QuanLy {
                     Database.getDanhSachSanPham().menu();
                 }
                 case "0" -> {
-                    System.out.println("DANG XUAT.");
+                    System.out.println("ĐĂNG XUẤT.");
                     Main.nguoiDung = null;
-                    System.err.println("Thoat");
+                    System.out.println("ThOÁT.");
                 }
                 default -> {
-                    System.err.println("LUA CHON CUA BAN KHONG PHU HOP.");
+                    System.err.println("LỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
         } while(luachon != "0");

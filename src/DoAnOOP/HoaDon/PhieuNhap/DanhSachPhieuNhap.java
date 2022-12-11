@@ -1,6 +1,7 @@
 package DoAnOOP.HoaDon.PhieuNhap;
 
 import DoAnOOP.File.ADanhSach;
+import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.Table;
 
 import java.io.Serial;
@@ -22,6 +23,7 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
 
     public void addPhieuNhap(PhieuNhap newPhieuNhap) {
         phieuNhaps.add(newPhieuNhap);
+        PhieuNhap.idIncrement++;
     }
 
     public void setPhieuNhaps(String maPhieuNhapCanSua, PhieuNhap newPhieuNhap) {
@@ -31,7 +33,7 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
                 return;
             }
         }
-        System.err.println("ID KHONG CO TRONG DANH SACH.");
+        System.err.println("\tID KHÔNG CÓ TRONG DANH SÁCH.");
     }
 
     public void removePhieuNhap(String maPhieuNhapCanXoa) {
@@ -41,7 +43,7 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
                 return;
             }
         }
-        System.err.println("ID KHONG CO TRONG DANH SACH.");
+        System.err.println("\tID KHÔNG CÓ TRONG DANH SÁCH.");
     }
 
     public int lengthOfPhieuNhaps() {
@@ -70,6 +72,7 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
             System.out.println("2.Thêm Thông Tin Phiếu Nhập.");
             System.out.println("3.Sửa Thông Tin Phiếu Nhập.");
             System.out.println("4.Xóa Phiếu Nhập Trong Danh Sách.");
+            System.out.println("5.Tìm Kiếm Thông Tin Phiếu Nhập Theo Mã");
             System.out.println("0.Thoát.");
             System.out.print("Nhập Lựa Chọn Của Bạn: ");
             luachon = scanner.nextLine();
@@ -100,6 +103,11 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
                     System.out.print("Nhập Mã Phiếu Nhập Cần Xóa: ");
                     String maPhieuNhapCanXoa = scanner.nextLine();
                     removePhieuNhap(maPhieuNhapCanXoa);
+                }
+                case "5" -> {
+                    System.out.print("Nhập Mã Phiếu Nhập Cần Tìm Kiếm: ");
+                    String check = scanner.nextLine();
+                    Database.getDanhSachPhieuNhap().getByIdPhieuNhap(check).output();
                 }
                 case "0" -> {
                     System.err.println("THOÁT.");

@@ -18,7 +18,7 @@ public class PhieuNhap implements Output, Serializable {
     final static Scanner scanner = new Scanner(System.in);
     private String maPhieuNhap, maNhanVien, maNhaCungCap;
     private Date ngayNhap;
-    private static int idIncrement = 0;
+    public static int idIncrement = 0;
     private int tongTien;
 
     public PhieuNhap() {
@@ -91,6 +91,13 @@ public class PhieuNhap implements Output, Serializable {
         maNhaCungCap = scanner.nextLine();
         System.out.println("Nhap Thong tin Ngay Nhap.");
         ngayNhap.input();
+    }
+
+    public void output() {
+        System.out.println("Mã Phiếu Nhập: " + getMaPhieuNhap());
+        System.out.println("Tên Nhân Viên: " + Database.getDanhSachNhanVien().getByIdEmployee(getMaNhanVien()).getFullname());
+        System.out.println("Tên Nhà Cung Cấp: " + Database.getDanhSachNCC().getByIdProvider(getMaNhaCungCap()).getTenNCC());
+        System.out.println("Ngày Nhập: " +  getNgayNhap().toString());
     }
 
     @Override
