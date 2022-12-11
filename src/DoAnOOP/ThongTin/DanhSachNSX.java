@@ -2,10 +2,14 @@ package DoAnOOP.ThongTin;
 
 import DoAnOOP.File.ADanhSach;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class DanhSachNSX extends ADanhSach {
+public class DanhSachNSX extends ADanhSach implements Serializable {
+    @Serial
+    private static long serialVersion = 555641313155l;
     public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachNSX.bin";
     static final Scanner scanner = new Scanner(System.in);
     private int length = Maker.id;

@@ -3,10 +3,14 @@ package DoAnOOP.People;
 import DoAnOOP.File.ADanhSach;
 import DoAnOOP.Help.HoTro;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class DanhSachKhachHang extends ADanhSach {
+public class DanhSachKhachHang extends ADanhSach implements Serializable {
+    @Serial
+    private static long serialVersion = 4654646546l;
     public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachKhachHang.bin";
 
     static final Scanner scanner = new Scanner(System.in);

@@ -2,9 +2,13 @@ package DoAnOOP.View;
 
 import DoAnOOP.KhoDuLieu.Database;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class NhanVien {
+public class NhanVien implements Serializable {
+    @Serial
+    private static long serialVersion = 45641213213l;
     final static Scanner scanner = new Scanner(System.in);
     private static void menu() {
         System.out.println("1.Quan Li Phieu Nhap.");

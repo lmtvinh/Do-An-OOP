@@ -2,11 +2,15 @@ package DoAnOOP.HoaDon.HoaDonBan;
 
 import DoAnOOP.File.ADanhSach;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class DanhSachChiTietHoaDonBan extends ADanhSach {
+public class DanhSachChiTietHoaDonBan extends ADanhSach implements Serializable {
+    @Serial
+    private static long serialVersion = 545647798l;
     public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachChiTietHoaDonBan.bin";
     final static Scanner scanner = new Scanner(System.in);
     ArrayList<ChiTietHoaDonBan> chiTietHoaDonBans = new ArrayList<ChiTietHoaDonBan>();

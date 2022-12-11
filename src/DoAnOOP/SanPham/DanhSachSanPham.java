@@ -3,11 +3,15 @@ package DoAnOOP.SanPham;
 import DoAnOOP.File.ADanhSach;
 import DoAnOOP.Table;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class DanhSachSanPham extends ADanhSach{
+public class DanhSachSanPham extends ADanhSach implements Serializable {
+    @Serial
+    private static long serialVersion = 5554643215l;
     public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachSanPham.bin";
     final static Scanner scanner = new Scanner(System.in);
     ArrayList<SanPham> danhSachSanPham ;
