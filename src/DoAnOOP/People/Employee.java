@@ -83,45 +83,50 @@ public class Employee extends Person implements Output, Serializable {
     @Override
     public void input() {
         String luachon;
-        do {
-            System.out.println("-------------Menu----------");
-            System.out.println("1.Dang nhap.");
-            System.out.println("0.Thoat.");
-            System.out.print("Nhap lua chon cua ban: ");
-            luachon = scanner.nextLine();
-            switch (Integer.parseInt(luachon)) {
-                case 1 -> {
-                    do {
-                        System.out.println("-------------Menu----------");
-                        System.out.print("user name: ");
-                        String user = scanner.nextLine();
-                        System.out.print("password: ");
-                        String password = scanner.nextLine();
-                        if (user.equals("quanli") && password.equals("quanli")) {
-                            super.input();
-                            System.out.print("Nhap Ma Quan Li: ");
-                            maNV = Check.checkMSQL();
-                            System.out.print("Nhap Luong co ban Quan Li: ");
-                            luongCoBan = Integer.parseInt(scanner.nextLine());
-                            System.out.print("Nhap so Gio lam cua Quan Li: ");
-                            soGioLam = Integer.parseInt(scanner.nextLine());
-                        } else {
-                            super.input();
-                            System.out.print("Nhap Ma Nhan vien: ");
-                            maNV = Check.checkMSNV();
-                            System.out.print("Nhap Luong co ban Nhan vien: ");
-                            luongCoBan = Integer.parseInt(scanner.nextLine());
-                            System.out.print("Nhap so Gio lam cua Nhan vien: ");
-                            soGioLam = Integer.parseInt(scanner.nextLine());
-                        }
-                    } while (luachon != "0");
-                }
+        System.out.println("\n\n\t\tMenu Lựa Chọn.");
+        System.out.println("1.Quản Lí.");
+        System.out.println("2.Nhân Viên.");
+        System.out.print("Nhập Lựa Chọn Của Bạn: ");
+        luachon = scanner.nextLine();
+        switch (luachon) {
+            case "1" -> {
+                super.input();
+                System.out.print("Nhập Mã Quản Lí Của Nhân Viên(username): ");
+                maNV = Check.checkMSQL();
+                System.out.print("Nhập Mật Khẩu: ");
+                matKhau = scanner.nextLine();
+                System.out.print("Nhập Lương Cơ Bản Của Quản Lí: ");
+                luongCoBan = Check.checkInputInteger();
+                System.out.print("Nhập Số Giờ Làm Của Quản Lí: ");
+                soGioLam = Check.checkInputInteger();
+//              Hệ Số Lương Của Quản Lí
+                setHeSoLuong(50000);
             }
-        } while (luachon != "0");
+            case "2" -> {
+                super.input();
+                System.out.print("Nhập Mã Quản Lí Của Quản Lí(username): ");
+                maNV = Check.checkMSNV();
+                System.out.print("Nhập Mật Khẩu: ");
+                matKhau = scanner.nextLine();
+                System.out.print("Nhập Lương Cơ Bản Của Nhân Viên: ");
+                luongCoBan = Check.checkInputInteger();
+                System.out.print("Nhập Số Giờ Làm Của Nhân Viên: ");
+                soGioLam = Check.checkInputInteger();
+//                Hệ Số Lương Của Nhân Viên
+                setHeSoLuong(30000);
+            }
+            default -> {
+                System.err.println("\t\tLỰA CHỌN CỦA BẠN KHÔNG HỢP LỆ");
+            }
+        }
     }
+
+    @Override
     public void output() {
-        System.out.printf("%-15s%-25s%-25s%-25s%-15s%-12s%-12s\n","Ma Nhan Vien","Ten Nhan Vien","Email","Address","Luong Co Ban","So Gio Lam","Luong");
-        System.out.printf("%-15s%-25s%-25s%-25s%-15f%-12f%-12f\n",getMaNV(),getFullname(),getEmail(),getAddress().toString(),getLuongCoBan(),getSoGioLam(),tinhLuong());
+        System.out.println("Mã Nhân Viên: " + getMaNV());
+        super.output();
+        System.out.println("Số Giờ Làm: " + soGioLam);
+        System.out.println("Lương: " + tinhLuong());
     }
 
     public static void main(String[] args) {

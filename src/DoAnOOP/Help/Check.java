@@ -1,5 +1,7 @@
 package DoAnOOP.Help;
 
+import DoAnOOP.KhoDuLieu.Database;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -28,7 +30,7 @@ public class Check {
         while(true) {
             input = scanner.nextLine();
             input = input.toUpperCase();
-            if(input.matches("NV"+"[0-9]{3}")) {
+            if(input.matches("NV"+"[0-9]{3}") && (Database.getDanhSachNhanVien().getByIdEmployee(input)==null)) {
                 return input;
             } else {
                 System.out.println("Dinh danh Ma Nhan Vien: NV___.ViDu: NV001");
@@ -52,7 +54,7 @@ public class Check {
         while(true) {
             input = scanner.nextLine();
             input = input.toUpperCase();
-            if(input.matches("QL"+"[0-9]{3}")) {
+            if((input.matches("QL"+"[0-9]{3}")) && (Database.getDanhSachNhanVien().getByIdEmployee(input)==null)) {
                 return input;
             } else {
                 System.out.println("Dinh danh Ma Nhan Vien: QL___.ViDu: QL001");
@@ -66,7 +68,7 @@ public class Check {
         while(true) {
             input = scanner.nextLine();
             input = input.toUpperCase();
-            if(input.matches("KH"+"[0-9]{3}")) {
+            if(input.matches("KH"+"[0-9]{3}") && (Database.getDanhSachKhachHang().getByIdCustomer(input)==null)) {
                 return input;
             } else {
                 System.out.println("Dinh danh Ma Khach Hang: KH___.ViDu: KH001");

@@ -25,10 +25,10 @@ public class NhanVien{
             luachon = scanner.nextLine();
             switch (luachon) {
                 case "1"-> {
-                    Database.getDanhSachPhieuNhap().menuQL();
+                    Database.getDanhSachPhieuNhap().menuQLDSPN();
                 }
                 case "2" -> {
-                    Database.getDanhSachHoaDonBan().menuQL();
+                    Database.getDanhSachHoaDonBan().menuQLDSHDB();
                 }
                 case "3" -> {
                     Database.getDanhSachKhachHang().menu();

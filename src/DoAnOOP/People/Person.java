@@ -62,27 +62,28 @@ public class Person implements Output, Serializable {
     }
 
     public void input(){
-        System.out.print("Nhap full name: ");
+        System.out.print("Nhập Họ Và Tên: ");
         setFullname(in.nextLine());
-        System.out.print("Nhap email: ");
+        System.out.print("Nhập Email: ");
         email = Check.checkInputEmail();
+        System.out.println("Nhập Thông Tin Về Địa Chỉ: ");
         address.input();
+        System.out.println("Nhập Ngày Sinh: ");
         dateOfBirth.input();
     }
 
     public void output(){
-//        System.out.println("Full name: " + getFullname());
-//        System.out.println("Dia chi: " + add.getAddress());
-//        System.out.println("Ngay sinh: " + dateOfBirth.getDate());
-        System.out.printf("%-25s%-25s%-25s%-15s%","Full name","Email","Address","Date Of Brith");
-        System.out.printf("%-25s%-25s%-25s%-15s%",getFullname(),getEmail(),getAddress().toString(),getDateOfBirth().toString());
+        System.out.println("Họ và tên: " + getFullname());
+        System.out.println("Email: " + getEmail());
+        System.out.println("Địa Chỉ: " + getAddress().toString());
+        System.out.println("Ngày Sinh: " + getDateOfBirth().toString());
     }
 
-    public static void main(String[] args) {
-        Person person = new Person();
-        person.input();
-        person.output();
-    }
+//    public static void main(String[] args) {
+//        Person person = new Person();
+//        person.input();
+//        person.output();
+//    }
 
     @Override
     public String[] getThuocTinh() {

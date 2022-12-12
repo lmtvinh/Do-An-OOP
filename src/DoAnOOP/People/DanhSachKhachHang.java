@@ -3,9 +3,11 @@ package DoAnOOP.People;
 import DoAnOOP.File.ADanhSach;
 import DoAnOOP.Help.HoTro;
 import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.Table;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -93,54 +95,60 @@ public class DanhSachKhachHang extends ADanhSach implements Serializable {
         }
     }
 
-    public void output() {
-        System.out.printf("%-8s%-25s%-15s%-12s\n", "Ma Khach Hang", "Ten Khach Hang", "Nhom Khach Hang");
+    public void getAll() {
+        ArrayList<Customer> arrayListDSKH = new ArrayList<>();
         for (int i = 0; i < length; i++) {
-            customers[i].output();
+            arrayListDSKH.add(customers[i]);
         }
+        Table.createTable(arrayListDSKH);
+        Table.printTable(arrayListDSKH);
     }
 
     public void menu() {
         String luachon;
         do {
             HoTro.clearConsole();
-            System.out.println("-------------------Menu--------------------");
-            System.out.println("1.Them Khach Hang vao Danh sach Khach Hang.");
-            System.out.println("2.Sua Danh Sach Khach Hang.");
-            System.out.println("3.Xoa Danh Sach Khach Hang.");
-            System.out.println("4.Xem Danh Sach Khach Hang.");
-            System.out.println("0.Thoat");
-            System.out.print("Nhap lua chon cua ban: ");
+            System.out.println("\n\n\t\tMENU DANH SÁCH KHÁCH HÀNG.");
+            System.out.println("1.Thêm Khách Hàng Vào Danh Sách Khách Hàng.");
+            System.out.println("2.Sửa Thông Tin Khách Hàng Trong Danh Sách Khách Hàng.");
+            System.out.println("3.Xóa Thông Tin Khách Hàng Trong Danh Sách Khách Hàng.");
+            System.out.println("4.Xem Danh Sách Khách Hàng.");
+            System.out.println("0.Thoát.");
+            System.out.print("Nhập Lựa Chọn Của Bạn: ");
             luachon = scanner.nextLine();
             switch (luachon) {
                 case "1" -> {
                     Customer a = new Customer();
                     customers = new Customer[length];
-                    System.out.println("Nhap thong tin cua Khach Hang.");
+                    System.out.println("Nhập Thông Tin Của Khách Hàng Mà Bạn Muốn Thêm Vào Danh Sách.");
                     a.input();
                     addCustomer(a);
                 }
                 case "2" -> {
-                    System.out.println("Danh sach Khach Hang.");
-                    output();
-                    System.out.print("Nhap Ma Khach Hang muon sua: ");
+                    System.out.println("Danh Sách Khách Hàng.");
+                    getAll();
+                    System.out.print("Nhập Mã Khách Hàng Muốn Thay Đổi Thông Tin: ");
                     String index = scanner.nextLine();
                     updateCustomer(index);
                 }
                 case "3" -> {
+                    System.out.println("Danh Sách Khách Hàng.");
+                    getAll();
+                    System.out.println("Xóa Thông Tin Khách Hàng Ra Khỏi Danh Sách.");
                     removeCustomer();
                 }
                 case "4" -> {
-                    output();
+                    System.out.println("Danh Sách Khách Hàng.");
+                    getAll();
                 }
                 case "0" -> {
-                    System.out.println("Thoat");
+                    System.out.println("\t\tTHOÁT.");
                 }
                 default -> {
-                    System.out.println("Lua chon cua ban khong phu hop");
+                    System.err.println("\t\tLỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
-        } while (luachon != "0");
+        } while (luachon == "0");
     }
 
 //    public static void main(String[] args) {

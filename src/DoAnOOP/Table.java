@@ -17,7 +17,7 @@ public class Table {
         }
         String rs = createRow(data.get(0).getThuocTinh(),doRongCacCot);
         for (var row:data) {
-            rs += createRow(row.getThuocTinh(),doRongCacCot);
+            rs += createRow(row.getDuLieu(),doRongCacCot);
         }
         return rs;
     }

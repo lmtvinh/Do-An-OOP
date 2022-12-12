@@ -19,7 +19,7 @@ public class Main {
             return false;
         }
         if (!user.getMatKhau().equals(matKhau)) {
-            System.out.println("Mật Khẩu Không Chính Xác");
+            System.out.println("Mật Khẩu Không Chính Xác.");
             return false;
         }
         nguoiDung = user;

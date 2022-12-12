@@ -37,13 +37,15 @@ public class Customer extends Person implements Output, Serializable {
     @Override
     public void input() {
         super.input();
-        System.out.print("Nhap ma khach hang: ");
+        System.out.print("Nhập Mã Khách Hàng: ");
         maKhachHang = Check.checkMKH();
     }
 
-//    public void output() {
-//        System.out.printf("%-8s%-25s%-15s%-12s\n",getMaKhachHang(),null,getPhanLoaiKhachHang());
-//    }
+    @Override
+    public void output() {
+        System.out.println("Mã Khách Hàng: " + getMaKhachHang());
+        super.output();
+    }
 
     @Override
     public String[] getThuocTinh() {

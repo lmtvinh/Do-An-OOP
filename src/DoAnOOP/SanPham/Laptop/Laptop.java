@@ -40,4 +40,11 @@ public class Laptop extends SanPham implements Output, Serializable {
     public String[] getDuLieu() {
         return new String[]{this.maSanPham, this.tenSanPham, this.mainboard, this.CPU, this.ramCapacity, this.SSD, this.HHD, this.cooling, this.VGA,""+this.price, Database.getDanhSachNCC().getByIdProvider(this.maNCC).getTenNCC(), Database.getDanhSachNSX().findById(this.maNXS).getTenNSX(),""+this.thoiGianBaoHanh, Database.getDanhSachLoaiSanPham().getById(this.idMaLoai).getTenLoai(),this.screensize,this.resolution};
     }
+
+    @Override
+    public void output() {
+        super.output();
+        System.out.println("Kích Thước Màn Hình: " + screensize);
+        System.out.println("Độ Phân Giải Màn Hình: " + resolution);
+    }
 }

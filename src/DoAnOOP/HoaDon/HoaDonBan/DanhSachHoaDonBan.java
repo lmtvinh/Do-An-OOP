@@ -55,20 +55,20 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
         Table.createTable(hoaDonBans);
     }
 
-    public void menuQL() {
+    public void menuQLDSHDB() {
         String luachon;
         do {
-            System.out.println("Menu Hóa Đơn Bán Của Cửa Hàng.");
+            System.out.println("\n\n\t\tMenu Hóa Đơn Bán Của Cửa Hàng.");
             System.out.println("1.Xem Hóa Đơn Bán Hàng.");
             System.out.println("2.Thêm Hóa Đơn Bán Hàng.");
             System.out.println("3.Sửa Hóa Đơn Bán Hàng.");
             System.out.println("4.Xóa Hóa Đơn Bán Hàng.");
             System.out.println("0.Thoát.");
-            System.out.print("Nhập lựa chọn của bạn: ");
+            System.out.print("Nhập Lựa Chọn Của Bạn: ");
             luachon = scanner.nextLine();
             switch (luachon) {
                 case "1" -> {
-                    System.out.println("Danh Sách Hóa Đơn Bán");
+                    System.out.println("Danh Sách Hóa Đơn Bán.");
                     getAll();
                 }
                 case "2" -> {
@@ -101,49 +101,49 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
                     System.err.println("LỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
-        } while (luachon != "0");
+        } while (luachon == "0");
     }
 
-    public void menuNV() {
-        String luachon;
-        do {
-            System.out.println("Menu Hóa Đơn Bán Của Cửa Hàng.");
-            System.out.println("1.Xem Hóa Đơn Bán Hàng.");
-            System.out.println("2.Thêm Hóa Đơn Bán Hàng.");
-            System.out.println("4.Xóa Hóa Đơn Bán Hàng.");
-            System.out.println("0.Thoát.");
-            System.out.print("Nhập lựa chọn của bạn: ");
-            luachon = scanner.nextLine();
-            switch(luachon) {
-                case "1" -> {
-                    System.out.println("Danh Sách Hóa Đơn Bán");
-                    getAll();
-                }
-                case "2" -> {
-                    System.out.println("Nhập Thông Tin Hóa Đơn Bán Cần Thêm.");
-                    HoaDonBan newHoaDonBan = new HoaDonBan();
-                    newHoaDonBan.input();
-                    addHoaDonBan(newHoaDonBan);
-                }
-                case "3" -> {
-                    System.out.println("Danh Sách Hóa Đơn Bán.");
-                    getAll();
-                    System.out.println("Nhập Thông Tin Hóa Đơn Bán Hàng Cần Sửa.");
-                    HoaDonBan newHoaDonBan = new HoaDonBan();
-                    newHoaDonBan.input();
-                    System.out.print("Nhập Mã Hóa Đơn Bán Hàng Cần Sửa: ");
-                    String manewHoaDonBanSua = scanner.nextLine();
-                    setHoaDonBan(manewHoaDonBanSua, newHoaDonBan);
-                }
-                case "0" -> {
-                    System.err.println("THOÁT.");
-                }
-                default -> {
-                    System.err.println("LỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
-                }
-            }
-        }while(luachon != "0");
-    }
+//    public void menuNV() {
+//        String luachon;
+//        do {
+//            System.out.println("Menu Hóa Đơn Bán Của Cửa Hàng.");
+//            System.out.println("1.Xem Hóa Đơn Bán Hàng.");
+//            System.out.println("2.Thêm Hóa Đơn Bán Hàng.");
+//            System.out.println("4.Xóa Hóa Đơn Bán Hàng.");
+//            System.out.println("0.Thoát.");
+//            System.out.print("Nhập lựa chọn của bạn: ");
+//            luachon = scanner.nextLine();
+//            switch(luachon) {
+//                case "1" -> {
+//                    System.out.println("Danh Sách Hóa Đơn Bán");
+//                    getAll();
+//                }
+//                case "2" -> {
+//                    System.out.println("Nhập Thông Tin Hóa Đơn Bán Cần Thêm.");
+//                    HoaDonBan newHoaDonBan = new HoaDonBan();
+//                    newHoaDonBan.input();
+//                    addHoaDonBan(newHoaDonBan);
+//                }
+//                case "3" -> {
+//                    System.out.println("Danh Sách Hóa Đơn Bán.");
+//                    getAll();
+//                    System.out.println("Nhập Thông Tin Hóa Đơn Bán Hàng Cần Sửa.");
+//                    HoaDonBan newHoaDonBan = new HoaDonBan();
+//                    newHoaDonBan.input();
+//                    System.out.print("Nhập Mã Hóa Đơn Bán Hàng Cần Sửa: ");
+//                    String manewHoaDonBanSua = scanner.nextLine();
+//                    setHoaDonBan(manewHoaDonBanSua, newHoaDonBan);
+//                }
+//                case "0" -> {
+//                    System.err.println("THOÁT.");
+//                }
+//                default -> {
+//                    System.err.println("LỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
+//                }
+//            }
+//        }while(luachon == "0");
+//    }
 
     @Override
     public void copyFrom(ADanhSach newDanhSach) {

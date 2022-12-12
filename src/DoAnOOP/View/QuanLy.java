@@ -22,10 +22,10 @@ public class QuanLy {
             luachon = scanner.nextLine();
             switch (luachon) {
                 case "1"-> {
-                    Database.getDanhSachPhieuNhap().menuQL();
+                    Database.getDanhSachPhieuNhap().menuQLDSPN();
                 }
                 case "2" -> {
-                    Database.getDanhSachHoaDonBan().menuQL();
+                    Database.getDanhSachHoaDonBan().menuQLDSHDB();
                 }
                 case "3" -> {
                     Database.getDanhSachNhanVien().menuQL();
@@ -45,7 +45,7 @@ public class QuanLy {
                     System.err.println("LỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
-        } while(luachon != "0");
+        } while(luachon == "0");
         Database.xuatFielDatabase();
     }
 }

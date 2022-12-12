@@ -65,10 +65,10 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
         Table.printTable(phieuNhaps);
     }
 
-    public void menuQL() {
+    public void menuQLDSPN() {
         String luachon;
         do {
-            System.out.println("Menu Phiếu Nhập Của Cửa Hàng.");
+            System.out.println("\n\n\t\tMENU PHIẾU NHẬP CỦA CỬA HÀNG.");
             System.out.println("1.Xem Thông Tin Phiếu Nhập.");
             System.out.println("2.Thêm Thông Tin Phiếu Nhập.");
             System.out.println("3.Sửa Thông Tin Phiếu Nhập.");
@@ -111,13 +111,13 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
                     Database.getDanhSachPhieuNhap().getByIdPhieuNhap(check).output();
                 }
                 case "0" -> {
-                    System.err.println("THOÁT.");
+                    System.out.println("\t\tTHOÁT.");
                 }
                 default -> {
                     System.err.println("LỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
-        } while(luachon != "0");
+        } while(luachon == "0");
     }
 
     @Override

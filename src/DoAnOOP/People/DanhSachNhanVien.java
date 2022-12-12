@@ -102,7 +102,7 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
     public void menuQL() {
         String luachon;
         do {
-            System.out.println("Menu Quản Lí Nhân Viên Của Cửa Hàng");
+            System.out.println("\t\t\n\nMenu Quản Lí Danh Sách Nhân Viên Của Cửa Hàng");
             System.out.println("1.Thêm Nhân Viên Vào Danh Sách.");
             System.out.println("2.Sửa Danh Sách Nhân Viên.");
             System.out.println("3.Xóa Danh Sách Nhân Viên.");
@@ -121,7 +121,7 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
                 }
                 case "2" -> {
                     HoTro.clearConsole();
-                    System.out.println("Danh Sách Nhân Viên Hiện Tại.");
+                    System.out.println("Danh Sách Nhân Viên.");
                     output();
                     System.out.println("Nhập Mã Số Nhân Viên Cần Sửa: ");
                     String index = scanner.nextLine();
@@ -133,43 +133,43 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
                 }
                 case "4" -> {
                     HoTro.clearConsole();
-                    System.out.println("Danh sach Nhan vien hien tai.");
+                    System.out.println("Danh Sách Nhân Viên.");
                     output();
                 }
                 case "0" -> {
                     HoTro.clearConsole();
-                    System.out.println("THOAT");
+                    System.out.println("\t\tTHOÁT");
                 }
                 default -> {
                     HoTro.clearConsole();
-                    System.err.println("LUA CHON CUA BAN KHONG PHU HOP.");
+                    System.err.println("\t\tLỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
             break;
-        } while (luachon != "0");
+        } while (luachon == "0");
     }
 
     public void menuNV() {
         String luachon;
         do {
-            System.out.println("---------------Menu-------------");
-            System.out.println("1.Xem danh sach Nhan Vien.");
-            System.out.println("0.Thoat");
-            System.out.print("Nhap lua chon cua ban: ");
+            System.out.println("\t\t\n\nMenu Quản Lí Danh Sách Nhân Viên Của Cửa Hàng");
+            System.out.println("1.Xem Danh Sách Nhân Viên.");
+            System.out.println("0.Thoát.");
+            System.out.print("Nhập Lựa Chọn Của Bạn: ");
             luachon = scanner.nextLine();
             switch (Integer.parseInt(luachon)) {
                 case 1 -> {
                     HoTro.clearConsole();
-                    System.out.println("Danh sach Nhan Vien cua Cua Hang.");
+                    System.out.println("Danh Sách Nhân Viên Của Cửa Hàng.");
                     output();
                 } case 0 -> {
                     HoTro.clearConsole();
-                    System.out.println("Thoat");
+                    System.out.println("\t\tThoát");
                 }default ->  {
-                    System.err.println("Lua chon cua ban khong phu hop.");
+                    System.err.println("\t\tLựa Chọn Của Bạn Không Phù Hợp.");
                 }
             }
-        } while (luachon != "0");
+        } while (luachon == "0");
     }
 
     public Employee getByIdEmployee(String idCanCheck) {
