@@ -158,39 +158,39 @@ public class SanPham implements Output, Serializable {
     }
 
     public void input() {
-        System.out.print("Nhap Ma San Pham: ");
+        System.out.print("Nhập Mã Sản Phẩm: ");
         maSanPham = scanner.nextLine();
-        System.out.print("Nhap Ten San Pham: ");
+        System.out.print("Nhập Tên Sản Phẩm: ");
         tenSanPham = scanner.nextLine();
-        System.out.print("Nhap Thong Tin Mainboard: ");
+        System.out.print("Nhập Thông Tin Mainboard: ");
         mainboard = scanner.nextLine();
-        System.out.print("Nhap Thong Tin CPU: ");
+        System.out.print("Nhập Thông Tin CPU: ");
         CPU = scanner.nextLine();
-        System.out.print("Nhap Thong Tin Ram: ");
+        System.out.print("Nhập Thông Tin Ram: ");
         ramCapacity = scanner.nextLine();
-        System.out.print("Nhap Thong Tin SSD: ");
+        System.out.print("Nhập Thông Tin SSD: ");
         SSD = scanner.nextLine();
-        System.out.print("Nhap Thong Tin HHD: ");
+        System.out.print("Nhập Thông Tin HHD: ");
         HHD = scanner.nextLine();
-        System.out.print("Nhap Thong Tin Tan Nhiet: ");
+        System.out.print("Nhập Thông Tin Tản Nhiệt: ");
         cooling = scanner.nextLine();
-        System.out.print("Nhap Thong Tin VGA: ");
+        System.out.print("Nhập Thông Tin VGA: ");
         VGA = scanner.nextLine();
-        System.out.print("Nhap Gia Ban: ");
+        System.out.print("Nhập Giá Bán: ");
         price = Check.checkInputInteger();
-        System.out.print("Nhap Ma Nha Cung Cap: ");
+        System.out.print("Nhập Mã Nhà Cung Cấp: ");
         maNCC = scanner.nextLine();
-        System.out.print("Nhap Ma Nha San Xuat: ");
+        System.out.print("Nhập Mã Nhà Sản Xuất: ");
         maNCC = scanner.nextLine();
-        System.out.print("Thoi gian bao hanh cua san pham: ");
+        System.out.print("Thời Gian Bảo Hành Của Sản Phẩm: ");
         thoiGianBaoHanh = Check.checkInputInteger();
-        System.out.print("Nhap Ma Loai San Pham: ");
+        System.out.print("Nhập Mã Loại Sản Phẩm: ");
         idMaLoai = scanner.nextLine();
     }
 //in ra all + nhom san pham
     @Override
     public String[] getThuocTinh() {
-        return new String[]{"Ma San Pham","Ten San Pham","Mainboard","CPU","Ram","SSD","HHD","Tan Nhiet","VGA","Gia Ban","Thong tin Nha Cung Cap","Thong tin Nha San Xuat","Thoi gian bao hanh","Ma Loai"};
+        return new String[]{"Mã Sản Phẩm","Tên Sản Phẩm","Mainboard","CPU","Ram","SSD","HHD","Tản Nhiệt","VGA","Giá Bán","Tên Nhà Cung Cấp","Tên Nhà Sản Xuất","Thời Gian Bảo Hành","Mã Loại"};
     }
 
     @Override
@@ -199,19 +199,19 @@ public class SanPham implements Output, Serializable {
     }
 
     public void output() {
-        System.out.println("Ten San Pham: " + getTenSanPham());
+        System.out.println("Tên Sản Phẩm: " + getTenSanPham());
         System.out.println("Mainboared: " + getMainboard());
         System.out.println("CPU: " + getCPU());
         System.out.println("Ram: " + getRamCapacity());
         System.out.println("SSD: " + getSSD());
         System.out.println("HHD: " + getHHD());
-        System.out.println("Tan Nhiet: " + getCooling());
+        System.out.println("Tản Nhiệt: " + getCooling());
         System.out.println("VGA: " + getVGA());
-        System.out.println("Gia Ban: " + getPrice());
-        System.out.println("Ten Nha Cung Cap: " + Database.getDanhSachNCC().getByIdProvider(getMaNCC()));
-        System.out.println("Ten Nha San Xuat: " + Database.getDanhSachNSX().findById(getMaNXS()));
-        System.out.println("Thoi Gian Bao Hanh: " + thoiGianBaoHanh);
-        System.out.println("Ten Loai San Pham: " + Database.getDanhSachLoaiSanPham().getById(getIdMaLoai()).getTenLoai());
+        System.out.println("Giá Bán: " + getPrice());
+        System.out.println("Tên Nhà Cung Cấp: " + Database.getDanhSachNCC().getByIdProvider(getMaNCC()));
+        System.out.println("Tên Nhà Sản Xuất: " + Database.getDanhSachNSX().findById(getMaNXS()));
+        System.out.println("Thời Gian Bảo Hành: " + thoiGianBaoHanh);
+        System.out.println("Tên Loại Sản Phẩm: " + Database.getDanhSachLoaiSanPham().getById(getIdMaLoai()).getTenLoai());
     }
 
 }

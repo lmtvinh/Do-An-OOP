@@ -2,6 +2,7 @@ package DoAnOOP.SanPham;
 
 import DoAnOOP.File.ADanhSach;
 import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.Output;
 import DoAnOOP.Table;
 
 import java.io.Serial;
@@ -97,60 +98,60 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
     public void menu(){
         String luachon;
         do {
-            System.out.println("MENU DANH SACH SAN PHAM.");
-            System.out.println("1.Them San Pham Vao Danh Sach.");
-            System.out.println("2.Sua San Pham Trong Danh Sach.");
-            System.out.println("3.Xoa San Pham Trong Danh Sach.");
-            System.out.println("4.Xem Danh Sach San Pham.");
-            System.out.println("5.Tim Kiem Danh Sach Theo Id.");
-            System.out.println("6.Tim Kiem Danh Sach Theo Ten.");
-            System.out.println("0.Thoat.");
-            System.out.print("Nhap lua chon cua ban: ");
+            System.out.println("\n\n\t\tMENU DANH SÁCH SẢN PHẨM.");
+            System.out.println("1.Thêm Sản Phẩm Vào Danh Sách.");
+            System.out.println("2.Sửa Sản Phẩm Trong Danh Sách.");
+            System.out.println("3.Xóa Sản Phẩm Trong Danh Sách.");
+            System.out.println("4.Xem Danh Sách Sản Phẩm.");
+            System.out.println("5.Tìm Kiếm Sản Phẩm Trong Danh Sách Theo Id.");
+            System.out.println("6.Tìm Kiếm Sản Phẩm Trong Danh Sách Theo Tên.");
+            System.out.println("0.Thoát.");
+            System.out.print("Nhập Lựa Chọn Của Bạn: ");
             luachon = scanner.nextLine();
             switch (luachon) {
                 case "1" -> {
-                    System.out.println("Nhap Thong Rin San Pham Can Them Vao Danh Sach.");
+                    System.out.println("Nhập Thông Tin Sản Phẩm Cần Thêm Vào Danh Sách.");
                     SanPham newSanPham = new SanPham();
                     newSanPham.input();
                     addSanPham(newSanPham);
                 }
                 case "2" -> {
-                    System.out.println("Thong Tin Danh Sach San Pham.");
+                    System.out.println("Danh Sách Sản Phẩm.");
                     getAll();
-                    System.out.println("Sua Thong Tin San Pham Trong Danh Sach");
-                    System.out.print("Nhap Ma San Pham Can Sua: ");
+                    System.out.println("Sửa Thông Tin Sản Phẩm Trong Danh Sách");
+                    System.out.print("Nhập Mã Sản Phẩm Cần Thay Đổi Thông Tin: ");
                     String maSanPham = scanner.nextLine();
-                    System.out.print("Nhap Thong Tin San Pham Ban Muon Sua: ");
+                    System.out.print("Nhập Thông Tin Sản Phẩm Bạn Muốn Thay Đổi: ");
                     SanPham newSanPham = new SanPham();
                     newSanPham.input();
                     updateSanPham(maSanPham,newSanPham);
                 }
                 case "3" -> {
-                    System.out.println("Thong Tin Danh Sach San Pham.");
+                    System.out.println("Danh Sách Sản Phẩm.");
                     getAll();
-                    System.out.print("Nhap Ma San Pham Can Xoa: ");
+                    System.out.print("Nhập Mã Sản Phẩm Cần Xóa: ");
                     String maSanPhamCanXoa = scanner.nextLine();
                     removeSanPham(maSanPhamCanXoa);
                 }
                 case "4" -> {
-                    System.out.println("Thong Tin Danh Sach San Pham.");
+                    System.out.println("Danh Sách Sản Phẩm.");
                     getAll();
                 }
                 case "5" -> {
-                    System.out.print("Nhap ID San Pham Can Tim Kiem Thong Tin: ");
+                    System.out.print("Nhập ID Sản Phẩm Cần Tìm Kiếm Thông Tin: ");
                     String idCanTim = scanner.nextLine();
                     findById(idCanTim);
                 }
                 case "6" -> {
-                    System.out.print("Nhap Ten San Pham Can Tim Kiem Thong Tin: ");
+                    System.out.print("Nhập Tên Sản Phẩm Cần Tìm Kiếm Thông Tin: ");
                     String nameCanTim = scanner.nextLine();
                     findByName(nameCanTim);
                 }
                 case "0" -> {
-                    System.err.println("THOAT.");
+                    System.err.println("THOÁT.");
                 }
                 default -> {
-                    System.err.println("LUA CHON CUA BAN KHONG PHU HOP.");
+                    System.err.println("LỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
         } while (luachon != "0");

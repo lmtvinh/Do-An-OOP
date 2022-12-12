@@ -61,7 +61,7 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
     }
 
     public void getAll() {
-//        Table.createTable(phieuNhaps);
+        Table.createTable(phieuNhaps);
         Table.printTable(phieuNhaps);
     }
 

@@ -1,10 +1,12 @@
 package DoAnOOP.SanPham;
 
+import DoAnOOP.Output;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Scanner;
 
-public class LoaiSanPham implements Serializable{
+public class LoaiSanPham implements Serializable, Output {
     @Serial
     private static long serialVersionUID = 546546464L;
     final static Scanner scanner = new Scanner(System.in);
@@ -44,15 +46,27 @@ public class LoaiSanPham implements Serializable{
     }
 
     public void input() {
-        System.out.print("Nhap Ma Loai San Pham: ");
+        System.out.print("Nhập Mã Loại Sản Phẩm: ");
         maLoai = scanner.nextLine();
-        System.out.print("Nhap Ten Loai San Pham: ");
+        System.out.print("Nhập Tên Loại Sản Phẩm: ");
         tenLoai = scanner.nextLine();
-        System.out.print("Nhap ghi chu(neu co): ");
+        System.out.print("Nhập Ghi Chú(Nếu có): ");
         ghiChu = scanner.nextLine();
     }
 
     public void output() {
+        System.out.println("Mã Loại Sản Phẩm: " + this.getMaLoai());
+        System.out.println("Tên Loại Sản Phẩm: " + this.getTenLoai());
+        System.out.println("Ghi chú: " + this.getGhiChu());
+    }
 
+    @Override
+    public String[] getThuocTinh() {
+        return new String[]{"Mã Loại Sản Phẩm","Tên Loại Sản Phẩm","Ghi Chú"};
+    }
+
+    @Override
+    public String[] getDuLieu() {
+        return new String[]{this.getMaLoai(),this.getTenLoai(),this.getGhiChu()};
     }
 }
