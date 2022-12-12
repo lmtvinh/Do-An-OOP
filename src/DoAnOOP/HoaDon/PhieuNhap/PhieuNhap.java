@@ -18,12 +18,9 @@ public class PhieuNhap implements Output, Serializable {
     final static Scanner scanner = new Scanner(System.in);
     private String maPhieuNhap, maNhanVien, maNhaCungCap;
     private Date ngayNhap;
-    public static int idIncrement = 0;
     private int tongTien;
 
     public PhieuNhap() {
-        maPhieuNhap = "PN" + PhieuNhap.idIncrement;
-        PhieuNhap.idIncrement++;
     }
 
     public PhieuNhap(String maNhanVien, String maNhaCungCap, Date ngayNhap) {
@@ -107,6 +104,6 @@ public class PhieuNhap implements Output, Serializable {
 
     @Override
     public String[] getDuLieu() {
-        return new String[]{this.maPhieuNhap,this.maNhanVien,Database.getDanhSachNhanVien().getByIdEmployee(this.maNhanVien).getFullname(),this.maNhaCungCap,this.ngayNhap.toString()};
+        return new String[]{this.maPhieuNhap,this.maNhanVien,Database.getDanhSachNhanVien().getByIdEmployee(this.maNhanVien).getFullname(),this.maNhaCungCap,Database.getDanhSachNCC().getByIdProvider(getMaNhaCungCap()).getTenNCC(),this.ngayNhap.toString()};
     }
 }

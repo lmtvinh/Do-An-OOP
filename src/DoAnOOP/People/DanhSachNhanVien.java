@@ -2,6 +2,7 @@ package DoAnOOP.People;
 
 import DoAnOOP.File.ADanhSach;
 import DoAnOOP.Help.HoTro;
+import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.Table;
 
 import java.io.Serial;
@@ -35,18 +36,22 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
     }
 
     public void addEmployee(Employee a) {
-        if(length == 0) {
-            employees = new Employee[1];
-            employees[0] = a;
-            length++;
-        } else {
-            Employee[] temp = new Employee[length + 1];
-            for (int i = 0; i < length; i++) {
-                temp[i] = employees[i];
+        if (Database.getDanhSachNhanVien().getByIdEmployee(a.getMaNV()) == null) {
+            if(length == 0) {
+                employees = new Employee[1];
+                employees[0] = a;
+                length++;
+            } else {
+                Employee[] temp = new Employee[length + 1];
+                for (int i = 0; i < length; i++) {
+                    temp[i] = employees[i];
+                }
+                temp[length] = a;
+                employees = temp;
+                length++;
             }
-            temp[length] = a;
-            employees = temp;
-            length++;
+        } else {
+            System.out.print("ID BẠN NHẬP ĐÃ CÓ TRONG DANH SÁCH.");
         }
     }
 
@@ -91,6 +96,7 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
             arrayListEmployee.add(employees[i]);
         }
         Table.createTable(arrayListEmployee);
+        Table.printTable(arrayListEmployee);
     }
 
     public void menuQL() {

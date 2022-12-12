@@ -2,6 +2,7 @@ package DoAnOOP.People;
 
 import DoAnOOP.File.ADanhSach;
 import DoAnOOP.Help.HoTro;
+import DoAnOOP.KhoDuLieu.Database;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -36,18 +37,22 @@ public class DanhSachKhachHang extends ADanhSach implements Serializable {
     }
 
     public void addCustomer(Customer a) {
-        if (length == 0) {
-            customers = new Customer[1];
-            customers[0] = a;
-            length++;
-        } else {
-            Customer[] temp = new Customer[length + 1];
-            for (int i = 0; i < length; i++) {
-                temp[i] = customers[i];
+        if (Database.getDanhSachKhachHang().getByIdCustomer(a.getMaKhachHang()) == null) {
+            if (length == 0) {
+                customers = new Customer[1];
+                customers[0] = a;
+                length++;
+            } else {
+                Customer[] temp = new Customer[length + 1];
+                for (int i = 0; i < length; i++) {
+                    temp[i] = customers[i];
+                }
+                temp[length] = a;
+                customers = temp;
+                length++;
             }
-            temp[length] = a;
-            customers = temp;
-            length++;
+        } else {
+            System.out.println("ID BẠN NHẬP HIỆN TẠI ĐÃ CÓ TRONG DANH SÁCH.");
         }
     }
 

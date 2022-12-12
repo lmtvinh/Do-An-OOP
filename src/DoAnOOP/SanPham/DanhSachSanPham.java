@@ -1,6 +1,7 @@
 package DoAnOOP.SanPham;
 
 import DoAnOOP.File.ADanhSach;
+import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.Table;
 
 import java.io.Serial;
@@ -20,7 +21,11 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
     }
 
     public void addSanPham(SanPham newSanPham) {
-        danhSachSanPham.add(newSanPham);
+        if (Database.getDanhSachSanPham().getByIdSanPham(newSanPham.getMaSanPham()) == null) {
+            danhSachSanPham.add(newSanPham);
+        } else {
+            System.out.println("ID ĐÃ TỒN TẠI TRONG DANH SÁCH.");
+        }
     }
 
     public void updateSanPham(String maSanPham, SanPham newSanPham) {
@@ -72,11 +77,12 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
 
     public void getAll() {
         Table.createTable(danhSachSanPham);
+        Table.printTable(danhSachSanPham);
     }
 
     public SanPham getById(String idCanCheck) {
         for (int i = 0; i < danhSachSanPham.size(); i++) {
-            if (danhSachSanPham.get(i).getMaSanPham()==idCanCheck) {
+            if (Objects.equals(danhSachSanPham.get(i).getMaSanPham(), idCanCheck)) {
                 return danhSachSanPham.get(i);
             }
         }

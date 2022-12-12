@@ -15,6 +15,7 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
     private static long serialVersion = -4645645664l;
     public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachPhieuNhap.bin";
     final static Scanner scanner = new Scanner(System.in);
+    private int idIncrement = 0;
     ArrayList<PhieuNhap> phieuNhaps;
 
     public DanhSachPhieuNhap() {
@@ -23,7 +24,7 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
 
     public void addPhieuNhap(PhieuNhap newPhieuNhap) {
         phieuNhaps.add(newPhieuNhap);
-        PhieuNhap.idIncrement++;
+        newPhieuNhap.setMaPhieuNhap("" + this.idIncrement++);
     }
 
     public void setPhieuNhaps(String maPhieuNhapCanSua, PhieuNhap newPhieuNhap) {
@@ -122,5 +123,6 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
     @Override
     public void copyFrom(ADanhSach newDanhSach) {
         this.phieuNhaps = ((DanhSachPhieuNhap)newDanhSach).phieuNhaps;
+        this.idIncrement = ((DanhSachPhieuNhap)newDanhSach).idIncrement;
     }
 }

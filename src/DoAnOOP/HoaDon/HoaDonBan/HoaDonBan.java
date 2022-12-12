@@ -21,13 +21,10 @@ public class HoaDonBan implements Output, Serializable {
     private Address address;
     private LocalDateTime ngayBan;
     private int tongTien;
-    private static int idIncrement = 0;
 
     public HoaDonBan() {
         address = new Address("273C","An Duong Vuong","Phuong 4","Quan 5","TP Ho Chi Minh");
         ngayBan = LocalDateTime.now();
-        maHoaDon ="HDB" + HoaDonBan.idIncrement;
-        HoaDonBan.idIncrement++;
     }
 
     public HoaDonBan(String maKhachHang, String maNhanVien) {

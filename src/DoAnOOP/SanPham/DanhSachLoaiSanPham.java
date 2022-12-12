@@ -1,6 +1,8 @@
 package DoAnOOP.SanPham;
 
 import DoAnOOP.File.ADanhSach;
+import DoAnOOP.Output;
+import DoAnOOP.Table;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -43,9 +45,7 @@ public class DanhSachLoaiSanPham extends ADanhSach implements Serializable {
     }
 
     public void getAll() {
-        for (int i = 0; i < danhSachLoaiSanPham.size(); i++) {
-            danhSachLoaiSanPham.get(i);
-        }
+        Table.createTable(danhSachLoaiSanPham);
     }
 
     public LoaiSanPham getById(String idCanCheck) {

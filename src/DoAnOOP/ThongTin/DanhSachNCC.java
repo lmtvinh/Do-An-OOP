@@ -1,6 +1,7 @@
 package DoAnOOP.ThongTin;
 
 import DoAnOOP.File.ADanhSach;
+import DoAnOOP.KhoDuLieu.Database;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -20,23 +21,31 @@ public class DanhSachNCC extends ADanhSach implements Serializable {
     }
 
     public void addProvider(Provider newProvider) {
-        providers.add(newProvider);
+        if (Database.getDanhSachNCC().getByIdProvider(newProvider.getMaNCC()) == null) {
+            providers.add(newProvider);
+        } else {
+            System.out.println("ID HIỆN CÓ TRONG DANH SÁCH.");
+        }
     }
 
     public void setProviders(String maCanSua, Provider newProvider) {
         for (int i = 0;i < providers.size(); i++) {
             if (Objects.equals(providers.get(i).getMaNCC(), maCanSua)) {
                 providers.set(i, newProvider);
+                return;
             }
         }
+        System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
     }
 
     public void removeProvider(String maCanXoa) {
         for (int i = 0; i < providers.size(); i++) {
             if (Objects.equals(providers.get(i).getMaNCC(), maCanXoa)) {
                 providers.remove(i);
+                return;
             }
         }
+        System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
     }
 
     public Provider getByIdProvider(String maCanCheck) {

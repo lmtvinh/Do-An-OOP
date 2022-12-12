@@ -15,6 +15,7 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
     public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachHoaDonBan.bin";
     final static Scanner scanner = new Scanner(System.in);
     private ArrayList<HoaDonBan> hoaDonBans;
+    private int idIncrement = 0;
 
     public DanhSachHoaDonBan() {
         hoaDonBans = new ArrayList<HoaDonBan>();
@@ -22,6 +23,7 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
 
     public void addHoaDonBan(HoaDonBan a) {
         hoaDonBans.add(a);
+        a.setMaHoaDon("" + this.idIncrement);
     }
 
     public void setHoaDonBan(String maHoaDonCanSua, HoaDonBan newHoaDonBan) {
