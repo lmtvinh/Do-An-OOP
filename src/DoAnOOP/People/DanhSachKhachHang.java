@@ -104,6 +104,28 @@ public class DanhSachKhachHang extends ADanhSach implements Serializable {
         Table.printTable(arrayListDSKH);
     }
 
+    public void findById(String idCanCheck) {
+        for (int i = 0; i < length; i++) {
+            if (Objects.equals(customers[i].getMaKhachHang(), idCanCheck)) {
+                System.out.println("THÔNG TIN KHÁCH HÀNG BẠN MUỐN TÌM KIẾM.");
+                customers[i].output();
+                return;
+            }
+        }
+        System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
+    }
+
+    public void findByName(String nameCanCheck) {
+        for (int i = 0; i < length; i++) {
+            if (customers[i].getFullname().toLowerCase().contains(nameCanCheck.toLowerCase())) {
+                System.out.println("THÔNG TIN KHÁCH HÀNG BẠN MUỐN TÌM KIẾM.");
+                customers[i].output();
+                return;
+            }
+        }
+        System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
+    }
+
     public void menu() {
         String luachon;
         do {
@@ -113,6 +135,8 @@ public class DanhSachKhachHang extends ADanhSach implements Serializable {
             System.out.println("2.Sửa Thông Tin Khách Hàng Trong Danh Sách Khách Hàng.");
             System.out.println("3.Xóa Thông Tin Khách Hàng Trong Danh Sách Khách Hàng.");
             System.out.println("4.Xem Danh Sách Khách Hàng.");
+            System.out.println("5.Tìm Kiếm Thông Tin Khách Hàng Theo Mã.");
+            System.out.println("6.Tìm Kiếm Thông Tin Khách Hàng Theo Tên.");
             System.out.println("0.Thoát.");
             System.out.print("Nhập Lựa Chọn Của Bạn: ");
             luachon = scanner.nextLine();
@@ -140,6 +164,16 @@ public class DanhSachKhachHang extends ADanhSach implements Serializable {
                 case "4" -> {
                     System.out.println("Danh Sách Khách Hàng.");
                     getAll();
+                }
+                case "5" -> {
+                    System.out.print("Nhập Mã Khách Hàng Bạn Muốn Xem Thông Tin: ");
+                    String maKhachHang = scanner.nextLine();
+                    findById(maKhachHang);
+                }
+                case "6" -> {
+                    System.out.print("Nhập Tên Khách Hàng Bạn Muốn Tìm Kiếm: ");
+                    String nameKhachHang = scanner.nextLine();
+                    findByName(nameKhachHang);
                 }
                 case "0" -> {
                     System.out.println("\t\tTHOÁT.");

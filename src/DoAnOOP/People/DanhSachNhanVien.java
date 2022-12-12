@@ -107,6 +107,8 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
             System.out.println("2.Sửa Danh Sách Nhân Viên.");
             System.out.println("3.Xóa Danh Sách Nhân Viên.");
             System.out.println("4.Xem Danh Sách Nhân Viên.");
+            System.out.println("5.Tìm Kiếm Nhân Viên Theo Mã.");
+            System.out.println("6.Tìm Kiếm Nhân Viên Theo Tên.");
             System.out.println("0.Thoát");
             System.out.print("Nhập Lựa Chọn Của Bạn: ");
             luachon = scanner.nextLine();
@@ -135,6 +137,20 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
                     HoTro.clearConsole();
                     System.out.println("Danh Sách Nhân Viên.");
                     output();
+                }
+                case "5" -> {
+                    System.out.println("Danh Sách Nhân Viên.");
+                    output();
+                    System.out.println("Nhập Mã Nhân Viên Mà Bạn Muốn Xem Thông Tin: ");
+                    String maNhanVien = scanner.nextLine();
+                    findById(maNhanVien);
+                }
+                case "6" -> {
+                    System.out.println("Danh Sách Nhân Viên.");
+                    output();
+                    System.out.println("Nhập Tên Nhân Viên Mà Bạn Muốn Xem Thông Tin: ");
+                    String tenNhanVien = scanner.nextLine();
+                    findByName(tenNhanVien);
                 }
                 case "0" -> {
                     HoTro.clearConsole();
@@ -185,5 +201,27 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
     public void copyFrom(ADanhSach newDanhSach) {
         this.employees = ((DanhSachNhanVien)newDanhSach).employees;
         this.length = ((DanhSachNhanVien)newDanhSach).length;
+    }
+
+    public void findById(String idCanTim) {
+        for (int i = 0; i < length; i++) {
+            if (Objects.equals(employees[i].getMaNV(), idCanTim)) {
+                System.out.println("THÔNG TIN NHÂN VIÊN MÀ BẠN MUỐN TÌM.");
+                employees[i].output();
+                return;
+            }
+        }
+        System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
+    }
+
+    public void findByName(String nameCanCheck) {
+        for (int i = 0; i < length; i++) {
+            if (employees[i].getFullname().toLowerCase().contains(nameCanCheck.toLowerCase())) {
+                System.out.println("THÔNG TIN NHÂN VIÊN MÀ BẠN MUỐN TÌM.");
+                employees[i].output();
+                return;
+            }
+        }
+        System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
     }
 }
