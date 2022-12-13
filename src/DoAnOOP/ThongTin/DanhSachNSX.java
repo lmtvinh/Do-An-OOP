@@ -1,6 +1,7 @@
 package DoAnOOP.ThongTin;
 
 import DoAnOOP.File.ADanhSach;
+import DoAnOOP.Help.HoTro;
 import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.Table;
 
@@ -13,7 +14,7 @@ import java.util.Scanner;
 public class DanhSachNSX extends ADanhSach implements Serializable {
     @Serial
     private static long serialVersion = 555641313155L;
-    public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachNSX.bin";
+    public final static String DUONG_DAN_LUU_FILE = HoTro.duongDanTuongDoi + "DanhSachNSX.bin";
     static final Scanner scanner = new Scanner(System.in);
     private int length = Maker.id;
     private Maker[] makers = new Maker[length];

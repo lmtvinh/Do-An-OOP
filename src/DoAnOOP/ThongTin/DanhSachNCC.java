@@ -1,6 +1,7 @@
 package DoAnOOP.ThongTin;
 
 import DoAnOOP.File.ADanhSach;
+import DoAnOOP.Help.HoTro;
 import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.Table;
 
@@ -13,7 +14,7 @@ import java.util.Scanner;
 public class DanhSachNCC extends ADanhSach implements Serializable {
     @Serial
     private static long serialVersionUID = 45465465L;
-    public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachNCC.bin";
+    public final static String DUONG_DAN_LUU_FILE = HoTro.duongDanTuongDoi + "DanhSachNCC.bin";
     final static Scanner scanner = new Scanner(System.in);
     ArrayList<Provider> providers;
 

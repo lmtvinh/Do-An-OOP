@@ -1,6 +1,7 @@
 package DoAnOOP.HoaDon.HoaDonBan;
 
 import DoAnOOP.File.ADanhSach;
+import DoAnOOP.Help.HoTro;
 import DoAnOOP.Table;
 
 import java.io.Serial;
@@ -12,7 +13,7 @@ import java.util.Scanner;
 public class DanhSachChiTietHoaDonBan extends ADanhSach implements Serializable {
     @Serial
     private static long serialVersion = 545647798l;
-    public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachChiTietHoaDonBan.bin";
+    public final static String DUONG_DAN_LUU_FILE = HoTro.duongDanTuongDoi + "DanhSachChiTietHoaDonBan.bin";
     final static Scanner scanner = new Scanner(System.in);
     ArrayList<ChiTietHoaDonBan> chiTietHoaDonBans = new ArrayList<ChiTietHoaDonBan>();
 

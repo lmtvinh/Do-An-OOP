@@ -2,6 +2,7 @@ package DoAnOOP.HoaDon.PhieuNhap;
 
 import DoAnOOP.File.ADanhSach;
 import DoAnOOP.Help.Check;
+import DoAnOOP.Help.HoTro;
 import DoAnOOP.HoaDon.HoaDonBan.ChiTietHoaDonBan;
 import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.SanPham.SanPham;
@@ -17,7 +18,7 @@ import java.util.Scanner;
 public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
     @Serial
     private static long serialVersion = -4645645664l;
-    public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachPhieuNhap.bin";
+    public final static String DUONG_DAN_LUU_FILE = HoTro.duongDanTuongDoi + "DanhSachPhieuNhap.bin";
     final static Scanner scanner = new Scanner(System.in);
     private int idIncrement = 0;
     ArrayList<PhieuNhap> phieuNhaps;

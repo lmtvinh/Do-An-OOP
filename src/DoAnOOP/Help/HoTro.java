@@ -7,6 +7,7 @@ public class HoTro {
         System.out.flush();
     }
 
+    public static String duongDanTuongDoi = System.getProperty("user.dir")+"\\data\\";
     // Khong chay duoc tren Intellij
     // public static void click(int x, int y) throws AWTException {
     //     Robot bot = new Robot();

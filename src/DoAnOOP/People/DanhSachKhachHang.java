@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class DanhSachKhachHang extends ADanhSach implements Serializable {
     @Serial
     private static long serialVersionUID = 4654646546L;
-    public final static String DUONG_DAN_LUU_FILE = "D:\\Do An OOP\\DoAnOOP\\DanhSachKhachHang.bin";
+    public final static String DUONG_DAN_LUU_FILE = HoTro.duongDanTuongDoi + "DanhSachKhachHang.bin";
 
     static final Scanner scanner = new Scanner(System.in);
     private Customer[] customers;
