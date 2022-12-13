@@ -79,11 +79,11 @@ public class ChiTietHoaDonBan implements Output, Serializable {
 
     @Override
     public String[] getThuocTinh() {
-        return new String[]{"Ten San Pham","So luong","Thanh tien"};
+        return new String[]{"Mã Sản Phẩm","Tên Sản Phẩm","Số Lượng","Thành Tiền"};
     }
 
     @Override
     public String[] getDuLieu() {
-        return new String[]{Database.getDanhSachSanPham().getByIdSanPham(this.maSP).getTenSanPham(),""+this.soLuong,""+getThanhTien()};
+        return new String[]{this.maSP,Database.getDanhSachSanPham().getByIdSanPham(this.maSP).getTenSanPham(),""+this.soLuong,""+getThanhTien()};
     }
 }

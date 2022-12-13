@@ -174,4 +174,37 @@ public class Database {
            danhSachNSX.docFile(DanhSachNSX.DUONG_DAN_LUU_FILE);
         }
     }
+
+    public static void luuNhanh() {
+        if (danhSachSanPham != null) {
+            danhSachSanPham.ghiFile(DanhSachSanPham.DUONG_DAN_LUU_FILE);
+        }
+        if (danhSachLoaiSanPham != null) {
+            danhSachLoaiSanPham.ghiFile(DanhSachLoaiSanPham.DUONG_DAN_LUU_FILE);
+        }
+        if (danhSachPhieuNhap != null) {
+            danhSachPhieuNhap.ghiFile(DanhSachPhieuNhap.DUONG_DAN_LUU_FILE);
+        }
+        if (danhSachChiTietPhieuNhap != null) {
+            danhSachChiTietPhieuNhap.ghiFile(DanhSachChiTietPhieuNhap.DUONG_DAN_LUU_FILE);
+        }
+        if (danhSachHoaDonBan != null) {
+            danhSachHoaDonBan.ghiFile(DanhSachHoaDonBan.DUONG_DAN_LUU_FILE);
+        }
+        if (danhSachHoaDonBan != null) {
+            danhSachChiTietHoaDonBan.ghiFile(DanhSachChiTietHoaDonBan.DUONG_DAN_LUU_FILE);
+        }
+        if (danhSachKhachHang != null) {
+            danhSachKhachHang.ghiFile(DanhSachKhachHang.DUONG_DAN_LUU_FILE);
+        }
+        if (danhSachNhanVien != null) {
+            danhSachNhanVien.ghiFile(DanhSachNhanVien.DUONG_DAN_LUU_FILE);
+        }
+        if (danhSachNCC != null) {
+            danhSachNCC.ghiFile(DanhSachNCC.DUONG_DAN_LUU_FILE);
+        }
+        if (danhSachNSX != null) {
+            danhSachNSX.ghiFile(DanhSachNSX.DUONG_DAN_LUU_FILE);
+        }
+    }
 }

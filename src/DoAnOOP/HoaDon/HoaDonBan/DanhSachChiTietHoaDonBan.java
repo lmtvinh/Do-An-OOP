@@ -1,6 +1,7 @@
 package DoAnOOP.HoaDon.HoaDonBan;
 
 import DoAnOOP.File.ADanhSach;
+import DoAnOOP.Table;
 
 import java.io.Serial;
 import java.io.Serializable;

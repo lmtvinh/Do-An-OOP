@@ -1,6 +1,9 @@
 package DoAnOOP.HoaDon.HoaDonBan;
 
 import DoAnOOP.File.ADanhSach;
+import DoAnOOP.Help.Check;
+import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.SanPham.SanPham;
 import DoAnOOP.Table;
 
 import java.io.Serial;
@@ -24,6 +27,7 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
     public void addHoaDonBan(HoaDonBan a) {
         hoaDonBans.add(a);
         a.setMaHoaDon("" + this.idIncrement);
+        idIncrement++;
     }
 
     public void setHoaDonBan(String maHoaDonCanSua, HoaDonBan newHoaDonBan) {
@@ -63,6 +67,7 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
             System.out.println("2.Thêm Hóa Đơn Bán Hàng.");
             System.out.println("3.Sửa Hóa Đơn Bán Hàng.");
             System.out.println("4.Xóa Hóa Đơn Bán Hàng.");
+            System.out.println("5.Thanh Tóan Hóa Đơn Bán Hàng.");
             System.out.println("0.Thoát.");
             System.out.print("Nhập Lựa Chọn Của Bạn: ");
             luachon = scanner.nextLine();
@@ -76,6 +81,27 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
                     HoaDonBan newHoaDonBan = new HoaDonBan();
                     newHoaDonBan.input();
                     addHoaDonBan(newHoaDonBan);
+                    char choose = 'y';
+                    while (choose == 'y') {
+                        System.out.println("Danh Sách Sản Phẩm.");
+                        Database.getDanhSachSanPham().getAll();
+                        System.out.print("Nhập Mã Sản Phẩm Cần Mua: ");
+                        String maSanPhamCanMua = scanner.nextLine();
+                        SanPham n = Database.getDanhSachSanPham().getByIdSanPham(maSanPhamCanMua);
+                        if (n == null) {
+                            System.out.println("ID KHÔNG TỒN TẠI.");
+                        } else {
+                            System.out.print("Nhập Số Lượng Muốn Mua: ");
+                            int soLuong = Check.checkInputInteger();
+                            ChiTietHoaDonBan c = new ChiTietHoaDonBan();
+                            c.setSoLuong(soLuong);
+                            c.setMaSP(maSanPhamCanMua);
+                            c.setMaHD(newHoaDonBan.getMaHoaDon());
+                            Database.getDanhSachChiTietHoaDonBan().addChiTietHoaDonBan(c);
+                        }
+                        System.out.print("Bạn Có Muốn Mua Thêm Sản Phẩm Không(y/n): ");
+                        choose = scanner.nextLine().charAt(0);
+                    }
                 }
                 case "3" -> {
                     System.out.println("Danh Sách Hóa Đơn Bán.");
@@ -94,6 +120,9 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
                     String maHoaDonBanCanXoa = scanner.nextLine();
                     removeHoaDonBan(maHoaDonBanCanXoa);
                 }
+                case "5" -> {
+                    thanhToan();
+                }
                 case "0" -> {
                     System.err.println("THOÁT.");
                 }
@@ -102,6 +131,21 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
                 }
             }
         } while (luachon == "0");
+    }
+
+    public void thanhToan() {
+        System.out.print("Nhập Id Của Hóa Đơn: ");
+        String idCanThanhToan = scanner.nextLine();
+        var a = Database.getDanhSachHoaDonBan().getByIdHoaDonBan(idCanThanhToan);
+        if (a == null) {
+            System.out.println("Không Tìm Thấy Hóa Đơn.");
+            return;
+        }
+        if (a.isThanhToan()) {
+            System.out.println("Đã Thanh Toán Hóa Đơn.");
+            return;
+        }
+        a.setThanhToan(true);
     }
 
 //    public void menuNV() {

@@ -4,7 +4,9 @@ import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.Output;
 import DoAnOOP.People.Customer;
 import DoAnOOP.People.Employee;
+import DoAnOOP.Table;
 import DoAnOOP.ThongTin.Address;
+import DoAnOOP.View.Main;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -21,6 +23,7 @@ public class HoaDonBan implements Output, Serializable {
     private Address address;
     private LocalDateTime ngayBan;
     private int tongTien;
+    private boolean thanhToan = false;
 
     public HoaDonBan() {
         address = new Address("273C","An Duong Vuong","Phuong 4","Quan 5","TP Ho Chi Minh");
@@ -36,6 +39,14 @@ public class HoaDonBan implements Output, Serializable {
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         String formattedDate = ngayBan.format(myFormatObj);
         return formattedDate;
+    }
+
+    public boolean isThanhToan() {
+        return thanhToan;
+    }
+
+    public void setThanhToan(boolean thanhToan) {
+        this.thanhToan = thanhToan;
     }
 
     public String getMaHoaDon() {
@@ -82,20 +93,30 @@ public class HoaDonBan implements Output, Serializable {
      }
 
     public void input() {
-        System.out.print("Nhap ma nhan vien: ");
-        maNhanVien = scanner.nextLine();
-        System.out.print("Nhap ma khach hang: ");
+        maNhanVien = Main.nguoiDung.getMaNV();
+        System.out.print("Nhập Mã Khách Hàng: ");
         maKhachHang = scanner.nextLine();
         System.out.println("Ngay Ban: " + formattedDate());
     }
 
-//    public int getTongTien() {
-//        for (int i = 0; i < Database.getDanhSachChiTietHoaDonBan().getChiTietHoaDonBan(getMaHoaDon()).size(); i++) {
-//            tongTien += Database.getChiTietPhieuNhap(getMaHoaDon()).getThanhTienLaptop();
-//            tongTien += Database.getChiTietPhieuNhap(getMaHoaDon()).getThanhTienPC();
-//        }
-//        return tongTien;
-//    }
+    public int getTongTien() {
+        var n = Database.getDanhSachChiTietHoaDonBan().getChiTietHoaDonBan(getMaHoaDon());
+        tongTien = 0;
+//        bieu thuc lamda, foreach trong java
+        n.forEach(c->tongTien+=c.getThanhTien());
+        return tongTien;
+    }
+
+    public void xuatHoaDon() {
+        System.out.println("Mã Hóa Đơn: " + getMaHoaDon());
+        System.out.println("Tên Nhân Viên: " + Database.getDanhSachNhanVien().getByIdEmployee(getMaNhanVien()).getFullname());
+        System.out.println("Tên Khách Hàng: " + Database.getDanhSachKhachHang().getByIdCustomer(getMaKhachHang()).getFullname());
+        var n = Database.getDanhSachChiTietHoaDonBan().getChiTietHoaDonBan(getMaHoaDon());
+        Table.printTable(n);
+        System.out.println("Tổng Tiền: " + getTongTien());
+    }
+
+
 
     @Override
     public String[] getThuocTinh() {

@@ -74,11 +74,11 @@ public class ChiTietPhieuNhap implements Output, Serializable {
 
     @Override
     public String[] getThuocTinh() {
-        return new String[]{"Ten San Pham","So Luong","Thanh Tien"};
+        return new String[]{"Mã Phiếu Nhập","Tên Sản Phẩm","Số Lượng","Thành Tiền"};
     }
 
     @Override
     public String[] getDuLieu() {
-        return new String[]{Database.getDanhSachSanPham().getByIdSanPham(this.getMaSanPham()).getTenSanPham(),""+this.soLuong,""+this.getThanhTienSanPham()};
+        return new String[]{this.maPhieuNhap,Database.getDanhSachSanPham().getByIdSanPham(this.getMaSanPham()).getTenSanPham(),""+this.soLuong,""+this.getThanhTienSanPham()};
     }
 }

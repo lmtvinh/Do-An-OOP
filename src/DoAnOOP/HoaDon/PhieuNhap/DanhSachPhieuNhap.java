@@ -1,7 +1,10 @@
 package DoAnOOP.HoaDon.PhieuNhap;
 
 import DoAnOOP.File.ADanhSach;
+import DoAnOOP.Help.Check;
+import DoAnOOP.HoaDon.HoaDonBan.ChiTietHoaDonBan;
 import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.SanPham.SanPham;
 import DoAnOOP.Table;
 
 import java.io.Serial;
@@ -87,6 +90,27 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
                     PhieuNhap newPhieuNhap = new PhieuNhap();
                     newPhieuNhap.input();
                     addPhieuNhap(newPhieuNhap);
+                    char choose = 'y';
+                    while (choose == 'y') {
+                        System.out.println("Danh Sách Sản Phẩm.");
+                        Database.getDanhSachSanPham().getAll();
+                        System.out.print("Nhập Mã Sản Phẩm Cần Mua: ");
+                        String maSanPhamCanMua = scanner.nextLine();
+                        SanPham n = Database.getDanhSachSanPham().getByIdSanPham(maSanPhamCanMua);
+                        if (n == null) {
+                            System.out.println("ID KHÔNG TỒN TẠI.");
+                        } else {
+                            System.out.print("Nhập Số Lượng Muốn Mua: ");
+                            int soLuong = Check.checkInputInteger();
+                            ChiTietPhieuNhap c = new ChiTietPhieuNhap();
+                            c.setSoLuong(soLuong);
+                            c.setMaSP(maSanPhamCanMua);
+                            c.setMaHD(newPhieuNhap.getMaPhieuNhap());
+                            Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(c);
+                        }
+                        System.out.print("Bạn Có Muốn Mua Thêm Sản Phẩm Không(y/n): ");
+                        choose = scanner.nextLine().charAt(0);
+                    }
                 }
                 case "3" -> {
                     System.out.println("Danh Sách Thông Tin Phiếu Nhập.");

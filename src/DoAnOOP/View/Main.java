@@ -5,6 +5,8 @@ import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.People.Customer;
 import DoAnOOP.People.Employee;
 
+import javax.xml.crypto.Data;
+
 public class Main {
     public static Employee nguoiDung = null;
     public static Customer khachHang = null;
@@ -51,6 +53,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Database.luuNhanh();
+            }
+        }));
         String yourChoice;
         do {
             System.out.println("\n\n\t\tMENU ĐĂNG NHẬP.");

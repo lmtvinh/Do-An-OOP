@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class KhachHang {
     final static Scanner scanner = new Scanner(System.in);
-    public void menu() {
+    public static void menu() {
         System.out.println("\n\n\t\tMenu Khách Hàng");
         System.out.println("1.Quản Lí Sản Phẩm.");
         System.out.println("2.Xem Thông Tin Hóa Đơn Của Bạn.");
