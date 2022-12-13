@@ -1,1 +1,2 @@
-# Do-An-OOP
+# Đồ Án OOP
+Quản Lý Cửa Hàng Bán Máy Tính
