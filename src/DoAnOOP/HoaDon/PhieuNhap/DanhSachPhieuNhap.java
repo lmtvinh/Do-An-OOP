@@ -6,6 +6,7 @@ import DoAnOOP.HoaDon.HoaDonBan.ChiTietHoaDonBan;
 import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.SanPham.SanPham;
 import DoAnOOP.Table;
+import DoAnOOP.View.Main;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -86,30 +87,41 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
                     getAll();
                 }
                 case "2" -> {
-                    System.out.println("Nhập Thông Tin Phiếu Nhập Cần Thêm.");
-                    PhieuNhap newPhieuNhap = new PhieuNhap();
-                    newPhieuNhap.input();
-                    addPhieuNhap(newPhieuNhap);
-                    char choose = 'y';
-                    while (choose == 'y') {
-                        System.out.println("Danh Sách Sản Phẩm.");
-                        Database.getDanhSachSanPham().getAll();
-                        System.out.print("Nhập Mã Sản Phẩm Cần Mua: ");
-                        String maSanPhamCanMua = scanner.nextLine();
-                        SanPham n = Database.getDanhSachSanPham().getByIdSanPham(maSanPhamCanMua);
-                        if (n == null) {
-                            System.out.println("ID KHÔNG TỒN TẠI.");
-                        } else {
-                            System.out.print("Nhập Số Lượng Muốn Mua: ");
+                    System.out.println("Danh Sách Sản Phẩm.");
+                    Database.getDanhSachSanPham().getAll();
+                    System.out.println("Bạn Có Muốn Thêm Sản Phẩm Mới Không(y/n)?: ");
+                    String choice = scanner.nextLine();
+                    switch (choice) {
+                        case "y" -> {
+                            SanPham newSanPham = new SanPham();
+                            newSanPham.input();
+                            System.out.print("Nhập Số Lượng Sản Phẩm " + newSanPham.getTenSanPham() + ": ");
                             int soLuong = Check.checkInputInteger();
-                            ChiTietPhieuNhap c = new ChiTietPhieuNhap();
-                            c.setSoLuong(soLuong);
-                            c.setMaSP(maSanPhamCanMua);
-                            c.setMaHD(newPhieuNhap.getMaPhieuNhap());
-                            Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(c);
+                            newSanPham.setSoLuongSanPham(soLuong);
+                            ChiTietPhieuNhap newCTPN = new ChiTietPhieuNhap();
+                            newCTPN.setMaSanPham(newSanPham.getMaSanPham());
+                            newCTPN.setSoLuong(soLuong);
+                            newCTPN.setMaNhanVien(Main.nguoiDung.getMaNV());
+                            Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(newCTPN);
                         }
-                        System.out.print("Bạn Có Muốn Mua Thêm Sản Phẩm Không(y/n): ");
-                        choose = scanner.nextLine().charAt(0);
+                        case "n" -> {
+                            System.out.print("Nhập Mã Sản Phẩm Mà Bạn Muốn Thêm Số Lượng: ");
+                            String maSanPham = scanner.nextLine();
+                            var a = Database.getDanhSachSanPham().getByIdSanPham(maSanPham);
+                            if (a==null) {
+                                System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
+                                return;
+                            } else {
+                                System.out.print("Nhập Số Lượng Muốn Thêm: ");
+                                int soLuong = Check.checkInputInteger();
+                                ChiTietPhieuNhap newCTPN = new ChiTietPhieuNhap();
+                                newCTPN.setMaSanPham(a.getMaSanPham());
+                                newCTPN.setSoLuong(soLuong);
+                                newCTPN.setMaNhanVien(Main.nguoiDung.getMaNV());
+                                int sl = a.getSoLuongSanPham() + soLuong;
+                                a.setSoLuongSanPham(sl);
+                            }
+                        }
                     }
                 }
                 case "3" -> {

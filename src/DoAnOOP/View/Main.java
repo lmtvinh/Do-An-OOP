@@ -60,33 +60,14 @@ public class Main {
             }
         }));
         String yourChoice;
-        do {
-            System.out.println("\n\n\t\tMENU ĐĂNG NHẬP.");
-            System.out.println("1.Nhân Viên.");
-            System.out.println("2.Khách Hàng.");
-            System.out.println("0.Thoát");
-            System.out.print("Nhập Lựa Chọn Của Bạn: ");
-            yourChoice = Check.inputEmpty().trim();
-            switch (yourChoice) {
-                case "1" -> {
-                    while (true) {
-                        while (!loginNV()) {
-                        }
-                        if(nguoiDung.getMaNV().equals("QL")) {
-                            QuanLy.run();
-                        } else {
-                            NhanVien.run();
-                        }
-                    }
-                }
-                case "2" -> {
-                    while(true) {
-                        while (!loginKH()){
-                            KhachHang.run();
-                        }
-                    }
-                }
+        while (true) {
+            while (!loginNV()) {
             }
-        } while (yourChoice == "0");
+            if (nguoiDung.getMaNV().equals("QL")) {
+                QuanLy.run();
+            } else {
+                NhanVien.run();
+            }
+        }
     }
 }

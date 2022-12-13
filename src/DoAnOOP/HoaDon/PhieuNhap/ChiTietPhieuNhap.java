@@ -11,16 +11,17 @@ public class ChiTietPhieuNhap implements Output, Serializable {
     @Serial
     private static final long serialVersion = -55545321321l;
     final static Scanner scanner = new Scanner(System.in);
-    private String maPhieuNhap, maSanPham;
+    private String maPhieuNhap, maSanPham, maNhanVien;
     private int soLuong;
     private static int idIncrement = 0;
 
     public ChiTietPhieuNhap() {
     }
 
-    public ChiTietPhieuNhap(String maPhieuNhap, String maSanPham, int soLuong) {
+    public ChiTietPhieuNhap(String maPhieuNhap, String maSanPham, String maNhanVien, int soLuong) {
         this.maPhieuNhap = maPhieuNhap;
         this.maSanPham = maSanPham;
+        this.maNhanVien = maNhanVien;
         this.soLuong = soLuong;
     }
 
@@ -46,6 +47,14 @@ public class ChiTietPhieuNhap implements Output, Serializable {
 
     public void setSoLuong(int soLuong) {
         this.soLuong = soLuong;
+    }
+
+    public String getMaNhanVien() {
+        return maNhanVien;
+    }
+
+    public void setMaNhanVien(String maNhanVien) {
+        this.maNhanVien = maNhanVien;
     }
 
     public void input() {

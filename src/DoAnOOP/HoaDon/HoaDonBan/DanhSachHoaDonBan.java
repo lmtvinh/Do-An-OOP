@@ -93,11 +93,23 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
                         } else {
                             System.out.print("Nhập Số Lượng Muốn Mua: ");
                             int soLuong = Check.checkInputInteger();
-                            ChiTietHoaDonBan c = new ChiTietHoaDonBan();
-                            c.setSoLuong(soLuong);
-                            c.setMaSP(maSanPhamCanMua);
-                            c.setMaHD(newHoaDonBan.getMaHoaDon());
-                            Database.getDanhSachChiTietHoaDonBan().addChiTietHoaDonBan(c);
+                            int i = 0;
+                            while (i == 0) {
+                                if (soLuong > Database.getDanhSachSanPham().getByIdSanPham(maSanPhamCanMua).getSoLuongSanPham()) {
+                                    ChiTietHoaDonBan c = new ChiTietHoaDonBan();
+                                    c.setSoLuong(soLuong);
+                                    c.setMaSP(maSanPhamCanMua);
+                                    c.setMaHD(newHoaDonBan.getMaHoaDon());
+                                    Database.getDanhSachChiTietHoaDonBan().addChiTietHoaDonBan(c);
+                                    int sl = Database.getDanhSachChiTietHoaDonBan().getByIdChiTietHoaDonBan(maSanPhamCanMua).getSoLuong();
+                                    sl -= soLuong;
+                                    Database.getDanhSachSanPham().getByIdSanPham(maSanPhamCanMua).setSoLuongSanPham(sl);
+                                    i = 1;
+                                }
+                                else {
+                                    System.out.println("Số Lượng Bạn Muốn Mua Vượt Quá Số Lượng Còn Trong Kho.");
+                                }
+                            }
                         }
                         System.out.print("Bạn Có Muốn Mua Thêm Sản Phẩm Không(y/n): ");
                         choose = scanner.nextLine().charAt(0);

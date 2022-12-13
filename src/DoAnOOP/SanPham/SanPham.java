@@ -15,12 +15,12 @@ public class SanPham implements Output, Serializable {
     private static long serialVersionUID = 54561331213L;
     final static Scanner scanner = new Scanner(System.in);
     protected String maSanPham,tenSanPham, mainboard, CPU, ramCapacity, maNXS, maNCC, SSD, HHD, cooling, VGA, idMaLoai;
-    protected int price, thoiGianBaoHanh;
+    protected int price, thoiGianBaoHanh, soLuongSanPham;
 
     public SanPham() {
     }
 
-    public SanPham(String maSanPham, String tenSanPham, String mainboard, String CPU, String ramCapacity, String maNXS, String maNCC, String SSD, String HHD, String cooling, String VGA, String idMaLoai, int price, int thoiGianBaoHanh) {
+    public SanPham(String maSanPham, String tenSanPham, String mainboard, String CPU, String ramCapacity, String maNXS, String maNCC, String SSD, String HHD, String cooling, String VGA, String idMaLoai, int price, int thoiGianBaoHanh, int soLuongSanPham) {
         this.maSanPham = maSanPham;
         this.tenSanPham = tenSanPham;
         this.mainboard = mainboard;
@@ -35,6 +35,15 @@ public class SanPham implements Output, Serializable {
         this.idMaLoai = idMaLoai;
         this.price = price;
         this.thoiGianBaoHanh = thoiGianBaoHanh;
+        this.soLuongSanPham = soLuongSanPham;
+    }
+
+    public int getSoLuongSanPham() {
+        return soLuongSanPham;
+    }
+
+    public void setSoLuongSanPham(int soLuongSanPham) {
+        this.soLuongSanPham = soLuongSanPham;
     }
 
     public String getMaSanPham() {
@@ -186,16 +195,18 @@ public class SanPham implements Output, Serializable {
         thoiGianBaoHanh = Check.checkInputInteger();
         System.out.print("Nhập Mã Loại Sản Phẩm: ");
         idMaLoai = scanner.nextLine();
+        System.out.print("Nhập Số Lượng Sản Phẩm: ");
+        soLuongSanPham = Check.checkInputInteger();
     }
 //in ra all + nhom san pham
     @Override
     public String[] getThuocTinh() {
-        return new String[]{"Mã Sản Phẩm","Tên Sản Phẩm","Mainboard","CPU","Ram","SSD","HHD","Tản Nhiệt","VGA","Giá Bán","Tên Nhà Cung Cấp","Tên Nhà Sản Xuất","Thời Gian Bảo Hành","Mã Loại"};
+        return new String[]{"Mã Sản Phẩm","Tên Sản Phẩm","Mainboard","CPU","Ram","SSD","HHD","Tản Nhiệt","VGA","Giá Bán","Tên Nhà Cung Cấp","Tên Nhà Sản Xuất","Thời Gian Bảo Hành","Mã Loại","Số Lượng"};
     }
 
     @Override
     public String[] getDuLieu() {
-        return new String[]{this.maSanPham, this.tenSanPham, this.mainboard, this.CPU, this.ramCapacity, this.SSD, this.HHD, this.cooling, this.VGA,""+this.price, Database.getDanhSachNCC().getByIdProvider(this.maNCC).getTenNCC(), Database.getDanhSachNSX().findById(this.maNXS).getTenNSX(),""+this.thoiGianBaoHanh, Database.getDanhSachLoaiSanPham().getById(this.idMaLoai).getTenLoai() };
+        return new String[]{this.maSanPham, this.tenSanPham, this.mainboard, this.CPU, this.ramCapacity, this.SSD, this.HHD, this.cooling, this.VGA,""+this.price, Database.getDanhSachNCC().getByIdProvider(this.maNCC).getTenNCC(), Database.getDanhSachNSX().findById(this.maNXS).getTenNSX(),""+this.thoiGianBaoHanh, Database.getDanhSachLoaiSanPham().getById(this.idMaLoai).getTenLoai(),""+this.soLuongSanPham};
     }
 
     public void output() {

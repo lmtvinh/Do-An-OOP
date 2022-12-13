@@ -219,7 +219,7 @@ public class Main {
                                 "32GB (16x2) DDR5 4800MHz (2x SO-DIMM socket, up to 64GB SDRAM)", "AS", "GVN",
                                 "1TB M.2 NVMe™ PCIe® 4.0 Performance SSD (2 slots M.2 2280 PCIe 4.0x4)",
                                 "Tùy chọn nâng cấp", "LED Xigmatek STARZ X20A Arctic", "NVIDIA® RTX™ A3000 12GB GDDR6",
-                                "VP", 79990000, 24, "16 inch", "4K (3840 x 2400) OLED 16:10");
+                                "VP", 79990000, 24,10, "16 inch", "4K (3840 x 2400) OLED 16:10");
                 // Laptop2
                 // Laptop laptop2 = new Laptop("ASUS ROG Strix SCAR 15 G533ZW LN134W","Intel
                 // Core i9-12900H 3.8GHz up to 5.0GHz 24MB","32GB (16GBx2) DDR5 4800MHz (2x
@@ -230,7 +230,7 @@ public class Main {
                                 "32GB (16GBx2) DDR5 4800MHz (2x SO-DIMM socket, up to 64GB SDRAM)", "AS", "GVN",
                                 "1TB M.2 NVMe PCIe 4.0 ",
                                 "Tùy chọn nâng cấp", "LED Xigmatek STARZ X20A Arctic", "NVIDIA® RTX™ A3000 12GB GDDR6",
-                                "GA", 71990000, 48, "15.6 inch", "WQHD (2560 x 1440) 16:9");
+                                "GA", 71990000, 48, 10,"15.6 inch", "WQHD (2560 x 1440) 16:9");
                 // ACER
                 // Laptop3
                 // Laptop laptop3 = new Laptop("Acer Swift Edge SFA16 41 R9WB",
@@ -245,7 +245,7 @@ public class Main {
                                 "1TB PCIe NVMe SSD (1 Slot)",
                                 "Tùy chọn nâng cấp", "LED Xigmatek STARZ X20A Arctic",
                                 "NVIDIA GeForce GTX 1650 4GB GDDR6 ",
-                                "VP", 55990000, 48, "16 inch", "WQUXGA (3840x2400) OLED 16:10");
+                                "VP", 55990000, 48, 10,"16 inch", "WQUXGA (3840x2400) OLED 16:10");
                 // Laptop4
                 // Laptop laptop4 = new Laptop("Acer Predator Triton 500 SE PT516 52S 91XH",
                 // "Intel® Core™ i9-12900H 3.80 GHz up to 5.00 GHz", "32GB DDR5 4800MHz
@@ -258,7 +258,7 @@ public class Main {
                                 "32GB DDR5 4800MHz Onboard", "AC", "GVN",
                                 "1TB PCIe NVMe SSD (1 Slot)",
                                 "Tùy chọn nâng cấp", "LED Xigmatek STARZ X20A Arctic", "NVIDIA® RTX™ A3000 12GB GDDR6",
-                                "GA", 65990000, 48, "16inch", "WQXGA (2560 x 1600) SlimBezel 240Hz");
+                                "GA", 65990000, 48, 10,"16inch", "WQXGA (2560 x 1600) SlimBezel 240Hz");
                 // Lenovo
                 // Laptop5
                 // Laptop laptop5 = new Laptop("Lenovo IdeaPad 5 Pro 16ARH7 82SN003LVN",
@@ -274,7 +274,7 @@ public class Main {
                                 "512GB SSD M.2 2242 PCIe 3.0x4 NVMe (1slot)",
                                 "Tùy chọn nâng cấp", "LED Xigmatek STARZ X20A Arctic",
                                 "NVIDIA GeForce GTX 1650 4GB GDDR6 ",
-                                "VP", 40990000, 48, "16inch", "2.5K WQXGA (2560x1600) IPS");
+                                "VP", 40990000, 48, 10,"16inch", "2.5K WQXGA (2560x1600) IPS");
                 // Laptop6
                 // Laptop laptop6 = new Laptop("Lenovo Legion 7 16IAX7 82TD008FVN", "Intel Core
                 // i7-12700H",
@@ -289,7 +289,7 @@ public class Main {
                                 "1TB SSD M.2 2280 PCIe 4.0x4 NVMe (2 slots)",
                                 "Tùy chọn nâng cấp", "LED Xigmatek STARZ X20A Arctic",
                                 "NVIDIA GeForce RTX 3070 Ti 8GB GDDR6, Boost Clock 1485MHz, TGP 150W",
-                                "GA", 76990000, 48, "16inch", "WQXGA (2560x1600) IPS 500nits Anti-glare");
+                                "GA", 76990000, 48, 10,"16inch", "WQXGA (2560x1600) IPS 500nits Anti-glare");
                 // Dell
                 // Laptop7
                 // Laptop laptop7 = new Laptop("Dell XPS 15 9520 70295790",
@@ -303,7 +303,7 @@ public class Main {
                                 "1TB SSD M.2 PCIE",
                                 "Tùy chọn nâng cấp", "LED Xigmatek STARZ X20A Arctic",
                                 "AMD Radeon Graphics",
-                                "VP", 75990000, 48, "15.6inch", "3.5K QHD+ (3456 x 2160)");
+                                "VP", 75990000, 48, 10,"15.6inch", "3.5K QHD+ (3456 x 2160)");
                 // Laptop8
                 // Laptop laptop8 = new Laptop("Dell Alienware M15 R6 70272633",
                 // "Intel Core i7-11800H 2.3GHz up to 4.6GHz 24MB",
@@ -317,7 +317,7 @@ public class Main {
                                 "1TB PCIe NVMe(1 slots)",
                                 "Tùy chọn nâng cấp", "LED Xigmatek STARZ X20A Arctic",
                                 "NVIDIA® GeForce RTX 3070 8GB GDDR6",
-                                "GA", 54990000, 48, "15.6inch", "QHD (2560 x 1440) 240Hz");
+                                "GA", 54990000, 48, 10,"15.6inch", "QHD (2560 x 1440) 240Hz");
                 // HP
                 // Laptop9
                 // Laptop laptop9 = new Laptop("HP Spectre x360 14 ef0030TU 6K773PA",
@@ -331,7 +331,7 @@ public class Main {
                                 "1TB PCIe NVMe TLC M.2 SSD",
                                 "Tùy chọn nâng cấp", "LED Xigmatek STARZ X20A Arctic",
                                 "Intel Iris Xe Graphics",
-                                "VP", 51990000, 48, "13.5inch", "3K2K (3000 x 2000)");
+                                "VP", 51990000, 48, 10,"13.5inch", "3K2K (3000 x 2000)");
                 // Laptop10
                 // Laptop laptop10 = new Laptop("HP Omen 16 b0127TX 4Y0W7PA", "HP Omen 16
                 // b0127TX 4Y0W7PA",
@@ -345,7 +345,7 @@ public class Main {
                                 "1TB PCIe NVMe TLC M.2 SSD",
                                 "Tùy chọn nâng cấp", "LED Xigmatek STARZ X20A Arctic",
                                 "Intel Iris Xe Graphics",
-                                "GA", 51990000, 48, "16.1inch", "QHD (2560 x 1440)");
+                                "GA", 51990000, 48, 10,"16.1inch", "QHD (2560 x 1440)");
                 Database.getDanhSachSanPham().addSanPham(laptop1);
                 Database.getDanhSachSanPham().addSanPham(laptop2);
                 Database.getDanhSachSanPham().addSanPham(laptop3);
@@ -389,7 +389,7 @@ public class Main {
                                 "Tùy Chọn Nâng Cấp",
                                 "SamSung 980 PRO 1TB M.2 PCIe gen 4 NVMe x2",
                                 "ASUS ROG Strix GeForce RTX 3090 Gaming OC edition 24G",
-                                "GA", 125000000, 60,
+                                "GA", 125000000, 60, 10,
                                 "Cougar ConQuer 2 - Full Tower");
                 // PC2
                 // PC pc2 = new PC("GVN ProArt Plus 9 a4090", "GVN ProArt Plus 9 a4090",
@@ -410,7 +410,7 @@ public class Main {
                                 "Tùy Chọn Nâng Cấp",
                                 "Cooler Master SICKLEFLOW 120 ARGB 3 IN 1",
                                 "ASUS TUF Gaming GeForce RTX 4090 OC Edition 24GB GDDR6X",
-                                "GA", 120000000, 60,
+                                "GA", 120000000, 60, 10,
                                 "NZXT H7 Flow Black");
                 // PC3
                 // PC pc3 = new PC("GVN TITAN Plus i3080Ti", "Intel Core i9 12900K",
@@ -431,7 +431,7 @@ public class Main {
                                 "Tùy Chọn Nâng Cấp",
                                 "Cooler Master SICKLEFLOW 120 ARGB 3 IN 1",
                                 "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G",
-                                "GA", 120000000, 60,
+                                "GA", 120000000, 60, 10,
                                 "ASUS ROG Strix Helios GX601");
                 // PC4
                 // PC pc4 = new PC("MSI GeForce RTX 3080 Ti GAMING X TRIO 12G",
@@ -452,7 +452,7 @@ public class Main {
                                 "Tùy Chọn Nâng Cấp",
                                 "Cooler Master SICKLEFLOW 120 ARGB 3 IN 1",
                                 "GIGABYTE GeForce RTX 3070 VISION OC 8G (rev 2.0)",
-                                "GA", 67000000, 60,
+                                "GA", 67000000, 60, 10,
                                 "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO");
                 // PC5
                 // PC pc5 = new PC("GVN PHANTOM Plus a3080Ti", "AMD Ryzen 7 5800X3D", "AMD Ryzen
@@ -472,7 +472,7 @@ public class Main {
                                 "Tùy Chọn Nâng Cấp",
                                 "Corsair H150i ELITE CAPELLIX",
                                 "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G",
-                                "GA", 67000000, 60,
+                                "GA", 67000000, 60, 10,
                                 "Corsair 4000D AIRFLOW White");
                 // PC6
                 // PC pc6 = new PC("GVN Homework Athlon", "Athlon 3000G / 5MB / 3.5GHz / 2 nhân
@@ -490,7 +490,7 @@ public class Main {
                                 "Tùy Chọn Nâng Cấp",
                                 "Corsair H150i ELITE CAPELLIX",
                                 "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G",
-                                "VP", 67000000, 60,
+                                "VP", 67000000, 60, 10,
                                 "Jetek EM4");
                 // PC7
                 // PC pc7 = new PC("GVN VIPER i3050 WHITE", "Intel Core i5 12400F", "PNY XLR8
@@ -511,7 +511,7 @@ public class Main {
                                 "ID COOLING SE-214-XT ARGB WHITE",
                                 "GIGABYTE GeForce RTX 3050 EAGLE OC 8G",
                                 "GA",
-                                21490000, 60,
+                                21490000, 60, 10,
                                 "1st Player XF White (4 fan RGB)");
                 // PC8
                 // PC pc8 = new PC("GVN TITAN Plus i3080Ti", "Intel Core i9 12900K",
@@ -532,7 +532,7 @@ public class Main {
                                 "ASUS ROG RYUJIN II 360",
                                 "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G",
                                 "GA",
-                                89000000, 60,
+                                89000000, 60, 10,
                                 "ASUS ROG Strix Helios GX601");
                 // PC9
                 // PC pc9 = new PC("GVN PHANTOM Plus i4080", "Intel Core i7 13700K", "Intel Core
@@ -554,7 +554,7 @@ public class Main {
                                 "ASUS ROG RYUJIN II 360",
                                 "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G",
                                 "GA",
-                                89000000, 60,
+                                89000000, 60, 10,
                                 "ASUS ROG Strix Helios GX601");
                 // PC10
                 // PC pc10 = new PC("Corsair LL120 RGB LED 120mm White — Triple Pack with
@@ -576,7 +576,7 @@ public class Main {
                                 "Corsair LL120 RGB LED 120mm — Triple Pack with Lighting Node PRO",
                                 "MSI GeForce RTX 3080 Ti GAMING X TRIO 12G",
                                 "GA",
-                                87000000, 60,
+                                87000000, 60, 10,
                                 "ASUS TUF Gaming GeForce RTX 3090 Ti OC edition 24G");
                 Database.getDanhSachSanPham().addSanPham(pc1);
                 Database.getDanhSachSanPham().addSanPham(pc2);
@@ -701,25 +701,25 @@ public class Main {
 
         public static void initChiTietPhieuNhap() {
                 // CTPN1
-                ChiTietPhieuNhap chiTietPhieuNhap1 = new ChiTietPhieuNhap("PN1", "LP001", 5);
+                ChiTietPhieuNhap chiTietPhieuNhap1 = new ChiTietPhieuNhap("PN1", "LP001","QL001", 5);
                 // CTPN2
-                ChiTietPhieuNhap chiTietPhieuNhap2 = new ChiTietPhieuNhap("PN2", "LP002", 5);
+                ChiTietPhieuNhap chiTietPhieuNhap2 = new ChiTietPhieuNhap("PN2", "LP002","QL001", 5);
                 // CTPN3
-                ChiTietPhieuNhap chiTietPhieuNhap3 = new ChiTietPhieuNhap("PN3", "LP003", 5);
+                ChiTietPhieuNhap chiTietPhieuNhap3 = new ChiTietPhieuNhap("PN3", "LP003","QL001", 5);
                 // CTPN4
-                ChiTietPhieuNhap chiTietPhieuNhap4 = new ChiTietPhieuNhap("PN4", "LP004", 5);
+                ChiTietPhieuNhap chiTietPhieuNhap4 = new ChiTietPhieuNhap("PN4", "LP004","QL001", 5);
                 // CTPN5
-                ChiTietPhieuNhap chiTietPhieuNhap5 = new ChiTietPhieuNhap("PN5", "LP005", 5);
+                ChiTietPhieuNhap chiTietPhieuNhap5 = new ChiTietPhieuNhap("PN5", "LP005","QL001", 5);
                 // CTPN6
-                ChiTietPhieuNhap chiTietPhieuNhap6 = new ChiTietPhieuNhap("PN6", "PC001", 5);
+                ChiTietPhieuNhap chiTietPhieuNhap6 = new ChiTietPhieuNhap("PN6", "PC001","QL001", 5);
                 // CTPN7
-                ChiTietPhieuNhap chiTietPhieuNhap7 = new ChiTietPhieuNhap("PN7", "PC007", 5);
+                ChiTietPhieuNhap chiTietPhieuNhap7 = new ChiTietPhieuNhap("PN7", "PC007","QL001", 5);
                 // CTPN8
-                ChiTietPhieuNhap chiTietPhieuNhap8 = new ChiTietPhieuNhap("PN8", "PC008", 5);
+                ChiTietPhieuNhap chiTietPhieuNhap8 = new ChiTietPhieuNhap("PN8", "PC008","QL001", 5);
                 // CTPN9
-                ChiTietPhieuNhap chiTietPhieuNhap9 = new ChiTietPhieuNhap("PN9", "PC001", 5);
+                ChiTietPhieuNhap chiTietPhieuNhap9 = new ChiTietPhieuNhap("PN9", "PC001","QL001", 5);
                 // CTPN10
-                ChiTietPhieuNhap chiTietPhieuNhap10 = new ChiTietPhieuNhap("PN10", "LP010", 5);
+                ChiTietPhieuNhap chiTietPhieuNhap10 = new ChiTietPhieuNhap("PN10", "LP010","QL001", 5);
                 Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(chiTietPhieuNhap1);
                 Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(chiTietPhieuNhap2);
                 Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(chiTietPhieuNhap3);

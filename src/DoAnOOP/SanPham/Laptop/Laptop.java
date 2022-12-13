@@ -16,9 +16,25 @@ public class Laptop extends SanPham implements Output, Serializable {
     public Laptop() {
     }
 
-    public Laptop(String maSanPham, String tenSanPham, String mainboard, String CPU, String ramCapacity, String maNXS, String maNCC, String SSD, String HHD, String cooling, String VGA, String idMaLoai, int price, int thoiGianBaoHanh, String screensize, String resolution) {
-        super(maSanPham, tenSanPham, mainboard, CPU, ramCapacity, maNXS, maNCC, SSD, HHD, cooling, VGA, idMaLoai, price, thoiGianBaoHanh);
+    public Laptop(String maSanPham, String tenSanPham, String mainboard, String CPU, String ramCapacity, String maNXS, String maNCC, String SSD, String HHD, String cooling, String VGA, String idMaLoai, int price, int thoiGianBaoHanh, int soLuongSanPham, String screensize, String resolution) {
+        super(maSanPham, tenSanPham, mainboard, CPU, ramCapacity, maNXS, maNCC, SSD, HHD, cooling, VGA, idMaLoai, price, thoiGianBaoHanh, soLuongSanPham);
         this.screensize = screensize;
+        this.resolution = resolution;
+    }
+
+    public String getScreensize() {
+        return screensize;
+    }
+
+    public void setScreensize(String screensize) {
+        this.screensize = screensize;
+    }
+
+    public String getResolution() {
+        return resolution;
+    }
+
+    public void setResolution(String resolution) {
         this.resolution = resolution;
     }
 

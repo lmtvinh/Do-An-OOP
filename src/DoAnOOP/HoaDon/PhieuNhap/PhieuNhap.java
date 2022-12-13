@@ -29,6 +29,22 @@ public class PhieuNhap implements Output, Serializable {
         this.ngayNhap = ngayNhap;
     }
 
+    public static long getSerialVersion() {
+        return serialVersion;
+    }
+
+    public static void setSerialVersion(long serialVersion) {
+        PhieuNhap.serialVersion = serialVersion;
+    }
+
+    public int getTongTien() {
+        return tongTien;
+    }
+
+    public void setTongTien(int tongTien) {
+        this.tongTien = tongTien;
+    }
+
     public String getMaNhanVien() {
         return maNhanVien;
     }

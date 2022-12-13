@@ -63,6 +63,20 @@ public class Check {
         }
     }
 
+    public static String checkMSP() {
+        String input;
+        while(true) {
+            input = scanner.nextLine();
+            input = input.toUpperCase();
+            if ((input.matches("SP"+"[0-9]{3}"))&&(Database.getDanhSachSanPham().getByIdSanPham(input)==null)) {
+                return input;
+            } else {
+                System.out.println("Định Danh Mã Sản Phẩm: SP___.Ví Dụ: SP001");
+            }
+            System.out.print("Mời Nhập Lại: ");
+        }
+    }
+
     public static String checkMKH() {
         String input;
         while(true) {

@@ -2,6 +2,7 @@ package DoAnOOP.ThongTin;
 
 import DoAnOOP.File.ADanhSach;
 import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.Table;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -60,5 +61,9 @@ public class DanhSachNCC extends ADanhSach implements Serializable {
     @Override
     public void copyFrom(ADanhSach newDanhSach) {
         this.providers = ((DanhSachNCC)newDanhSach).providers;
+    }
+
+    public void getAll() {
+        Table.printTable(providers);
     }
 }

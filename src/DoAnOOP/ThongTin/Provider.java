@@ -1,6 +1,7 @@
 package DoAnOOP.ThongTin;
 
 import DoAnOOP.Output;
+import DoAnOOP.Table;
 
 import java.io.Serial;
 import java.io.Serializable;
