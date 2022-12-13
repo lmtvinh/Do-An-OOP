@@ -157,6 +157,45 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
         } while (luachon != "0");
     }
 
+    public void menuKH() {
+        String luachon;
+        do {
+            System.out.println("\n\n\t\tMenu Sản Phẩm.");
+            System.out.println("1.Xem Danh Sách Sản Phẩm.");
+            System.out.println("2.Tìm Kiếm Sản Phẩm Theo Mã Sản Phẩm.");
+            System.out.println("3.Tìm Kiếm Sản Phẩm Theo Tên Sản Phẩm.");
+            System.out.println("0.Thoát.");
+            System.out.println("Nhập lựa chọn của bạn: ");
+            luachon = scanner.nextLine();
+            switch (luachon) {
+                case "1" -> {
+                    System.out.println("Danh Sách Sản Phẩm.");
+                    getAll();
+                }
+                case "2" -> {
+                    System.out.println("Danh Sách Sản Phẩm.");
+                    getAll();
+                    System.out.print("Nhập Mã Sản Phẩm Mà Bạn Muốn Tìm Kiếm Thông Tin: ");
+                    String idCanTim = scanner.nextLine();
+                    findById(idCanTim).output();
+                }
+                case "3" -> {
+                    System.out.println("Danh Sách Sản Phẩm.");
+                    getAll();
+                    System.out.print("Nhập Tên Sản Phẩm Mà Bạn Muốn Tìm Kiếm Thông Tin: ");
+                    String nameCanTim = scanner.nextLine();
+                    findByName(nameCanTim).output();
+                }
+                case "0" -> {
+                    System.out.println("\t\tThoát.");
+                }
+                default -> {
+                    System.err.println("\t\tLỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
+                }
+            }
+        } while(luachon == "0");
+    }
+
     public static void main(String[] args) {
         DanhSachSanPham danhSachSanPham1 = new DanhSachSanPham();
         danhSachSanPham1.menu();

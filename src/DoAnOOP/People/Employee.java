@@ -13,28 +13,21 @@ public class Employee extends Person implements Output, Serializable {
     @Serial
     private static long serialVersionUID = -456478797466L;
     static final Scanner scanner = new Scanner(System.in);
-    private String maNV, matKhau;
+    private String maNV;
     private float heSoLuong, luongCoBan, soGioLam;
 
     public Employee() {
     }
 
-    public Employee(String maNV,String matKhau, float heSoLuong, float luongCoBan, float soGioLam) {
-        this.matKhau = matKhau;
+    public Employee(String fullname, String email, String matKhau, Address address, Date dateOfBirth, String maNV, float heSoLuong, float luongCoBan, float soGioLam) {
+        super(fullname, email, matKhau, address, dateOfBirth);
         this.maNV = maNV;
         this.heSoLuong = heSoLuong;
         this.luongCoBan = luongCoBan;
         this.soGioLam = soGioLam;
     }
 
-    public Employee(String fullname, String email, Address address, Date dateOfBirth, String maNV,String matKhau, float heSoLuong, float luongCoBan, float soGioLam) {
-        super(fullname, email, address, dateOfBirth);
-        this.maNV = maNV;
-        this.matKhau = matKhau;
-        this.heSoLuong = heSoLuong;
-        this.luongCoBan = luongCoBan;
-        this.soGioLam = soGioLam;
-    }
+
 
     public String getMaNV() {
         return maNV;
@@ -42,14 +35,6 @@ public class Employee extends Person implements Output, Serializable {
 
     public void setMaNV(String maNV) {
         this.maNV = maNV;
-    }
-
-    public String getMatKhau() {
-        return matKhau;
-    }
-
-    public void setMatKhau(String matKhau) {
-        this.matKhau = matKhau;
     }
 
     public double getHeSoLuong() {

@@ -54,52 +54,50 @@ public class Main {
                 // Quan ly 1
                 Address a1 = new Address("273", "An Duong Vuong", "Phuong 8", "Quan 5", "TP HCM");
                 Date d1 = new Date(16, 6, 2003);
-                Employee e1 = new Employee("Nguyen Van A", "nguyenvana@gmail.com", a1, d1, "QL001", "quanli", 3,
+                Employee e1 = new Employee("Nguyen Van A", "nguyenvana@gmail.com","quanli", a1, d1, "QL001",  3,
                                 15000000, 240);
                 // Quan ly 2
                 Address a2 = new Address("43", "An Phu Dong 10", "An Phu Dong", "Quan 12", "TP HCM");
                 Date d2 = new Date(1, 1, 2000);
-                Employee e2 = new Employee("Nguyen Van B", "nguyenvanb@gmail.com", a2, d2, "QL002", "quanli", 3,
+                Employee e2 = new Employee("Nguyen Van B", "nguyenvanb@gmail.com","quanli", a2, d2, "QL002",  3,
                                 16000000, 200);
                 // Quan ly 3
                 Address a3 = new Address("828", "Tran Hung Dao", "Phuong 7", "Quan 5", "TP HCM");
                 Date d3 = new Date(9, 6, 2003);
-                Employee e3 = new Employee("Tran Luong Thieu Huy", "tranluongthieuhuy@gmail.com", a3, d3, "QL003",
-                                "quanli", 3, 17000000, 210);
+                Employee e3 = new Employee("Tran Luong Thieu Huy", "tranluongthieuhuy@gmail.com", "quanli", a3, d3, "QL003", 3, 17000000, 210);
                 // Quan ly 4
                 Address a4 = new Address("D2/34", "Kinh A", "Xa Le Minh Xuan", "Quan Binh Chanh", "TP HCM");
                 Date d4 = new Date(19, 3, 2003);
-                Employee e4 = new Employee("Nguyen Minh Huu", "nguyenminhhuu@gmail.com", a4, d4, "QL004", "quanli", 3,
-                                18000000, 150);
+                Employee e4 = new Employee("Nguyen Minh Huu", "nguyenminhhuu@gmail.com", "quanli",a4, d4, "QL004", 3, 18000000, 150);
                 // Nhan vien 1
                 Address a5 = new Address("18B", "Duong so 2", "Phuong Thanh My Loi", "Quan 2", "TP HCM");
                 Date d5 = new Date(12, 8, 2003);
-                Employee e5 = new Employee("Pham Van Du", "phanvandu@gmail.com", a5, d5, "NV001", "nhanvien", 2.5f,
+                Employee e5 = new Employee("Pham Van Du", "phanvandu@gmail.com","nhanvien", a5, d5, "NV001",  2.5f,
                                 8000000, 300);
                 // Nhan vien 2
                 Address a6 = new Address("24", "D2", "Phuong 5", "Quan Binh Thanh", "TP HCM");
                 Date d6 = new Date(5, 6, 2000);
-                Employee e6 = new Employee("Luong Minh B", "luongminhb@gmail.com", a6, d6, "NV002", "nhanvien", 2f,
+                Employee e6 = new Employee("Luong Minh B", "luongminhb@gmail.com","nhanvien", a6, d6, "NV002",  2f,
                                 7000000, 200);
                 // Nhan vien 3
                 Address a7 = new Address("25", "D3", "Phuong 6", "Quan Tan Binh", "TP HCM");
                 Date d7 = new Date(5, 6, 2000);
-                Employee e7 = new Employee("Ngo Minh C", "ngominhc@gmail.com", a7, d7, "NV003", "nhanvien", 2f, 7500000,
+                Employee e7 = new Employee("Ngo Minh C", "ngominhc@gmail.com","nhanvien", a7, d7, "NV003",  2f, 7500000,
                                 200);
                 // Nhan vien 4
                 Address a8 = new Address("8", "D8", "Phuong 8", "Quan Binh Tan", "TP HCM");
                 Date d8 = new Date(15, 6, 2000);
-                Employee e8 = new Employee("Le Van B", "levanb@gmail.com", a8, d8, "NV004", "nhanvien", 2f, 6500000,
+                Employee e8 = new Employee("Le Van B", "levanb@gmail.com","nhanvien", a8, d8, "NV004",  2f, 6500000,
                                 210);
                 // Nhan vien 5
                 Address a9 = new Address("84", "D3", "Phuong 9", "Quan Tan Phu", "TP HCM");
                 Date d9 = new Date(25, 6, 2000);
-                Employee e9 = new Employee("Huynh Minh C", "huynhminhc@gmail.com", a9, d9, "NV005", "nhanvien", 2f,
+                Employee e9 = new Employee("Huynh Minh C", "huynhminhc@gmail.com","nhanvien", a9, d9, "NV005",  2f,
                                 6000000, 150);
                 // Nhan vien 6
                 Address a10 = new Address("45", "A10", "Phuong 10", "Quan 3", "TP HCM");
                 Date d10 = new Date(5, 8, 1999);
-                Employee e10 = new Employee("Tran Luong Thieu H", "tlth@gmail.com", a10, d10, "NV006", "nhanvien", 2F,
+                Employee e10 = new Employee("Tran Luong Thieu H", "tlth@gmail.com","nhanvien", a10, d10, "NV006",  2F,
                                 5000000, 155);
                 Database.getDanhSachNhanVien().addEmployee(e1);
                 Database.getDanhSachNhanVien().addEmployee(e2);
@@ -117,43 +115,43 @@ public class Main {
                 // Khach hang 1
                 Address a1 = new Address("76", "Le Khiet", "Thi Tran Cho Chua", "Huyen Nghia Hanh", "Quang Ngai");
                 Date d1 = new Date(16, 6, 2003);
-                Customer c1 = new Customer("Luong Minh The Vinh", "luongminhthevinh@gmail.com", a1, d1, "KH001");
+                Customer c1 = new Customer("Luong Minh The Vinh", "luongminhthevinh@gmail.com","khachhang", a1, d1, "KH001");
                 // Khach hang 2
                 Address a2 = new Address("77", "Le Hong Phong", "Phuong Bong Son", "Thi xa Hoai Nhon", "Binh Dinh");
                 Date d2 = new Date(16, 5, 2000);
-                Customer c2 = new Customer("Ngo Van A", "ngovana@gmail.com", a2, d2, "KH002");
+                Customer c2 = new Customer("Ngo Van A", "ngovana@gmail.com", "khachhang",a2, d2, "KH002");
                 // Khach hang 3
                 Address a3 = new Address("55", "Nguyen Trai", "Phuong 8", "Quan 5", "TP HCM");
                 Date d3 = new Date(6, 2, 1999);
-                Customer c3 = new Customer("Le Huu B", "lehuub@gmail.com", a3, d3, "KH003");
+                Customer c3 = new Customer("Le Huu B", "lehuub@gmail.com","khachhang", a3, d3, "KH003");
                 // Khach hang 4
                 Address a4 = new Address("66", "Luy Ban Bich", "Phuong 9", "Quan Tan phu", "TP HCM");
                 Date d4 = new Date(25, 6, 2005);
-                Customer c4 = new Customer("Luong Huu D", "luonghuud@gmail.com", a4, d4, "KH004");
+                Customer c4 = new Customer("Luong Huu D", "luonghuud@gmail.com","khachhang", a4, d4, "KH004");
                 // Khach hang 5
                 Address a5 = new Address("48", "Le Dai Hanh", "Phuong 9", "Quan Hai Ba Trung", "Ha Noi");
                 Date d5 = new Date(27, 5, 2004);
-                Customer c5 = new Customer("Le Van Ba", "levanba@gmail.com", a5, d5, "KH005");
+                Customer c5 = new Customer("Le Van Ba", "levanba@gmail.com","khachhang", a5, d5, "KH005");
                 // Khach hang 6
                 Address a6 = new Address("172", "Lac Long Quan", "Phuong Buoi", "Quan Tay Ho", "Ha Noi");
                 Date d6 = new Date(27, 5, 1995);
-                Customer c6 = new Customer("Nguyen Tan Tu", "nguyentantu@gmail.com", a6, d6, "KH006");
+                Customer c6 = new Customer("Nguyen Tan Tu", "nguyentantu@gmail.com","khachhang", a6, d6, "KH006");
                 // Khach hang 7
                 Address a7 = new Address("158", "Tran Phu", "Phuong 5", "Quan 5", "TP HCM");
                 Date d7 = new Date(27, 7, 1997);
-                Customer c7 = new Customer("Ngo Huu N", "ngohuun@gmail.com", a7, d7, "KH007");
+                Customer c7 = new Customer("Ngo Huu N", "ngohuun@gmail.com","khachhang", a7, d7, "KH007");
                 // Khach hang 8
                 Address a8 = new Address("18", "Ngo Tat To", "Phuong 8", "Quan 9", "TP HCM");
                 Date d8 = new Date(28, 8, 1998);
-                Customer c8 = new Customer("Nguyen Tan Tu", "nguyentantu@gmail.com", a8, d8, "KH008");
+                Customer c8 = new Customer("Nguyen Tan Tu", "nguyentantu@gmail.com","khachhang", a8, d8, "KH008");
                 // Khach hang 9
                 Address a9 = new Address("9", "Dao Duy Anh", "Phuong 9", "Quan Dong Da", "Ha Noi");
                 Date d9 = new Date(27, 5, 1995);
-                Customer c9 = new Customer("Nguyen Tan Huy", "nguyentanhuy@gmail.com", a9, d9, "KH009");
+                Customer c9 = new Customer("Nguyen Tan Huy", "nguyentanhuy@gmail.com","khachhang", a9, d9, "KH009");
                 // Khach hang 10
                 Address a10 = new Address("150", "Dao Duy Anh", "Phuong 9", "Quan Phu Nhuan", "TP HCM");
                 Date d10 = new Date(10, 10, 2000);
-                Customer c10 = new Customer("Nguyen Tan Hoang", "nguyentanhoang@gmail.com", a10, d10, "KH010");
+                Customer c10 = new Customer("Nguyen Tan Hoang", "nguyentanhoang@gmail.com","khachhang", a10, d10, "KH010");
                 Database.getDanhSachKhachHang().addCustomer(c1);
                 Database.getDanhSachKhachHang().addCustomer(c2);
                 Database.getDanhSachKhachHang().addCustomer(c3);

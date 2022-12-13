@@ -14,7 +14,7 @@ public class Person implements Output, Serializable {
     private static long serialVersionUID = -4641318484654L;
     static final Scanner in=new Scanner(System.in);
 
-    protected String fullname, email;
+    protected String fullname, email, matKhau;
     protected Address address;
     protected Date dateOfBirth;
 
@@ -23,11 +23,20 @@ public class Person implements Output, Serializable {
         this.address = new Address();
         this.dateOfBirth = new Date();
     }
-    public Person(String fullname,String email,Address address, Date dateOfBirth) {
+    public Person(String fullname,String email,String matKhau, Address address, Date dateOfBirth) {
         this.email = email;
         this.fullname = fullname;
         this.address = address;
         this.dateOfBirth = dateOfBirth;
+        this.matKhau = matKhau;
+    }
+
+    public String getMatKhau() {
+        return matKhau;
+    }
+
+    public void setMatKhau(String matKhau) {
+        this.matKhau = matKhau;
     }
 
     public void setFullname(String fullname) {
@@ -66,6 +75,8 @@ public class Person implements Output, Serializable {
         setFullname(in.nextLine());
         System.out.print("Nhập Email: ");
         email = Check.checkInputEmail();
+        System.out.println("Nhập Mật Khẩu: ");
+        matKhau = Check.inputEmpty().trim();
         System.out.println("Nhập Thông Tin Về Địa Chỉ: ");
         address.input();
         System.out.println("Nhập Ngày Sinh: ");

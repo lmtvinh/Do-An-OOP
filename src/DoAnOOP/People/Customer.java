@@ -21,8 +21,8 @@ public class Customer extends Person implements Output, Serializable {
         this.maKhachHang = maKhachHang;
     }
 
-    public Customer(String fullname, String email, Address address, Date dateOfBirth, String maKhachHang) {
-        super(fullname, email, address, dateOfBirth);
+    public Customer(String fullname, String email, String matKhau, Address address, Date dateOfBirth, String maKhachHang) {
+        super(fullname, email, matKhau, address, dateOfBirth);
         this.maKhachHang = maKhachHang;
     }
 
