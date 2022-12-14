@@ -16,8 +16,10 @@ public class DanhSachNSX extends ADanhSach implements Serializable {
     private static long serialVersion = 555641313155L;
     public final static String DUONG_DAN_LUU_FILE = HoTro.duongDanTuongDoi + "DanhSachNSX.bin";
     static final Scanner scanner = new Scanner(System.in);
-    private int length = Maker.id;
-    private Maker[] makers = new Maker[length];
+    private int length = 0;
+    private Maker[] makers = new Maker[1];
+
+
 
     public void addMaker(Maker newMaker) {
         if (Database.getDanhSachNSX().findById(newMaker.getMaNSX()) == null) {
@@ -72,8 +74,9 @@ public class DanhSachNSX extends ADanhSach implements Serializable {
     }
 
     public Maker findById(String idCanTim) {
+
         for (int i = 0;i < length; i++) {
-            if (Objects.equals(makers[i].getMaNSX(), idCanTim)) {
+            if (makers[i].getMaNSX().compareTo(idCanTim)==0) {
                 return makers[i];
             }
         }
@@ -92,6 +95,7 @@ public class DanhSachNSX extends ADanhSach implements Serializable {
     @Override
     public void copyFrom(ADanhSach newDanhSach) {
         this.makers = ((DanhSachNSX)newDanhSach).makers;
+        this.length = ((DanhSachNSX)newDanhSach).length;
     }
 
     public void menuNSX() {

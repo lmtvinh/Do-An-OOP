@@ -32,11 +32,11 @@ public class Main {
                 removeAllData();
                 initCustomer();
                 initEmployee();
+                initProvider();
+                initMaker();
                 initPC();
                 initLaptop();
                 initLoaiSanPham();
-                initProvider();
-                initMaker();
                 initHoaDonBan();
                 initChiTietHoaDonBan();
                 initPhieuNhap();
@@ -204,6 +204,10 @@ public class Main {
                 QuocGia quocGia5 = new QuocGia("+1", "Hoa Ky");
                 Maker maker5 = new Maker("HP", "HP Inc.", quocGia5);
                 Database.getDanhSachNSX().addMaker(maker5);
+//                Hang San Xuat GearVN
+                QuocGia quocGia6 = new QuocGia("+84","Viet Nam");
+                Maker maker6 = new Maker("GVN","GearVN", quocGia6);
+                Database.getDanhSachNSX().addMaker(maker6);
         }
 
         // public static void initLoaiLaptop() {
@@ -550,7 +554,7 @@ public class Main {
                 // "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO",
                 // "Corsair LL120 RGB LED 120mm White — Triple Pack with Lighting Node PRO",
                 // "GA");
-                PC pc9 = new PC("SP018",
+                PC pc9 = new PC("SP019",
                                 "GVN PHANTOM Plus i4080",
                                 "GIGABYTE Z690 AERO D DDR5",
                                 "Intel Core i9 12900K / 3.2GHz Turbo 5.2GHz / 16 Nhân 24 Luồng / 30MB / LGA 1700",
@@ -572,7 +576,7 @@ public class Main {
                 // "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)",
                 // "ASUS TUF GAMING B550M-PLUS WIFI II (Socket AM4)", "Tùy chọn nâng cấp",
                 // "DEEPCOOL AG400 ARGB", "DEEPCOOL AG400 ARGB", "GA");
-                PC pc10 = new PC("SP019",
+                PC pc10 = new PC("SP020",
                                 "GVN ProArt Plus 7 a3090Ti",
                                 "ASUS TUF GAMING X670E-PLUS WIFI (DDR5)",
                                 "AMD Ryzen 7 7700X / 4.5GHz Boost 5.4GHz / 8 nhân 16 luồng / 40MB / AM5",

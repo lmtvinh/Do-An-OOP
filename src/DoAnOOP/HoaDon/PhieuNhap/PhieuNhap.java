@@ -99,7 +99,7 @@ public class PhieuNhap implements Output, Serializable {
 
     public void input() {
         System.out.print("Nhap Ma Nhan Vien: ");
-        maNhanVien = Check.checkMSNV();
+        maNhanVien = Check.checkMSQL();
         System.out.print("Nhap Ma Nha Cung Cap: ");
         maNhaCungCap = scanner.nextLine();
         System.out.println("Nhap Thong tin Ngay Nhap.");

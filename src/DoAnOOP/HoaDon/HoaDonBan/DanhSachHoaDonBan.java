@@ -57,7 +57,8 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
     }
 
     public void getAll() {
-        Table.createTable(hoaDonBans);
+//        Table.createTable(hoaDonBans);
+        Table.printTable(hoaDonBans);
     }
 
     public void menuQLDSHDB() {

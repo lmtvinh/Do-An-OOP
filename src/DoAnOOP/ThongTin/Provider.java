@@ -20,8 +20,8 @@ public class Provider implements Output, Serializable {
 	public Provider() {
 		maNCC = null;
 		tenNCC =null;
-		quocGia = null;
-		address = null;
+		quocGia = new QuocGia();
+		address = new Address();
 		phoneNumber = null;
 	}
 	public Provider(String maNCC, String tenNCC, QuocGia quocGia, Address address, String phoneNumber) {

@@ -4,6 +4,8 @@ import DoAnOOP.File.ADanhSach;
 import DoAnOOP.Help.HoTro;
 import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.Output;
+import DoAnOOP.SanPham.Laptop.Laptop;
+import DoAnOOP.SanPham.PC.PC;
 import DoAnOOP.Table;
 
 import java.io.Serial;
@@ -61,7 +63,7 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
 
     public SanPham findById(String idCanTim) {
         for (int i = 0; i < danhSachSanPham.size(); i++) {
-            if (danhSachSanPham.get(i).getMaSanPham() == idCanTim) {
+            if (Objects.equals(danhSachSanPham.get(i).getMaSanPham(), idCanTim)) {
                 return danhSachSanPham.get(i);
             }
         }
@@ -111,10 +113,35 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
             luachon = scanner.nextLine();
             switch (luachon) {
                 case "1" -> {
-                    System.out.println("Nhập Thông Tin Sản Phẩm Cần Thêm Vào Danh Sách.");
-                    SanPham newSanPham = new SanPham();
-                    newSanPham.input();
-                    addSanPham(newSanPham);
+                    String choice;
+                    do {
+                        System.out.println("\n\n\t\tMENU THÊM MỚI SẢN PHẨM.");
+                        System.out.println("1.PC.");
+                        System.out.println("2.Laptop.");
+                        System.out.println("0.Thoát.");
+                        System.out.print("Nhập lựa chọn của bạn: ");
+                        choice = scanner.nextLine();
+                        switch (choice) {
+                            case "1" -> {
+                                System.out.println("Nhập Thông Tin PC Cần Thêm Vào Danh Sách.");
+                                PC newPC = new PC();
+                                newPC.input();
+                                addSanPham(newPC);
+                            }
+                            case "2" -> {
+                                System.out.println("Nhập Thông Tin Laptop Cần Thêm Vào Danh Sách.");
+                                Laptop newLaptop = new Laptop();
+                                newLaptop.input();
+                                addSanPham(newLaptop);
+                            }
+                            case "0" -> {
+                                System.out.println("\t\tTHOÁT.");
+                            }
+                            default -> {
+                                System.out.println("\t\tLựa Chọn Của Bạn Không Phù Hợp.");
+                            }
+                        }
+                    } while (!choice.equals("0"));
                 }
                 case "2" -> {
                     System.out.println("Danh Sách Sản Phẩm.");
@@ -122,10 +149,12 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
                     System.out.println("Sửa Thông Tin Sản Phẩm Trong Danh Sách");
                     System.out.print("Nhập Mã Sản Phẩm Cần Thay Đổi Thông Tin: ");
                     String maSanPham = scanner.nextLine();
-                    System.out.print("Nhập Thông Tin Sản Phẩm Bạn Muốn Thay Đổi: ");
-                    SanPham newSanPham = new SanPham();
-                    newSanPham.input();
-                    updateSanPham(maSanPham,newSanPham);
+                    var sanPhamCanSua = Database.getDanhSachSanPham().getById(maSanPham);
+                    if (sanPhamCanSua != null) {
+                        sanPhamCanSua.suaSanPham();
+                    } else {
+                        System.out.println("KHÔNG CÓ ID TRONG DANH SÁCH");
+                    }
                 }
                 case "3" -> {
                     System.out.println("Danh Sách Sản Phẩm.");
@@ -155,7 +184,7 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
                     System.err.println("LỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
-        } while (luachon != "0");
+        } while (!luachon.equals("0"));
     }
 
     public void menuKH() {

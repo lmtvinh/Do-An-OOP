@@ -5,6 +5,8 @@ import DoAnOOP.Help.Check;
 import DoAnOOP.Help.HoTro;
 import DoAnOOP.HoaDon.HoaDonBan.ChiTietHoaDonBan;
 import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.SanPham.Laptop.Laptop;
+import DoAnOOP.SanPham.PC.PC;
 import DoAnOOP.SanPham.SanPham;
 import DoAnOOP.Table;
 import DoAnOOP.View.Main;
@@ -94,16 +96,42 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
                     String choice = scanner.nextLine();
                     switch (choice) {
                         case "y" -> {
-                            SanPham newSanPham = new SanPham();
-                            newSanPham.input();
-                            System.out.print("Nhập Số Lượng Sản Phẩm " + newSanPham.getTenSanPham() + ": ");
-                            int soLuong = Check.checkInputInteger();
-                            newSanPham.setSoLuongSanPham(soLuong);
-                            ChiTietPhieuNhap newCTPN = new ChiTietPhieuNhap();
-                            newCTPN.setMaSanPham(newSanPham.getMaSanPham());
-                            newCTPN.setSoLuong(soLuong);
-                            newCTPN.setMaNhanVien(Main.nguoiDung.getMaNV());
-                            Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(newCTPN);
+                            String choice1;
+                            do {
+                                System.out.println("\n\n\t\tMENU THÊM MỚI SẢN PHẨM.");
+                                System.out.println("1.PC.");
+                                System.out.println("2.Laptop.");
+                                System.out.println("0.Thoát.");
+                                System.out.print("Nhập lựa chọn của bạn: ");
+                                choice1 = scanner.nextLine();
+                                switch (choice1) {
+                                    case "1" -> {
+                                        System.out.println("Nhập Thông Tin PC Cần Thêm Vào Danh Sách.");
+                                        PC newPC = new PC();
+                                        newPC.input();
+                                        ChiTietPhieuNhap newCTPN = new ChiTietPhieuNhap();
+                                        newCTPN.setMaSanPham(newPC.getMaSanPham());
+                                        newCTPN.setMaNhanVien(Main.nguoiDung.getMaNV());
+                                        Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(newCTPN);
+                                    }
+                                    case "2" -> {
+                                        System.out.println("Nhập Thông Tin Laptop Cần Thêm Vào Danh Sách.");
+                                        Laptop newLaptop = new Laptop();
+                                        newLaptop.input();
+                                        ChiTietPhieuNhap newCTPN = new ChiTietPhieuNhap();
+                                        newCTPN.setMaSanPham(newLaptop.getMaSanPham());
+                                        newCTPN.setMaNhanVien(Main.nguoiDung.getMaNV());
+                                        Database.getDanhSachChiTietPhieuNhap().addChiTietPhieuNhap(newCTPN);
+                                    }
+                                    case "0" -> {
+                                        System.out.println("\t\tTHOÁT.");
+                                    }
+                                    default -> {
+                                        System.out.println("\t\tLựa Chọn Của Bạn Không Phù Hợp.");
+                                    }
+                                }
+                            } while (!choice1.equals("0"));
+
                         }
                         case "n" -> {
                             System.out.print("Nhập Mã Sản Phẩm Mà Bạn Muốn Thêm Số Lượng: ");
@@ -154,7 +182,7 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
                     System.err.println("LỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
-        } while(luachon == "0");
+        } while(!luachon.equals("0"));
     }
 
     @Override

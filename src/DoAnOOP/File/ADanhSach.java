@@ -12,6 +12,7 @@ public abstract class ADanhSach {
             ObjectOutputStream oos = new ObjectOutputStream(fo);
             oos.writeObject(this);
         } catch (Exception ignored) {
+            ignored.printStackTrace();
         }
     }
 

@@ -9,10 +9,12 @@ public class Table {
             doRongCacCot[i] = data.get(0).getThuocTinh()[i].length();
         }
         for (var row:data) {
+
             for (int i = 0; i < row.getThuocTinh().length; i++) {
                 if (doRongCacCot[i] < row.getDuLieu()[i].length()) {
                     doRongCacCot[i] = row.getDuLieu()[i].length();
                 }
+
             }
         }
         String rs = createRow(data.get(0).getThuocTinh(),doRongCacCot);

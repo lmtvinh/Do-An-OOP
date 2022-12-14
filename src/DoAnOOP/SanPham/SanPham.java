@@ -10,14 +10,25 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.Scanner;
 
-public class SanPham implements Output, Serializable {
+public abstract class SanPham implements Output, Serializable {
     @Serial
     private static long serialVersionUID = 54561331213L;
     final static Scanner scanner = new Scanner(System.in);
     protected String maSanPham,tenSanPham, mainboard, CPU, ramCapacity, maNXS, maNCC, SSD, HHD, cooling, VGA, idMaLoai;
     protected int price, thoiGianBaoHanh, soLuongSanPham;
 
-    public SanPham() {
+    protected String nhomSP;
+
+    public String getNhomSP() {
+        return nhomSP;
+    }
+
+    public void setNhomSP(String nhomSP) {
+        this.nhomSP = nhomSP;
+    }
+
+    public SanPham(String nhomSP) {
+        this.nhomSP = nhomSP;
     }
 
     public SanPham(String maSanPham, String tenSanPham, String mainboard, String CPU, String ramCapacity, String maNXS, String maNCC, String SSD, String HHD, String cooling, String VGA, String idMaLoai, int price, int thoiGianBaoHanh, int soLuongSanPham) {
@@ -168,7 +179,7 @@ public class SanPham implements Output, Serializable {
 
     public void input() {
         System.out.print("Nhập Mã Sản Phẩm: ");
-        maSanPham = scanner.nextLine();
+        maSanPham = Check.checkMaSP();
         System.out.print("Nhập Tên Sản Phẩm: ");
         tenSanPham = scanner.nextLine();
         System.out.print("Nhập Thông Tin Mainboard: ");
@@ -187,14 +198,22 @@ public class SanPham implements Output, Serializable {
         VGA = scanner.nextLine();
         System.out.print("Nhập Giá Bán: ");
         price = Check.checkInputInteger();
+//        Nha Cung Cap
+        System.out.println("Danh Sách Nhà Cung Cấp.");
+        Database.getDanhSachNCC().getAll();
         System.out.print("Nhập Mã Nhà Cung Cấp: ");
-        maNCC = scanner.nextLine();
+        maNCC = Check.checkMaNhaCungCap();
+//        Nha San Xuat
+        System.out.println("Danh Sách Nhà Sản Xuất.");
+        Database.getDanhSachNSX().getAll();
         System.out.print("Nhập Mã Nhà Sản Xuất: ");
-        maNCC = scanner.nextLine();
+        maNXS = Check.checkMaNhaSanXuat();
         System.out.print("Thời Gian Bảo Hành Của Sản Phẩm: ");
         thoiGianBaoHanh = Check.checkInputInteger();
+        System.out.println("Danh Sách Loại Sản Phẩm.");
+        Database.getDanhSachLoaiSanPham().getAll();
         System.out.print("Nhập Mã Loại Sản Phẩm: ");
-        idMaLoai = scanner.nextLine();
+        idMaLoai = Check.checkMaLoaiSanPham();
         System.out.print("Nhập Số Lượng Sản Phẩm: ");
         soLuongSanPham = Check.checkInputInteger();
     }
@@ -208,6 +227,8 @@ public class SanPham implements Output, Serializable {
     public String[] getDuLieu() {
         return new String[]{this.maSanPham, this.tenSanPham, this.mainboard, this.CPU, this.ramCapacity, this.SSD, this.HHD, this.cooling, this.VGA,""+this.price, Database.getDanhSachNCC().getByIdProvider(this.maNCC).getTenNCC(), Database.getDanhSachNSX().findById(this.maNXS).getTenNSX(),""+this.thoiGianBaoHanh, Database.getDanhSachLoaiSanPham().getById(this.idMaLoai).getTenLoai(),""+this.soLuongSanPham};
     }
+
+    public abstract void suaSanPham();
 
     public void output() {
         System.out.println("Tên Sản Phẩm: " + getTenSanPham());

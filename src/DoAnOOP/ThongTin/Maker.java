@@ -12,11 +12,9 @@ public class Maker implements Output, Serializable {
     final static Scanner scanner = new Scanner(System.in);
     private String maNSX, tenNSX;
     public static String maNhaSanXuat;
-    public static int id = 0;
     private QuocGia quocGia;
 
     public Maker() {
-        Maker.id++;
     }
 
     public Maker(String maNSX, String tenNSX, QuocGia quocGia) {

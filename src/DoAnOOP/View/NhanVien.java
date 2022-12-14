@@ -37,12 +37,12 @@ public class NhanVien{
                     Database.getDanhSachSanPham().menu();
                 }
                 case "0" -> {
-                    System.err.println("Thoát.");
+                    System.out.println("Thoát.");
                 }
                 default -> {
                     System.err.println("LỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
-        } while(luachon != "0");
+        } while(!luachon.equals("0"));
     }
 }

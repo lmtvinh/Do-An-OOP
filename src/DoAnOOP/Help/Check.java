@@ -1,7 +1,11 @@
 package DoAnOOP.Help;
 
 import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.SanPham.LoaiSanPham;
+import DoAnOOP.ThongTin.Maker;
+import DoAnOOP.ThongTin.Provider;
 
+import javax.xml.crypto.Data;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -127,5 +131,64 @@ public class Check {
             input = scanner.nextLine();
         }
         return input;
+    }
+
+    public static String checkMaNhaCungCap() {
+        String input;
+        while (true) {
+            input = scanner.nextLine();
+            if (Database.getDanhSachNCC().getByIdProvider(input) != null) {
+                return input;
+            } else {
+                System.out.println("Nhập Thông Tin Nhà Cung Cấp Mới: ");
+                Provider newProvider = new Provider();
+                newProvider.input();
+                Database.getDanhSachNCC().addProvider(newProvider);
+            }
+        }
+    }
+
+    public static String checkMaNhaSanXuat() {
+        String input;
+        while (true) {
+            input = scanner.nextLine();
+            if (Database.getDanhSachNSX().findById(input) != null) {
+                return input;
+            } else {
+                System.out.println("Nhập Thông Tin Nhà Sản Xuất Mới: ");
+                Maker newMaker = new Maker();
+                newMaker.input();
+                Database.getDanhSachNSX().addMaker(newMaker);
+            }
+        }
+    }
+
+    public static String checkMaLoaiSanPham() {
+        String input;
+        while (true) {
+            input = scanner.nextLine();
+            if (Database.getDanhSachLoaiSanPham().getById(input) != null) {
+                return input;
+            } else {
+                System.out.println("Nhập Thông Tin Loại Sản Phẩm Mới: ");
+                LoaiSanPham newLoaiSanPham = new LoaiSanPham();
+                newLoaiSanPham.input();
+                Database.getDanhSachLoaiSanPham().addLoaiSanPham(newLoaiSanPham);
+            }
+        }
+    }
+
+    public static String checkMaSP() {
+        String input;
+        while (true) {
+            input = scanner.nextLine();
+            input = input.toUpperCase();
+            if (input.matches("SP"+"[0-9]{3}")&&(Database.getDanhSachSanPham().getByIdSanPham(input)==null)) {
+                return input;
+            } else {
+                System.out.print("Định Danh Mã Sản Phẩm:SP___   .Ví Dụ:SP001");
+            }
+            System.out.println("Mời Nhập Lại: ");
+        }
     }
 }

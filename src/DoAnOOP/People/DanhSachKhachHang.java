@@ -64,6 +64,7 @@ public class DanhSachKhachHang extends ADanhSach implements Serializable {
         for (int i = index; i < length; i++) {
             set(a, index, customers);
         }
+        length--;
     }
 
     public void removeCustomer() {
