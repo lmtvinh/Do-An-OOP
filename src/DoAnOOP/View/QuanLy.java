@@ -45,7 +45,7 @@ public class QuanLy {
                     System.err.println("LỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
-        } while(luachon == "0");
+        } while(!luachon.equals("0"));
         Database.xuatFielDatabase();
     }
 }

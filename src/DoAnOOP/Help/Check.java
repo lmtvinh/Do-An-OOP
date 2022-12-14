@@ -1,9 +1,12 @@
 package DoAnOOP.Help;
 
+import DoAnOOP.HoaDon.PhieuNhap.PhieuNhap;
 import DoAnOOP.KhoDuLieu.Database;
+import DoAnOOP.People.Customer;
 import DoAnOOP.SanPham.LoaiSanPham;
 import DoAnOOP.ThongTin.Maker;
 import DoAnOOP.ThongTin.Provider;
+import DoAnOOP.View.KhachHang;
 
 import javax.xml.crypto.Data;
 import java.text.ParseException;
@@ -118,7 +121,7 @@ public class Check {
             if (n.matches("^\\-?\\d+$")) {
                 return Integer.parseInt(n);
             } else {
-                System.out.println(n + " khong phai so tu nhien.");
+                System.out.println(n + " Không Phải Số Tự Nhiên.");
             }
             System.out.print("Moi nhap lai: ");
         }
@@ -144,6 +147,7 @@ public class Check {
                 Provider newProvider = new Provider();
                 newProvider.input();
                 Database.getDanhSachNCC().addProvider(newProvider);
+                return newProvider.getMaNCC();
             }
         }
     }
@@ -159,6 +163,7 @@ public class Check {
                 Maker newMaker = new Maker();
                 newMaker.input();
                 Database.getDanhSachNSX().addMaker(newMaker);
+                return newMaker.getMaNSX();
             }
         }
     }
@@ -174,6 +179,7 @@ public class Check {
                 LoaiSanPham newLoaiSanPham = new LoaiSanPham();
                 newLoaiSanPham.input();
                 Database.getDanhSachLoaiSanPham().addLoaiSanPham(newLoaiSanPham);
+                return newLoaiSanPham.getMaLoai();
             }
         }
     }
@@ -186,9 +192,37 @@ public class Check {
             if (input.matches("SP"+"[0-9]{3}")&&(Database.getDanhSachSanPham().getByIdSanPham(input)==null)) {
                 return input;
             } else {
-                System.out.print("Định Danh Mã Sản Phẩm:SP___   .Ví Dụ:SP001");
+                System.out.println("Định Danh Mã Sản Phẩm:SP___   .Ví Dụ:SP001");
             }
             System.out.println("Mời Nhập Lại: ");
+        }
+    }
+
+    public static String checkPhoneNumber() {
+        String input;
+        while(true) {
+            input = scanner.nextLine();
+            input = input.toUpperCase();
+            if (input.matches("^(0|84)(2(0[3-9]|1[0-6|8|9]|2[0-2|5-9]|3[2-9]|4[0-9]|5[1|2|4-9]|6[0-3|9]|7[0-7]|8[0-9]|9[0-4|6|7|9])|3[2-9]|5[5|6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])([0-9]{7})$")){
+                return input;
+            } else {
+                System.out.println("Ví Dụ: 0346575111");
+            }
+            System.out.print("Mời Nhập Lại: ");
+        }
+    }
+
+    public static String checkMaKhachHangTrongDanhSanh() {
+        String input;
+        while (true) {
+            input = scanner.nextLine();
+            input = input.toUpperCase();
+            if (Database.getDanhSachKhachHang().getByIdCustomer(input) != null) {
+                return input;
+            } else {
+                System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
+            }
+            System.out.print("Mời Nhập Lại: ");
         }
     }
 }

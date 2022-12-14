@@ -1,5 +1,6 @@
 package DoAnOOP.ThongTin;
 
+import DoAnOOP.Help.Check;
 import DoAnOOP.Output;
 import DoAnOOP.Table;
 
@@ -72,7 +73,7 @@ public class Provider implements Output, Serializable {
 //        quocGia = sc.nextLine();
 		quocGia.input();
         System.out.print("Nhap So dien thoai: ");
-        phoneNumber = sc.nextLine();
+        phoneNumber = Check.checkPhoneNumber();
 	}
 	// public void output() {
 	// 	System.out.printf("%-20s%-20s%-20s%-20s\n","Ma NCC","Ten NCC","Quoc Gia","Dien thoai");

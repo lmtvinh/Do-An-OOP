@@ -183,7 +183,7 @@ public class DanhSachKhachHang extends ADanhSach implements Serializable {
                     System.err.println("\t\tLỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
-        } while (luachon == "0");
+        } while (!luachon.equals("0"));
     }
 
 //    public static void main(String[] args) {

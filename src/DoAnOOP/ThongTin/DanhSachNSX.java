@@ -46,8 +46,8 @@ public class DanhSachNSX extends ADanhSach implements Serializable {
     }
 
     public boolean check(String maNSX) {
-        for (int i = 0; i < makers.length; i++) {
-            if (Objects.equals(maNSX, makers[i].getMaNSX())) {
+        for (Maker maker : makers) {
+            if (Objects.equals(maNSX, maker.getMaNSX())) {
                 return true;
             }
         }
@@ -65,7 +65,6 @@ public class DanhSachNSX extends ADanhSach implements Serializable {
         }
         if (temp != -1 && newMaker != null) {
             Maker newMK = null;
-            newMK.input();
             for (int i = temp; i < length; i++) {
                 set(newMK, i, makers);
             }
@@ -88,7 +87,6 @@ public class DanhSachNSX extends ADanhSach implements Serializable {
         for (int i = 0; i < length; i++) {
             arrayListMaker.add(makers[i]);
         }
-        Table.createTable(arrayListMaker);
         Table.printTable(arrayListMaker);
     }
 
@@ -98,32 +96,32 @@ public class DanhSachNSX extends ADanhSach implements Serializable {
         this.length = ((DanhSachNSX)newDanhSach).length;
     }
 
-    public void menuNSX() {
-        String luachon;
-        do {
-            System.out.println("\n\n\t\tMENU NHÀ SẢN XUẤT.");
-            System.out.println("1.Xem Danh Sách Thông Tin Nhà Sản Xuất.");
-            System.out.println("2.Thêm Thông Tin Nhà Sản Xuất Vào Danh Sách.");
-            System.out.println("3.Sửa Thông Tin Nhà Sản Xuất Trong Danh Sách.");
-            System.out.println("4.Xóa Thông Tin Nhà Sản Xuất Trong Danh Sách.");
-            System.out.println("0.Thoát.");
-            System.out.println("Nhập lựa chọn của bạn: ");
-            luachon = scanner.nextLine();
-            switch (luachon) {
-                case "1" -> {
-                    System.out.println("DANH SÁCH THÔNG TIN NHÀ SẢN XUẤT.");
-                    getAll();
-                }
-                case "2" -> {
-                    System.out.print("Nhập Thông Nhà Sản Xuất Muốn Thêm Vào Danh Sách Thông Tin.");
-                    Maker newMaker = new Maker();
-                    newMaker.input();
-                    addMaker(newMaker);
-                }
-                case "3" -> {
-                    System.out.println("");
-                }
-            }
-        } while (luachon != "0");
-    }
+//    public void menuNSX() {
+//        String luachon;
+//        do {
+//            System.out.println("\n\n\t\tMENU NHÀ SẢN XUẤT.");
+//            System.out.println("1.Xem Danh Sách Thông Tin Nhà Sản Xuất.");
+//            System.out.println("2.Thêm Thông Tin Nhà Sản Xuất Vào Danh Sách.");
+//            System.out.println("3.Sửa Thông Tin Nhà Sản Xuất Trong Danh Sách.");
+//            System.out.println("4.Xóa Thông Tin Nhà Sản Xuất Trong Danh Sách.");
+//            System.out.println("0.Thoát.");
+//            System.out.println("Nhập lựa chọn của bạn: ");
+//            luachon = scanner.nextLine();
+//            switch (luachon) {
+//                case "1" -> {
+//                    System.out.println("DANH SÁCH THÔNG TIN NHÀ SẢN XUẤT.");
+//                    getAll();
+//                }
+//                case "2" -> {
+//                    System.out.print("Nhập Thông Nhà Sản Xuất Muốn Thêm Vào Danh Sách Thông Tin.");
+//                    Maker newMaker = new Maker();
+//                    newMaker.input();
+//                    addMaker(newMaker);
+//                }
+//                case "3" -> {
+//                    System.out.println("");
+//                }
+//            }
+//        } while (!luachon.equals("0"));
+//    }
 }

@@ -102,17 +102,17 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
         String luachon;
         do {
             System.out.println("\n\n\t\tMENU DANH SÁCH SẢN PHẨM.");
-            System.out.println("1.Thêm Sản Phẩm Vào Danh Sách.");
-            System.out.println("2.Sửa Sản Phẩm Trong Danh Sách.");
-            System.out.println("3.Xóa Sản Phẩm Trong Danh Sách.");
-            System.out.println("4.Xem Danh Sách Sản Phẩm.");
+            System.out.println("1.Xem Danh Sách Sản Phẩm.");
+            System.out.println("2.Thêm Sản Phẩm Vào Danh Sách.");
+            System.out.println("3.Sửa Sản Phẩm Trong Danh Sách.");
+            System.out.println("4.Xóa Sản Phẩm Trong Danh Sách.");
             System.out.println("5.Tìm Kiếm Sản Phẩm Trong Danh Sách Theo Id.");
             System.out.println("6.Tìm Kiếm Sản Phẩm Trong Danh Sách Theo Tên.");
             System.out.println("0.Thoát.");
             System.out.print("Nhập Lựa Chọn Của Bạn: ");
             luachon = scanner.nextLine();
             switch (luachon) {
-                case "1" -> {
+                case "2" -> {
                     String choice;
                     do {
                         System.out.println("\n\n\t\tMENU THÊM MỚI SẢN PHẨM.");
@@ -143,7 +143,7 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
                         }
                     } while (!choice.equals("0"));
                 }
-                case "2" -> {
+                case "3" -> {
                     System.out.println("Danh Sách Sản Phẩm.");
                     getAll();
                     System.out.println("Sửa Thông Tin Sản Phẩm Trong Danh Sách");
@@ -156,14 +156,14 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
                         System.out.println("KHÔNG CÓ ID TRONG DANH SÁCH");
                     }
                 }
-                case "3" -> {
+                case "4" -> {
                     System.out.println("Danh Sách Sản Phẩm.");
                     getAll();
                     System.out.print("Nhập Mã Sản Phẩm Cần Xóa: ");
                     String maSanPhamCanXoa = scanner.nextLine();
                     removeSanPham(maSanPhamCanXoa);
                 }
-                case "4" -> {
+                case "1" -> {
                     System.out.println("Danh Sách Sản Phẩm.");
                     getAll();
                 }
@@ -223,7 +223,7 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
                     System.err.println("\t\tLỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
-        } while(luachon == "0");
+        } while(!luachon.equals("0"));
     }
 
     public static void main(String[] args) {

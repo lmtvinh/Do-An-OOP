@@ -109,6 +109,7 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
                                         System.out.println("Nhập Thông Tin PC Cần Thêm Vào Danh Sách.");
                                         PC newPC = new PC();
                                         newPC.input();
+                                        Database.getDanhSachSanPham().addSanPham(newPC);
                                         ChiTietPhieuNhap newCTPN = new ChiTietPhieuNhap();
                                         newCTPN.setMaSanPham(newPC.getMaSanPham());
                                         newCTPN.setMaNhanVien(Main.nguoiDung.getMaNV());
@@ -118,6 +119,7 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
                                         System.out.println("Nhập Thông Tin Laptop Cần Thêm Vào Danh Sách.");
                                         Laptop newLaptop = new Laptop();
                                         newLaptop.input();
+                                        Database.getDanhSachSanPham().addSanPham(newLaptop);
                                         ChiTietPhieuNhap newCTPN = new ChiTietPhieuNhap();
                                         newCTPN.setMaSanPham(newLaptop.getMaSanPham());
                                         newCTPN.setMaNhanVien(Main.nguoiDung.getMaNV());
@@ -156,12 +158,14 @@ public class DanhSachPhieuNhap extends ADanhSach implements Serializable {
                 case "3" -> {
                     System.out.println("Danh Sách Thông Tin Phiếu Nhập.");
                     getAll();
-                    System.out.println("Nhập Thông Tin Phiếu Nhập Cần Thêm.");
-                    PhieuNhap newPhieuNhap = new PhieuNhap();
-                    newPhieuNhap.input();
                     System.out.print("Nhập Mã Phiếu Nhập Cần Sửa: ");
                     String maPhieuNhapCanSua = scanner.nextLine();
-                    setPhieuNhaps(maPhieuNhapCanSua,newPhieuNhap);
+                    var a = getByIdPhieuNhap(maPhieuNhapCanSua);
+                    if (a != null) {
+                        a.suaPhieuNhap();
+                    } else {
+                        System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
+                    }
                 }
                 case "4" -> {
                     System.out.println("Danh Sách Thông Tin Phiếu Nhập.");

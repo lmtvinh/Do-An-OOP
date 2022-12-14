@@ -9,6 +9,8 @@ import DoAnOOP.ThongTin.Provider;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -18,6 +20,8 @@ public class PhieuNhap implements Output, Serializable {
     final static Scanner scanner = new Scanner(System.in);
     private String maPhieuNhap, maNhanVien, maNhaCungCap;
     private Date ngayNhap;
+
+    private LocalDateTime ngaySuaPhieuNhap;
     private int tongTien;
 
     public PhieuNhap() {
@@ -27,6 +31,12 @@ public class PhieuNhap implements Output, Serializable {
         this.maNhanVien = maNhanVien;
         this.maNhaCungCap = maNhaCungCap;
         this.ngayNhap = ngayNhap;
+    }
+
+    public String formattedDate() {
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        String formattedDate = ngaySuaPhieuNhap.format(myFormatObj);
+        return formattedDate;
     }
 
     public static long getSerialVersion() {
@@ -104,6 +114,30 @@ public class PhieuNhap implements Output, Serializable {
         maNhaCungCap = scanner.nextLine();
         System.out.println("Nhap Thong tin Ngay Nhap.");
         ngayNhap.input();
+    }
+
+    public void suaPhieuNhap() {
+        System.out.println("Danh Sách Nhân Viên.");
+        Database.getDanhSachNhanVien().output();
+        System.out.print("Nhập Mã Nhân Viên: ");
+        String maNhanVien;
+        while (true) {
+            maNhanVien = scanner.nextLine();
+            if (Database.getDanhSachNhanVien().getByIdEmployee(maNhanVien) != null && maNhanVien.compareTo("QL")==0) {
+                break;
+            } else if (Database.getDanhSachNhanVien().getByIdEmployee(maNhanVien) != null && maNhanVien.compareTo("QL")!=0){
+                System.out.print("CHỈ CÓ QUẢN LÍ MỚI THÊM ĐƯỢC SẢN PHẨM VÀO KHO.");
+            } else {
+                System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
+            }
+        }
+        System.out.println("Danh Sách Nhà Cung Cấp: ");
+        Database.getDanhSachNCC().getAll();
+        System.out.print("Nhập Mã Nhà Cung Cấp: ");
+        String maNCC = Check.checkMaNhaCungCap();
+        System.out.println("Ngày Nhập: ");
+        ngayNhap.input();
+        System.out.println("Ngày Sửa Phiếu Nhập: " + formattedDate());
     }
 
     public void output() {

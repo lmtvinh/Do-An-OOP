@@ -34,6 +34,6 @@ public class KhachHang {
                     System.err.println("\t\tLỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
-        } while(luachon == "0");
+        } while(!luachon.equals("0"));
     }
 }

@@ -1,5 +1,6 @@
 package DoAnOOP.HoaDon.HoaDonBan;
 
+import DoAnOOP.Help.Check;
 import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.Output;
 import DoAnOOP.People.Customer;
@@ -21,7 +22,7 @@ public class HoaDonBan implements Output, Serializable {
     static final Scanner scanner = new Scanner(System.in);
     private String maHoaDon, maKhachHang, maNhanVien;
     private Address address;
-    private LocalDateTime ngayBan;
+    private LocalDateTime ngayBan,ngaySua;
     private int tongTien;
     private boolean thanhToan = false;
 
@@ -30,14 +31,21 @@ public class HoaDonBan implements Output, Serializable {
         ngayBan = LocalDateTime.now();
     }
 
-    public HoaDonBan(String maKhachHang, String maNhanVien) {
+    public HoaDonBan(String maKhachHang, String maNhanVien, int tongTien) {
         this.maKhachHang = maKhachHang;
         this.maNhanVien = maNhanVien;
+        this.tongTien = tongTien;
     }
 
     public String formattedDate() {
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         String formattedDate = ngayBan.format(myFormatObj);
+        return formattedDate;
+    }
+
+    public String formattedDateS() {
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        String formattedDate = ngaySua.format(myFormatObj);
         return formattedDate;
     }
 
@@ -97,6 +105,14 @@ public class HoaDonBan implements Output, Serializable {
         System.out.print("Nhập Mã Khách Hàng: ");
         maKhachHang = scanner.nextLine();
         System.out.println("Ngay Ban: " + formattedDate());
+    }
+
+    public void suaHoaDonBan() {
+        System.out.println("\tDanh Sách Khách Hàng.");
+        Database.getDanhSachKhachHang().getAll();
+        System.out.print("Nhập Mã Khách Hàng Bạn Muốn Sửa: ");
+        maKhachHang = Check.checkMaKhachHangTrongDanhSanh();
+        System.out.println("Ngày Sửa Hóa Đơn: " + formattedDateS());
     }
 
     public int getTongTien() {

@@ -603,25 +603,25 @@ public class Main {
 
         public static void initHoaDonBan() {
                 // HD1
-                HoaDonBan hoaDonBan1 = new HoaDonBan("KH001", "NV001");
+                HoaDonBan hoaDonBan1 = new HoaDonBan("KH001", "NV001", 90000000);
                 // HD2
-                HoaDonBan hoaDonBan2 = new HoaDonBan("KH002", "NV001");
+                HoaDonBan hoaDonBan2 = new HoaDonBan("KH002", "NV001",95000000);
                 // HD3
-                HoaDonBan hoaDonBan3 = new HoaDonBan("KH003", "NV003");
+                HoaDonBan hoaDonBan3 = new HoaDonBan("KH003", "NV003",80000000);
                 // HD4
-                HoaDonBan hoaDonBan4 = new HoaDonBan("KH004", "NV003");
+                HoaDonBan hoaDonBan4 = new HoaDonBan("KH004", "NV003",85000000);
                 // HD5
-                HoaDonBan hoaDonBan5 = new HoaDonBan("KH005", "NV004");
+                HoaDonBan hoaDonBan5 = new HoaDonBan("KH005", "NV004", 86000000);
                 // HD6
-                HoaDonBan hoaDonBan6 = new HoaDonBan("KH006", "NV004");
+                HoaDonBan hoaDonBan6 = new HoaDonBan("KH006", "NV004",50000000);
                 // HD7
-                HoaDonBan hoaDonBan7 = new HoaDonBan("KH007", "NV004");
+                HoaDonBan hoaDonBan7 = new HoaDonBan("KH007", "NV004",60000000);
                 // HD8
-                HoaDonBan hoaDonBan8 = new HoaDonBan("KH008", "NV005");
+                HoaDonBan hoaDonBan8 = new HoaDonBan("KH008", "NV005",58000000);
                 // HD9
-                HoaDonBan hoaDonBan9 = new HoaDonBan("KH009", "NV005");
+                HoaDonBan hoaDonBan9 = new HoaDonBan("KH009", "NV005",89000000);
                 // HD10
-                HoaDonBan hoaDonBan10 = new HoaDonBan("KH001", "NV003");
+                HoaDonBan hoaDonBan10 = new HoaDonBan("KH001", "NV003",16060000);
                 Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan1);
                 Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan2);
                 Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan3);

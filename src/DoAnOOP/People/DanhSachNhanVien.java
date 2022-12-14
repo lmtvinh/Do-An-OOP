@@ -95,7 +95,7 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
         for (int i = 0; i < length; i++) {
             arrayListEmployee.add(employees[i]);
         }
-        Table.createTable(arrayListEmployee);
+//        Table.createTable(arrayListEmployee);
         Table.printTable(arrayListEmployee);
     }
 
@@ -162,7 +162,7 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
                 }
             }
             break;
-        } while (luachon == "0");
+        } while (!Objects.equals(luachon, "0"));
     }
 
     public void menuNV() {

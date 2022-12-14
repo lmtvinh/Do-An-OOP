@@ -45,6 +45,7 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
                 hoaDonBans.remove(i);
             }
         }
+        System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
     }
 
     public HoaDonBan getByIdHoaDonBan(String maHoaDonBanCanTim) {
@@ -93,11 +94,12 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
                         if (n == null) {
                             System.out.println("ID KHÔNG TỒN TẠI.");
                         } else {
-                            System.out.print("Nhập Số Lượng Muốn Mua: ");
-                            int soLuong = Check.checkInputInteger();
+                            int soLuongTrongKho = Database.getDanhSachSanPham().getByIdSanPham(maSanPhamCanMua).getSoLuongSanPham();
                             int i = 0;
                             while (i == 0) {
-                                if (soLuong > Database.getDanhSachSanPham().getByIdSanPham(maSanPhamCanMua).getSoLuongSanPham()) {
+                                System.out.print("Nhập Số Lượng Muốn Mua: ");
+                                int soLuong = Check.checkInputInteger();
+                                if (soLuong > soLuongTrongKho) {
                                     ChiTietHoaDonBan c = new ChiTietHoaDonBan();
                                     c.setSoLuong(soLuong);
                                     c.setMaSP(maSanPhamCanMua);
@@ -120,12 +122,14 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
                 case "3" -> {
                     System.out.println("Danh Sách Hóa Đơn Bán.");
                     getAll();
-                    System.out.println("Nhập Thông Tin Hóa Đơn Bán Hàng Cần Sửa.");
-                    HoaDonBan newHoaDonBan = new HoaDonBan();
-                    newHoaDonBan.input();
                     System.out.print("Nhập Mã Hóa Đơn Bán Hàng Cần Sửa: ");
                     String manewHoaDonBanSua = scanner.nextLine();
-                    setHoaDonBan(manewHoaDonBanSua, newHoaDonBan);
+                    var a = getByIdHoaDonBan(manewHoaDonBanSua);
+                    if (a!=null) {
+                        a.suaHoaDonBan();
+                    } else {
+                        System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
+                    }
                 }
                 case "4" -> {
                     System.out.println("Danh Sách Hóa Đơn Bán.");
@@ -144,7 +148,7 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
                     System.err.println("LỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
-        } while (luachon == "0");
+        } while (!luachon.equals("0"));
     }
 
     public void thanhToan() {
