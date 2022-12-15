@@ -102,7 +102,7 @@ public class HoaDonBan implements Output, Serializable {
     public void input() {
         maNhanVien = Main.nguoiDung.getMaNV();
         System.out.print("Nhập Mã Khách Hàng: ");
-        maKhachHang = scanner.nextLine();
+        maKhachHang = Check.checkMaKHTrongDanhSach();
         System.out.println("Ngay Ban: " + formattedDate());
     }
 

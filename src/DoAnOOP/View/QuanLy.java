@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class QuanLy {
     final static Scanner scanner = new Scanner(System.in);
     private static void menu() {
+        System.out.println("\n\n\t\tMENU NHÂN VIÊN QUẢN LÍ.");
         System.out.println("1.Quản Lí Phiếu Nhập.");
         System.out.println("2.Quản Lí Hóa Đơn Bán.");
         System.out.println("3.Quản Lí Nhân Viên.");

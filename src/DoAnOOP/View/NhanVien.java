@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class NhanVien{
     final static Scanner scanner = new Scanner(System.in);
     private static void menu() {
-        System.out.println("\n\n\t\tMENU DÀNH CHO QUẢN LÍ.");
+        System.out.println("\n\n\t\tMENU DÀNH CHO NhÂN VIÊN.");
         System.out.println("1.Quản Lí Phiếu Nhập.");
         System.out.println("2.Quản Lí Hóa Đơn Bán.");
         System.out.println("3.Quản Lí Khách Hàng.");

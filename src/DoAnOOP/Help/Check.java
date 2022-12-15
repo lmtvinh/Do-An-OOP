@@ -98,21 +98,21 @@ public class Check {
         }
     }
 
-//    public static int checkPLKH() {
-//        String n;
-//        while (true) {
-//            n = scanner.nextLine();
-//            if(n.matches("[1-3]{1}")) {
-//                return Integer.parseInt(n);
-//            } else {
-//                System.err.println("Chi co 3 Nhom Khach Hang: ");
-//                System.out.println("1.Nhom I(Giam gia 25%): ");
-//                System.out.println("2.Nhom II(Giam gia 15%): ");
-//                System.out.println("3.Nhom IV(Giam gia 10%): ");
-//            }
-//            System.out.print("Moi nhap lai: ");
-//        }
-//    }
+    public static String checkMaKHTrongDanhSach() {
+        String input;
+        while(true) {
+            input = scanner.nextLine();
+            input = input.toUpperCase();
+            if(input.matches("KH"+"[0-9]{3}") && (Database.getDanhSachKhachHang().getByIdCustomer(input)!=null)) {
+                return input;
+            } else {
+                System.out.println("Thêm Thông Tin Khách Hàng Mới Vào Danh Sách.");
+                Customer newKhachHang = new Customer();
+                newKhachHang.input();
+                Database.getDanhSachKhachHang().addCustomer(newKhachHang);
+            }
+        }
+    }
 
     public static int checkInputInteger() {
         String n;

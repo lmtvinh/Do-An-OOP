@@ -80,6 +80,8 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
                     getAll();
                 }
                 case "2" -> {
+                    System.out.println("\tDanh Sách Khách Hàng.");
+                    Database.getDanhSachKhachHang().getAll();
                     System.out.println("Nhập Thông Tin Hóa Đơn Bán Cần Thêm.");
                     HoaDonBan newHoaDonBan = new HoaDonBan();
                     newHoaDonBan.input();
@@ -95,20 +97,19 @@ public class DanhSachHoaDonBan extends ADanhSach implements Serializable {
                             System.out.println("ID KHÔNG TỒN TẠI.");
                         } else {
                             int soLuongTrongKho = Database.getDanhSachSanPham().getByIdSanPham(maSanPhamCanMua).getSoLuongSanPham();
-                            int i = 0;
-                            while (i == 0) {
+                            while (true) {
                                 System.out.print("Nhập Số Lượng Muốn Mua: ");
                                 int soLuong = Check.checkInputInteger();
-                                if (soLuong > soLuongTrongKho) {
+                                if (soLuong < soLuongTrongKho) {
                                     ChiTietHoaDonBan c = new ChiTietHoaDonBan();
-                                    c.setSoLuong(soLuong);
                                     c.setMaSP(maSanPhamCanMua);
                                     c.setMaHD(newHoaDonBan.getMaHoaDon());
+                                    c.setSoLuong(soLuong);
                                     Database.getDanhSachChiTietHoaDonBan().addChiTietHoaDonBan(c);
-                                    int sl = Database.getDanhSachChiTietHoaDonBan().getByIdChiTietHoaDonBan(maSanPhamCanMua).getSoLuong();
+                                    int sl = soLuongTrongKho;
                                     sl -= soLuong;
                                     Database.getDanhSachSanPham().getByIdSanPham(maSanPhamCanMua).setSoLuongSanPham(sl);
-                                    i = 1;
+                                    break;
                                 }
                                 else {
                                     System.out.println("Số Lượng Bạn Muốn Mua Vượt Quá Số Lượng Còn Trong Kho.");
