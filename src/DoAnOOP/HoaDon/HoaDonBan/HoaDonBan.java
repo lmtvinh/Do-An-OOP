@@ -29,6 +29,7 @@ public class HoaDonBan implements Output, Serializable {
     public HoaDonBan() {
         address = new Address("273C","An Duong Vuong","Phuong 4","Quan 5","TP Ho Chi Minh");
         ngayBan = LocalDateTime.now();
+        ngaySua = LocalDateTime.now();
     }
 
     public HoaDonBan(String maKhachHang, String maNhanVien, int tongTien) {
@@ -39,14 +40,12 @@ public class HoaDonBan implements Output, Serializable {
 
     public String formattedDate() {
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        String formattedDate = ngayBan.format(myFormatObj);
-        return formattedDate;
+        return ngayBan.format(myFormatObj);
     }
 
     public String formattedDateS() {
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        String formattedDate = ngaySua.format(myFormatObj);
-        return formattedDate;
+        return ngaySua.format(myFormatObj);
     }
 
     public boolean isThanhToan() {

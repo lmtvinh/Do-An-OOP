@@ -70,11 +70,25 @@ public class DanhSachKhachHang extends ADanhSach implements Serializable {
     public void removeCustomer() {
         System.out.print("Nhap ma khach hang: ");
         String check = scanner.nextLine();
+        int flag = 0;
+        Customer[] temp = new Customer[length-1];
         for (int i = 0; i < length; i++) {
-            boolean result = get(i).getMaKhachHang().equalsIgnoreCase(check);
-            if (result) {
-                remove(i, get(i));
+            if (customers[i].getMaKhachHang().contains(check)) {
+                flag = i;
+                break;
             }
+        }
+        if (flag != 0 && flag < length) {
+            for (int i = 0; i < flag; i++) {
+                temp[i] = customers[i];
+            }
+            for (int i = flag + 1; i < length; i++) {
+                temp[i] = customers[i];
+            }
+            customers = temp;
+            length--;
+        } else {
+            System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
         }
     }
 

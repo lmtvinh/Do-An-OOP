@@ -63,7 +63,7 @@ public class Main {
         while (true) {
             while (!loginNV()) {
             }
-            if (nguoiDung.getMaNV().equals("QL")) {
+            if (nguoiDung.getMaNV().toUpperCase().contains( "QL")) {
                 QuanLy.run();
             } else {
                 NhanVien.run();

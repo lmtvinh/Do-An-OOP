@@ -21,7 +21,7 @@ public class PhieuNhap implements Output, Serializable {
     private String maPhieuNhap, maNhanVien, maNhaCungCap;
     private Date ngayNhap;
 
-    private LocalDateTime ngaySuaPhieuNhap;
+    private LocalDateTime ngaySuaPhieuNhap = LocalDateTime.now();
     private int tongTien;
 
     public PhieuNhap() {
@@ -35,8 +35,7 @@ public class PhieuNhap implements Output, Serializable {
 
     public String formattedDate() {
         DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        String formattedDate = ngaySuaPhieuNhap.format(myFormatObj);
-        return formattedDate;
+        return ngaySuaPhieuNhap.format(myFormatObj);
     }
 
     public static long getSerialVersion() {
@@ -120,12 +119,11 @@ public class PhieuNhap implements Output, Serializable {
         System.out.println("Danh Sách Nhân Viên.");
         Database.getDanhSachNhanVien().output();
         System.out.print("Nhập Mã Nhân Viên: ");
-        String maNhanVien;
         while (true) {
             maNhanVien = scanner.nextLine();
-            if (Database.getDanhSachNhanVien().getByIdEmployee(maNhanVien) != null && maNhanVien.compareTo("QL")==0) {
+            if (Database.getDanhSachNhanVien().getByIdEmployee(maNhanVien) != null && maNhanVien.contains("QL")) {
                 break;
-            } else if (Database.getDanhSachNhanVien().getByIdEmployee(maNhanVien) != null && maNhanVien.compareTo("QL")!=0){
+            } else if (Database.getDanhSachNhanVien().getByIdEmployee(maNhanVien) != null && !maNhanVien.contains("QL")){
                 System.out.print("CHỈ CÓ QUẢN LÍ MỚI THÊM ĐƯỢC SẢN PHẨM VÀO KHO.");
             } else {
                 System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
@@ -134,9 +132,8 @@ public class PhieuNhap implements Output, Serializable {
         System.out.println("Danh Sách Nhà Cung Cấp: ");
         Database.getDanhSachNCC().getAll();
         System.out.print("Nhập Mã Nhà Cung Cấp: ");
-        String maNCC = Check.checkMaNhaCungCap();
-        System.out.println("Ngày Nhập: ");
-        ngayNhap.input();
+        maNhaCungCap = Check.checkMaNhaCungCap();
+        System.out.println("Ngày Nhập: " + getNgayNhap());
         System.out.println("Ngày Sửa Phiếu Nhập: " + formattedDate());
     }
 

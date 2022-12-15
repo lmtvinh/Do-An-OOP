@@ -1,6 +1,7 @@
 package DoAnOOP.ThongTin;
 
 import DoAnOOP.Help.Check;
+import DoAnOOP.KhoDuLieu.Database;
 import DoAnOOP.Output;
 import DoAnOOP.Table;
 
@@ -66,7 +67,15 @@ public class Provider implements Output, Serializable {
 	}
 	public void input() {
 		System.out.print("Nhap ma Nha cung cap: ");
-        maNCC = sc.nextLine();
+        while (true) {
+			maNCC = sc.nextLine();
+			if (Database.getDanhSachNCC().getByIdProvider(maNCC) == null) {
+				break;
+			} else {
+				System.out.println("ID ĐÃ CÓ TRONG DANH SÁCH.");
+			}
+			System.out.print("Mời Nhập Lại: ");
+		}
         System.out.print("Nhap ten Nha cung cap: ");
         tenNCC = sc.nextLine();
         System.out.println("Nhap Quoc Gia: ");

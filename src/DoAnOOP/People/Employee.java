@@ -89,7 +89,7 @@ public class Employee extends Person implements Output, Serializable {
             }
             case "2" -> {
                 super.input();
-                System.out.print("Nhập Mã Quản Lí Của Quản Lí(username): ");
+                System.out.print("Nhập Mã Nhân Viên: ");
                 maNV = Check.checkMSNV();
                 System.out.print("Nhập Mật Khẩu: ");
                 matKhau = scanner.nextLine();

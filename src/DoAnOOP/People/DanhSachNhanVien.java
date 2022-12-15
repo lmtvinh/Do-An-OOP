@@ -16,7 +16,8 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
     private static long serialVersionUID = 456464897L;
     public final static String DUONG_DAN_LUU_FILE = HoTro.duongDanTuongDoi + "DanhSachNhanVien.bin";
     static final Scanner scanner = new Scanner(System.in);
-    private Employee[] employees;
+    private Employee[]
+            employees;
     private int length;
     public DanhSachNhanVien() {
         employees = null;
@@ -65,11 +66,26 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
     public void removeEmployee() {
         System.out.print("\nNhập Mã Nhân Viên Bạn Cần Xóa Khỏi Danh Sách: ");
         String check = scanner.nextLine();
-        for (int i =0;i < length; i++){
-            boolean result = get(i).getMaNV().equalsIgnoreCase(check);
-            if(result) {
-                remove(i,get(i));
+        int flag = 0;
+        Employee[] temp = new Employee[length-1];
+        for (int i = 0;i < length; i++) {
+           if (employees[i].getMaNV().contains(check)) {
+                flag = i;
+                break;
+           }
+        }
+        if (flag != 0 && flag < length) {
+            for (int i  = 0; i < flag; i++) {
+                temp[i] = employees[i];
             }
+            for (int i = flag+1; i < length; i++) {
+                temp[i] = employees[i];
+            }
+            employees = temp;
+            length--;
+        }
+        else {
+            System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
         }
     }
 
@@ -77,7 +93,7 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
         int temp = -1;
         Employee newEmployee = null;
         for (int i = 0; i < length; i++) {
-            if (employees[i].getMaNV() == index) {
+            if (Objects.equals(employees[i].getMaNV(), index)) {
                 temp = i;
                 newEmployee = employees[i];
             }
@@ -161,7 +177,6 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
                     System.err.println("\t\tLỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
-            break;
         } while (!Objects.equals(luachon, "0"));
     }
 
@@ -185,7 +200,7 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
                     System.err.println("\t\tLựa Chọn Của Bạn Không Phù Hợp.");
                 }
             }
-        } while (luachon == "0");
+        } while (!Objects.equals(luachon,"0"));
     }
 
     public Employee getByIdEmployee(String idCanCheck) {
@@ -223,5 +238,10 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
             }
         }
         System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
+    }
+
+    public static void main(String[] args) {
+        DanhSachNhanVien ds= new DanhSachNhanVien();
+        ds.menuQL();
     }
 }
