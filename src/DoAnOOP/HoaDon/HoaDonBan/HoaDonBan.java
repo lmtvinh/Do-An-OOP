@@ -23,7 +23,7 @@ public class HoaDonBan implements Output, Serializable {
     private String maHoaDon, maKhachHang, maNhanVien;
     private Address address;
     private LocalDateTime ngayBan,ngaySua;
-    private int tongTien;
+    private int tongTien = 0;
     private boolean thanhToan = false;
 
     public HoaDonBan() {
@@ -32,10 +32,11 @@ public class HoaDonBan implements Output, Serializable {
         ngaySua = LocalDateTime.now();
     }
 
-    public HoaDonBan(String maKhachHang, String maNhanVien, int tongTien) {
+    public HoaDonBan(String maKhachHang, String maNhanVien, int tongTien, boolean thanhToan) {
         this.maKhachHang = maKhachHang;
         this.maNhanVien = maNhanVien;
         this.tongTien = tongTien;
+        this.thanhToan = thanhToan;
     }
 
     public String formattedDate() {
@@ -116,7 +117,6 @@ public class HoaDonBan implements Output, Serializable {
 
     public int getTongTien() {
         var n = Database.getDanhSachChiTietHoaDonBan().getChiTietHoaDonBan(getMaHoaDon());
-        tongTien = 0;
 //        bieu thuc lamda, foreach trong java
         n.forEach(c->tongTien+=c.getThanhTien());
         return tongTien;
@@ -135,11 +135,11 @@ public class HoaDonBan implements Output, Serializable {
 
     @Override
     public String[] getThuocTinh() {
-        return new String[]{"Ma Hoa Don","Ma Nhan Vien","Ten Nhan Vien","Ma Khach Hang","Ten Khach Hang","Tong Tien"};
+        return new String[]{"Ma Hoa Don","Ma Nhan Vien","Ten Nhan Vien","Ma Khach Hang","Ten Khach Hang","Tong Tien","Trạng Thái Hóa Đơn"};
     }
 
     @Override
     public String[] getDuLieu() {
-        return new String[]{this.maHoaDon,this.maNhanVien,Database.getDanhSachNhanVien().getByIdEmployee(this.getMaNhanVien()).getFullname(),this.maKhachHang,Database.getDanhSachKhachHang().getByIdCustomer(this.maKhachHang).getFullname(),""+this.tongTien};
+        return new String[]{this.maHoaDon,this.maNhanVien,Database.getDanhSachNhanVien().getByIdEmployee(this.getMaNhanVien()).getFullname(),this.maKhachHang,Database.getDanhSachKhachHang().getByIdCustomer(this.maKhachHang).getFullname(),""+this.getTongTien(),thanhToan?"Đã thanh toán":"Chưa thanh toán"};
     }
 }

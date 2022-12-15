@@ -1,5 +1,7 @@
 package DoAnOOP.ThongTin;
 
+import DoAnOOP.Help.Check;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Scanner;
@@ -43,12 +45,12 @@ public class Date implements Serializable{
     }
 
     public void input() {
-        System.out.print("Nhap Ngay: ");
-        day = Integer.parseInt(scanner.nextLine());
-        System.out.print("Nhap Thang: ");
-        month = Integer.parseInt(scanner.nextLine());
-        System.out.print("Nhap Nam: ");
-        year = Integer.parseInt(scanner.nextLine());
+        System.out.print("Nhập Ngày: ");
+        day = Check.checkInputInteger();
+        System.out.print("Nhập Tháng: ");
+        month = Check.checkInputInteger();
+        System.out.print("Nhập Năm: ");
+        year = Check.checkInputInteger();
     }
 
     @Override

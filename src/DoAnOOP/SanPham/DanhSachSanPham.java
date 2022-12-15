@@ -19,7 +19,8 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
     private static long serialVersionUID = 5554643215L;
     public final static String DUONG_DAN_LUU_FILE = HoTro.duongDanTuongDoi + "DanhSachSanPham.bin";
     final static Scanner scanner = new Scanner(System.in);
-    ArrayList<SanPham> danhSachSanPham ;
+    ArrayList<SanPham> danhSachSanPham;
+
     public DanhSachSanPham() {
         danhSachSanPham = new ArrayList<SanPham>();
     }
@@ -33,9 +34,9 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
     }
 
     public void updateSanPham(String maSanPham, SanPham newSanPham) {
-        for(int i = 0; i < danhSachSanPham.size(); i++ ){
-            if(Objects.equals(danhSachSanPham.get(i).getMaSanPham(), maSanPham)) {
-                danhSachSanPham.set(i,newSanPham);
+        for (int i = 0; i < danhSachSanPham.size(); i++) {
+            if (Objects.equals(danhSachSanPham.get(i).getMaSanPham(), maSanPham)) {
+                danhSachSanPham.set(i, newSanPham);
                 return;
             }
         }
@@ -61,26 +62,36 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
         return null;
     }
 
-    public SanPham findById(String idCanTim) {
+    public ArrayList<SanPham> getByNameSanPham(String nameSanPham) {
+        ArrayList<SanPham> temp = new ArrayList<>();
         for (int i = 0; i < danhSachSanPham.size(); i++) {
-            if (Objects.equals(danhSachSanPham.get(i).getMaSanPham(), idCanTim)) {
-                return danhSachSanPham.get(i);
+            if (danhSachSanPham.get(i).getTenSanPham().toLowerCase().contains(nameSanPham.toLowerCase())) {
+                temp.add(danhSachSanPham.get(i));
             }
         }
-        return null;
+        return temp;
     }
 
-    public SanPham findByName(String nameCanTim) {
-        for (int i = 0; i < danhSachSanPham.size(); i++) {
-            if (danhSachSanPham.get(i).getTenSanPham().toLowerCase().contains(nameCanTim.toLowerCase())) {
-                return danhSachSanPham.get(i);
-            }
+    public void findById(String idCanTim) {
+        var a = Database.getDanhSachSanPham().getById(idCanTim);
+        if (a == null) {
+            System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH.");
+        } else {
+            a.output();
         }
-        return null;
+    }
+
+    public void findByName(String nameCanTim) {
+        var a = Database.getDanhSachSanPham().getByNameSanPham(nameCanTim);
+        if (a == null) {
+            System.out.println("KHÔNG TÌM THẤY SẢN PHẨM.");
+        } else {
+            Table.printTable(a);
+        }
     }
 
     public void getAll() {
-//        Table.createTable(danhSachSanPham);
+        // Table.createTable(danhSachSanPham);
         Table.printTable(danhSachSanPham);
     }
 
@@ -95,10 +106,10 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
 
     @Override
     public void copyFrom(ADanhSach newDanhSach) {
-        this.danhSachSanPham =  ((DanhSachSanPham)newDanhSach).danhSachSanPham;
+        this.danhSachSanPham = ((DanhSachSanPham) newDanhSach).danhSachSanPham;
     }
 
-    public void menu(){
+    public void menu() {
         String luachon;
         do {
             System.out.println("\n\n\t\tMENU DANH SÁCH SẢN PHẨM.");
@@ -207,14 +218,14 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
                     getAll();
                     System.out.print("Nhập Mã Sản Phẩm Mà Bạn Muốn Tìm Kiếm Thông Tin: ");
                     String idCanTim = scanner.nextLine();
-                    findById(idCanTim).output();
+                    findById(idCanTim);
                 }
                 case "3" -> {
                     System.out.println("Danh Sách Sản Phẩm.");
                     getAll();
                     System.out.print("Nhập Tên Sản Phẩm Mà Bạn Muốn Tìm Kiếm Thông Tin: ");
                     String nameCanTim = scanner.nextLine();
-                    findByName(nameCanTim).output();
+                    findByName(nameCanTim);
                 }
                 case "0" -> {
                     System.out.println("\t\tThoát.");
@@ -223,7 +234,7 @@ public class DanhSachSanPham extends ADanhSach implements Serializable {
                     System.err.println("\t\tLỰA CHỌN CỦA BẠN KHÔNG PHÙ HỢP.");
                 }
             }
-        } while(!luachon.equals("0"));
+        } while (!luachon.equals("0"));
     }
 
     public static void main(String[] args) {

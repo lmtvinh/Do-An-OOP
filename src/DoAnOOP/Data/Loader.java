@@ -15,7 +15,7 @@ import DoAnOOP.ThongTin.*;
 
 import java.io.File;
 
-public class Main {
+public class Loader {
         public static void removeAllData() {
                 File listFile = new File(HoTro.duongDanTuongDoi);
                 if (!listFile.exists()) {
@@ -602,36 +602,36 @@ public class Main {
         }
 
         public static void initHoaDonBan() {
-                // HD1
-                HoaDonBan hoaDonBan1 = new HoaDonBan("KH001", "NV001", 90000000);
-                // HD2
-                HoaDonBan hoaDonBan2 = new HoaDonBan("KH002", "NV001",95000000);
-                // HD3
-                HoaDonBan hoaDonBan3 = new HoaDonBan("KH003", "NV003",80000000);
-                // HD4
-                HoaDonBan hoaDonBan4 = new HoaDonBan("KH004", "NV003",85000000);
-                // HD5
-                HoaDonBan hoaDonBan5 = new HoaDonBan("KH005", "NV004", 86000000);
-                // HD6
-                HoaDonBan hoaDonBan6 = new HoaDonBan("KH006", "NV004",50000000);
-                // HD7
-                HoaDonBan hoaDonBan7 = new HoaDonBan("KH007", "NV004",60000000);
-                // HD8
-                HoaDonBan hoaDonBan8 = new HoaDonBan("KH008", "NV005",58000000);
-                // HD9
-                HoaDonBan hoaDonBan9 = new HoaDonBan("KH009", "NV005",89000000);
-                // HD10
-                HoaDonBan hoaDonBan10 = new HoaDonBan("KH001", "NV003",16060000);
-                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan1);
-                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan2);
-                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan3);
-                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan4);
-                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan5);
-                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan6);
-                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan7);
-                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan8);
-                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan9);
-                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan10);
+//                // HD1
+//                HoaDonBan hoaDonBan1 = new HoaDonBan("KH001", "NV001", 90000000,true);
+//                // HD2
+//                HoaDonBan hoaDonBan2 = new HoaDonBan("KH002", "NV001",95000000,true);
+//                // HD3
+//                HoaDonBan hoaDonBan3 = new HoaDonBan("KH003", "NV003",80000000,true);
+//                // HD4
+//                HoaDonBan hoaDonBan4 = new HoaDonBan("KH004", "NV003",85000000,true);
+//                // HD5
+//                HoaDonBan hoaDonBan5 = new HoaDonBan("KH005", "NV004", 86000000,true);
+//                // HD6
+//                HoaDonBan hoaDonBan6 = new HoaDonBan("KH006", "NV004",50000000,true);
+//                // HD7
+//                HoaDonBan hoaDonBan7 = new HoaDonBan("KH007", "NV004",60000000,true);
+//                // HD8
+//                HoaDonBan hoaDonBan8 = new HoaDonBan("KH008", "NV005",58000000,true);
+//                // HD9
+//                HoaDonBan hoaDonBan9 = new HoaDonBan("KH009", "NV005",89000000,true);
+//                // HD10
+//                HoaDonBan hoaDonBan10 = new HoaDonBan("KH001", "NV003",16060000,true);
+//                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan1);
+//                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan2);
+//                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan3);
+//                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan4);
+//                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan5);
+//                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan6);
+//                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan7);
+//                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan8);
+//                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan9);
+//                Database.getDanhSachHoaDonBan().addHoaDonBan(hoaDonBan10);
         }
 
         public static void initChiTietHoaDonBan() {

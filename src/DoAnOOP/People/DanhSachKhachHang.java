@@ -96,17 +96,16 @@ public class DanhSachKhachHang extends ADanhSach implements Serializable {
         int temp = -1;
         Customer newCustomer = null;
         for (int i = 0; i < length; i++) {
-            if (customers[i].getMaKhachHang().equals(index)) {
+            if (Objects.equals(customers[i].getMaKhachHang(), index)) {
                 temp = i;
                 newCustomer = customers[i];
             }
         }
         if (temp != -1 && newCustomer != null) {
-            Customer newCustomer1 = null;
-            newCustomer1.input();
-            set(newCustomer1, temp, customers);
+            newCustomer.suaThongTinConNguoi();
+            set(newCustomer, temp, customers);
         } else {
-            System.out.println("Khong co ID trong danh sach.");
+            System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH");
         }
     }
 
@@ -158,7 +157,7 @@ public class DanhSachKhachHang extends ADanhSach implements Serializable {
             switch (luachon) {
                 case "1" -> {
                     Customer a = new Customer();
-                    customers = new Customer[length];
+//                    customers = new Customer[length];
                     System.out.println("Nhập Thông Tin Của Khách Hàng Mà Bạn Muốn Thêm Vào Danh Sách.");
                     a.input();
                     addCustomer(a);
@@ -207,8 +206,8 @@ public class DanhSachKhachHang extends ADanhSach implements Serializable {
 
     public Customer getByIdCustomer(String idCanCheck) {
         for (int i = 0; i < length; i++) {
-            if (Objects.equals(customers[i].getMaKhachHang(), idCanCheck)) {
-                return customers[i];
+            if (Objects.equals(get(i).getMaKhachHang(), idCanCheck)) {
+                return get(i);
             }
         }
         return null;

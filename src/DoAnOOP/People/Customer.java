@@ -48,6 +48,38 @@ public class Customer extends Person implements Output, Serializable {
     }
 
     @Override
+    public void suaThongTinConNguoi() {
+        System.out.print("Họ Và Tên: ");
+        setFullname(scanner.nextLine());
+        System.out.print("Email: ");
+        setEmail(Check.checkInputEmail());
+        System.out.print("Mật Khẩu: ");
+        setMatKhau(Check.inputEmpty().trim());
+        System.out.println("Địa Chỉ: ");
+        Address a = new Address();
+        System.out.print("+Số Nhà: ");
+        a.setApartmentNumber(scanner.nextLine());
+        System.out.print("+Tên Đường: ");
+        a.setStreet(scanner.nextLine());
+        System.out.print("+Tên Phường: ");
+        a.setPrecinct(scanner.nextLine());
+        System.out.print("+Tên Quận: ");
+        a.setDistrict(scanner.nextLine());
+        System.out.print("+Tên Thành Phố: ");
+        a.setCity(scanner.nextLine());
+        setAddress(a);
+        System.out.println("Ngày Sinh: ");
+        Date d = new Date();
+        System.out.print("+Ngày: ");
+        d.setDay(Check.checkInputInteger());
+        System.out.print("+Tháng: ");
+        d.setMonth(Check.checkInputInteger());
+        System.out.print("+Năm: ");
+        d.setYear(Check.checkInputInteger());
+        setDateOfBirth(d);
+    }
+
+    @Override
     public String[] getThuocTinh() {
         return new String[]{"Ma Khach Hang","Ten Khach Hang","Email","Dia chi","Ngay Sinh"};
     }

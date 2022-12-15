@@ -105,6 +105,6 @@ public class Laptop extends SanPham implements Output, Serializable {
         super.output();
         System.out.println("Kích Thước Màn Hình: " + screensize);
         System.out.println("Độ Phân Giải Màn Hình: " + resolution);
-        System.out.println("Nhóm Sản Phẩm: " + this.nhomSP);
+        System.out.println("Nhóm Sản Phẩm: " + nhomSP);
     }
 }

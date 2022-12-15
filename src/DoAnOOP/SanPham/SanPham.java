@@ -240,8 +240,8 @@ public abstract class SanPham implements Output, Serializable {
         System.out.println("Tản Nhiệt: " + getCooling());
         System.out.println("VGA: " + getVGA());
         System.out.println("Giá Bán: " + getPrice());
-        System.out.println("Tên Nhà Cung Cấp: " + Database.getDanhSachNCC().getByIdProvider(getMaNCC()));
-        System.out.println("Tên Nhà Sản Xuất: " + Database.getDanhSachNSX().findById(getMaNXS()));
+        System.out.println("Tên Nhà Cung Cấp: " + Database.getDanhSachNCC().getByIdProvider(getMaNCC()).getTenNCC());
+        System.out.println("Tên Nhà Sản Xuất: " + Database.getDanhSachNSX().findById(getMaNXS()).getTenNSX());
         System.out.println("Thời Gian Bảo Hành: " + thoiGianBaoHanh);
         System.out.println("Tên Loại Sản Phẩm: " + Database.getDanhSachLoaiSanPham().getById(getIdMaLoai()).getTenLoai());
     }

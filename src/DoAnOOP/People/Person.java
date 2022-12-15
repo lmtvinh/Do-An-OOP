@@ -9,7 +9,7 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.util.Scanner;
 
-public class Person implements Output, Serializable {
+public abstract class Person implements Output, Serializable {
     @Serial
     private static long serialVersionUID = -4641318484654L;
     static final Scanner in=new Scanner(System.in);
@@ -95,6 +95,8 @@ public class Person implements Output, Serializable {
 //        person.input();
 //        person.output();
 //    }
+
+    public abstract void suaThongTinConNguoi();
 
     @Override
     public String[] getThuocTinh() {

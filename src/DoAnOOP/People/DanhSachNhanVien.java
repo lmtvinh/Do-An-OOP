@@ -16,8 +16,7 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
     private static long serialVersionUID = 456464897L;
     public final static String DUONG_DAN_LUU_FILE = HoTro.duongDanTuongDoi + "DanhSachNhanVien.bin";
     static final Scanner scanner = new Scanner(System.in);
-    private Employee[]
-            employees;
+    private Employee[] employees;
     private int length;
     public DanhSachNhanVien() {
         employees = null;
@@ -99,11 +98,10 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
             }
         }
         if (temp != -1 && newEmployee != null) {
-            Employee newEmployee1 = null;
-            newEmployee1.input();
-            set(newEmployee1, temp, employees);
+            newEmployee.suaThongTinConNguoi();
+            set(newEmployee, temp, employees);
         }
-        System.out.println("Khong co ID trong danh sach");
+        System.out.println("ID KHÔNG CÓ TRONG DANH SÁCH");
     }
 
     public void output() {
@@ -131,7 +129,7 @@ public class DanhSachNhanVien extends ADanhSach implements Serializable {
             switch (luachon) {
                 case "1" -> {
                     HoTro.clearConsole();
-                    employees = new Employee[length];
+//                    employees = new Employee[length];
                     System.out.println("Nhập Thông Tin Của Nhân Viên Cần Thêm Vào Danh Sách.");
                     Employee a = new Employee();
                     a.input();

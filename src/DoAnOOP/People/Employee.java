@@ -78,8 +78,6 @@ public class Employee extends Person implements Output, Serializable {
                 super.input();
                 System.out.print("Nhập Mã Quản Lí Của Nhân Viên(username): ");
                 maNV = Check.checkMSQL();
-                System.out.print("Nhập Mật Khẩu: ");
-                matKhau = scanner.nextLine();
                 System.out.print("Nhập Lương Cơ Bản Của Quản Lí: ");
                 luongCoBan = Check.checkInputInteger();
                 System.out.print("Nhập Số Giờ Làm Của Quản Lí: ");
@@ -112,6 +110,43 @@ public class Employee extends Person implements Output, Serializable {
         super.output();
         System.out.println("Số Giờ Làm: " + soGioLam);
         System.out.println("Lương: " + tinhLuong());
+    }
+
+    @Override
+    public void suaThongTinConNguoi() {
+        System.out.print("Họ Và Tên: ");
+        setFullname(scanner.nextLine());
+        System.out.print("Email: ");
+        setEmail(Check.checkInputEmail());
+        System.out.print("Mật Khẩu: ");
+        setMatKhau(Check.inputEmpty().trim());
+        System.out.println("Địa Chỉ: ");
+        Address a = new Address();
+        System.out.print("+Số Nhà: ");
+        a.setApartmentNumber(scanner.nextLine());
+        System.out.print("+Tên Đường: ");
+        a.setStreet(scanner.nextLine());
+        System.out.print("+Tên Phường: ");
+        a.setPrecinct(scanner.nextLine());
+        System.out.print("+Tên Quận: ");
+        a.setDistrict(scanner.nextLine());
+        System.out.print("+Tên Thành Phố: ");
+        a.setCity(scanner.nextLine());
+        setAddress(a);
+        System.out.println("Ngày Sinh: ");
+        Date d = new Date();
+        System.out.print("+Ngày: ");
+        d.setDay(Check.checkInputInteger());
+        System.out.print("+Tháng: ");
+        d.setMonth(Check.checkInputInteger());
+        System.out.print("+Năm: ");
+        d.setYear(Check.checkInputInteger());
+        setDateOfBirth(d);
+//        Employee
+        System.out.print("Lương Cơ Bản: ");
+        setLuongCoBan(Check.checkInputInteger());
+        System.out.print("Số Giờ Làm: ");
+        setSoGioLam(Check.checkInputInteger());
     }
 
     public static void main(String[] args) {
